@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 // reset стилей
 
 * {
@@ -9,11 +15,13 @@
 html {
   line-height: 1.15; // Устанавливаем базовую высоту строки
   -webkit-text-size-adjust: 100%; // Предотвращаем изменение размера шрифта на мобильных устройствах
+  width: 100%;
 }
 
 body {
-  font-family: sans-serif; // Устанавливаем шрифт по умолчанию
-  margin: 0;
+  max-width: 1440px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 auto;
 }
 
 // Сброс стилей для заголовков
@@ -64,5 +72,34 @@ body {
   background-color: #f1b3b3;
   h1 {
     color: red;
+  }
+}
+.wrapper {
+  max-width: 1160px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+header {
+  background-color: #fff;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+
+  img {
+    cursor: pointer;
+    width: 105.69px;
+    height: 40px;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: rgba(31, 32, 65, 0.5);
   }
 }

@@ -1,2 +1,15 @@
-header 
-    //- img(src=require("./assets/logo.svg").default, alt="logo")
+include ../mixins/mixins.pug
+
+header
+    div(class='wrapper')
+        img(src=require("./assets/logo.svg").default, alt="logo", href='/')
+        ul 
+            li О нас
+            li Услуги 
+            li Вакансии
+            li Новости
+            li Соглашения
+        +button("войти", false)
+        +button("зарегестрироваться", true)
+
+    
