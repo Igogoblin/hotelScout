@@ -1,13 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPact: "./",
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -16,16 +15,32 @@ module.exports = {
         use: "pug-loader",
       },
       {
-        test: /\.scss$/,
+        test: /\.module\.scss$/, // Обрабатываем файлы с .module.scss
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[path][name]__[local]--[hash:base64:5]", // Правильное вложение
+              },
+            },
+          },
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.scss$/, // Для обычных SCSS файлов
+        exclude: /\.module\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpg|gif|ico)$/,
+        test: /\.(png|jpg|gif|ico|svg)$/,
         use: {
           loader: "file-loader",
           options: {
             name: "[name].[ext]",
-            outputPath: "images/",
+            outputPath: "assets/",
           },
         },
       },

@@ -1,5 +1,67 @@
+// reset стилей
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15; // Устанавливаем базовую высоту строки
+  -webkit-text-size-adjust: 100%; // Предотвращаем изменение размера шрифта на мобильных устройствах
+}
+
 body {
-  background-color: #f0f0f0;
+  font-family: sans-serif; // Устанавливаем шрифт по умолчанию
+  margin: 0;
+}
+
+// Сброс стилей для заголовков
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+// Сброс стилей для списков
+ul,
+ol {
+  list-style: none; // Убираем маркеры
+}
+
+// Сброс стилей для ссылок
+a {
+  text-decoration: none; // Убираем подчеркивание
+  color: inherit; // Устанавливаем цвет по умолчанию
+}
+
+// Сброс стилей для таблиц
+table {
+  border-collapse: collapse; // Убираем отступы между ячейками
+  border-spacing: 0;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29.26px;
+}
+h2 {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 23.16px;
+}
+h3 {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14.63px;
+}
+body {
+  background-color: #f1b3b3;
   h1 {
     color: red;
   }
