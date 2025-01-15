@@ -16,7 +16,7 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist --dotfiles --silent"
   },
   "homepage": "https://Igogoblin.github.io/hotelScout"
 }
