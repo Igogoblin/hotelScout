@@ -1,2 +1,8 @@
 mixin button(text, isPrimary)
     button(class=isPrimary?'btn btn--primary': 'btn btn--second')=text
+
+mixin cardFooter(items, name )
+    ul(class=`menu__list ${name}`) 
+        each name,index in items 
+            li(class=`menu__item${index+1}`)
+                a(href="#")= name

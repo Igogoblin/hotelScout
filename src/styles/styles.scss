@@ -22,6 +22,8 @@ body {
   // max-width: 1440px;
   font-family: "Montserrat", sans-serif;
   margin: 0 auto;
+  min-height: 100vh;
+  height: 100%;
 }
 
 // Сброс стилей для заголовков
@@ -68,12 +70,7 @@ h3 {
   font-size: 12px;
   line-height: 14.63px;
 }
-body {
-  background-color: #f1b3b3;
-  h1 {
-    color: red;
-  }
-}
+
 .wrapper {
   max-width: 1160px;
   width: 100%;

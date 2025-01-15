@@ -38,7 +38,7 @@
   position: relative;
   border: none;
   border-radius: 22px;
-  padding-top: 2px;
+  padding: 3px 0 0 2px;
 
   &::before {
     content: "";
@@ -64,5 +64,20 @@
 
   &:hover::before {
     opacity: 0.5;
+  }
+}
+
+.menu__list {
+  li {
+    color: $darkShade-50;
+    padding-bottom: 20px;
+  }
+  .menu__item1 {
+    text-transform: uppercase;
+    color: $darkShade-100;
+    line-height: 14.63px;
+    font-weight: 700;
+    font-size: 12px;
+    padding-bottom: 21px;
   }
 }
