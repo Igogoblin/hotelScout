@@ -1,0 +1,12 @@
+include ../mixins/mixins.pug
+
+main
+    img(src=require("./assets/mainImage.jpg").default, alt="background", class="main__image")
+    .wrapper 
+        +cardCalendar
+        +registration({isEnter: true})
+        span
+            | Лучшие номера для вашей работы,
+            br
+            | отдыха и просто вдохновения
+        
