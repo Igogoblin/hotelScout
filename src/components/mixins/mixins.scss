@@ -81,3 +81,12 @@
     padding-bottom: 21px;
   }
 }
+
+.calendar__block {
+  width: 380px;
+  height: 374px;
+  border-radius: 4px;
+  background-color: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 1);
+}

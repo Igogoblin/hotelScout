@@ -16,7 +16,8 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack",
-    "deploy": "npm run build && gh-pages -d dist --dotfiles --silent"
+    "deploy": "npm run build && gh-pages -d dist --dotfiles --silent",
+    "clean": "rimraf node_modules/.cache/webpack"
   },
   "homepage": "https://Igogoblin.github.io/hotelScout"
 }

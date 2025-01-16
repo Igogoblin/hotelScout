@@ -1,18 +1,28 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   mode: "development",
+  cache: false,
   entry: "./src/index.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "/hotelScout/",
+    // publicPath: "/",
   },
   module: {
     rules: [
       {
         test: /\.pug$/,
-        use: "pug-loader",
+        use: [
+          {
+            loader: "pug-loader",
+            options: {
+              pretty: true, // Отключает минификацию Pug для удобства отладки
+            },
+          },
+        ],
       },
       {
         test: /\.module\.scss$/, // Обрабатываем файлы с .module.scss
@@ -58,6 +68,7 @@ module.exports = {
     compress: true,
     port: 8080,
     open: true,
+    watchFiles: ["src/**/*"],
   },
   resolve: {
     extensions: [".js", ".pug", ".scss"],
