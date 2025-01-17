@@ -1,3 +1,5 @@
+@use "../styles/_const.scss" as *;
+
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat-Medium.ttf") format("truetype");
@@ -69,6 +71,18 @@ h3 {
   font-weight: 700;
   font-size: 12px;
   line-height: 14.63px;
+}
+
+input {
+  height: 44px;
+  padding: 0 15px;
+  border: 1px solid $darkShade-25;
+  border-radius: 4px;
+  &::placeholder {
+    color: $darkShade-25;
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
 
 .wrapper {

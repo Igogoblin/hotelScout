@@ -64,11 +64,19 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: path.join(__dirname, "dist"),
+    static: {
+      directory: path.join(__dirname, "dist"),
+      watch: true,
+    },
+
     compress: true,
     port: 8080,
     open: true,
     watchFiles: ["src/**/*"],
+    liveReload: true,
+    client: {
+      overlay: true,
+    },
   },
   resolve: {
     extensions: [".js", ".pug", ".scss"],

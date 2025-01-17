@@ -2,7 +2,7 @@ include ../mixins/mixins.pug
 
 header
     div(class='wrapper')
-        img(src=require("./assets/logo.svg").default, alt="logo", href='/')
+        img(src=require("./assets/logo.svg").default, alt="logo")
         ul 
             li О нас
             li Услуги 
@@ -10,6 +10,6 @@ header
             li Новости
             li Соглашения
         +button("войти", false)
-        +button("зарегестрироваться", true)
+        +button("зарегистрироваться", true)
 
     
