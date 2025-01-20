@@ -1,5 +1,7 @@
-mixin button(text, isPrimary)
-    button(class=isPrimary?'btn btn--primary': 'btn btn--second')=text
+mixin button(text, isPrimary, isImage=false)
+    .btn__block
+        button(class=isPrimary?'btn btn--primary': 'btn btn--second')=text
+        img(src=require("./assets/arrow_forwardWhite.svg").default, alt="enter", class=isImage?"btn__image":"btn__image-none")
 
 mixin cardFooter(items, name )
     ul(class=`menu__list ${name}`) 
@@ -9,6 +11,26 @@ mixin cardFooter(items, name )
 
 mixin cardCalendar()
     .calendar__block
+        .calendar__wrapper
+            h2 Найдём номера под ваши пожелания
+            .calendar__period 
+                label(for="arrival") прибытие
+                    input(type="date", name="arrival", class="main__arrival")
+                label(for="departure") выезд
+                    input(type="date", name="departure", class="main__departure")
+            label(for="guest")
+            div(class="dropdown", id="dropdownContent")
+                button(onclick="toggleDropdown()") Гости
+                .dropdown__content
+                    a(href="#" class="dropdown__link") взрослые 
+                        +valueControl()
+            +button("подобрать номер", true, true)
+
+mixin valueControl()
+    .value__control 
+        button(class="value__control-btn--minus") -
+        span(class="value__control-value")= 0
+        button(class="value__control-btn--plus") +
 
 
 mixin registration(options)
@@ -35,15 +57,16 @@ mixin registration(options)
                 .born 
                     label(for="born") дата рождения
                         input(type="date", name="born")
-            span(class="registrationClassName")= dataEnter
+            span(class="registration__forEnter")= dataEnter
             label(for="enterEmail") 
                 input(type="email", name="enterEmail" class="registrationEmail" placeholder="Email")
                 input(type="password", name="enterEmail" class="registrationPassword" placeholder="Пароль")
             div(class=registrationClassName)
                 .toggle 
                     input(type="checkbox", name="special" class="toggle-checkbox")
-                    label(for="special" class="toggle-label") Получать спецпредложения
-            +button(forButton, true)
+                    label(for="special" class="toggle-label") 
+                    span Получать спецпредложения
+            +button(forButton, true, true)
             .registration__footer
                 span= registrationText
                 +button(registrationFinish, false)

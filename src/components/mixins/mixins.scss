@@ -1,72 +1,69 @@
 @use "../../styles/_const.scss" as *;
-.btn {
-  height: 34px;
-  border-radius: 22px;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14.63px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.btn.btn--primary {
-  background: linear-gradient(
-    180deg,
-    rgba(188, 156, 255, 1) 0%,
-    rgba(139, 164, 248, 1) 100%
-  );
-  color: #fff;
-  border: none;
-
-  &:hover {
-    background: linear-gradient(
-      180deg,
-      rgba(188, 156, 255, 1) 0%,
-      rgba(139, 164, 249, 1) 100%
-    );
-    opacity: 0.5;
+.btn__block {
+  .btn {
+    height: 34px;
+    border-radius: 22px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.63px;
+    text-transform: uppercase;
+    cursor: pointer;
   }
-}
-.btn.btn--second {
-  background: rgba(255, 255, 255);
-  color: rgba(188, 156, 255, 1);
-  border-image: linear-gradient(
-      180deg,
-      rgba(188, 156, 255, 1) 0%,
-      rgba(139, 164, 248, 1) 100%
-    )
-    1;
+  .btn.btn--primary {
+    background: linear-gradient(180deg, $purple 0%, $purple-grand 100%);
+    color: $white;
+    border: none;
+
+    &:hover {
+      background: linear-gradient(180deg, $purple 0%, $purple-grand 100%);
+      opacity: 0.5;
+    }
+  }
+  .btn.btn--second {
+    background: $white;
+    color: $purple;
+    border-image: linear-gradient(180deg, $purple 0%, $purple-grand 100%) 1;
+    position: relative;
+    border: none;
+    border-radius: 22px;
+    padding: 3px 0 0 2px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      padding: 2px;
+
+      background: linear-gradient(
+        180deg,
+        $purple 0%,
+        $purple-grand 100%
+      ); // Градиент рамки
+      -webkit-mask: linear-gradient($white 0 0) content-box,
+        linear-gradient($white 0 0);
+      mask: linear-gradient($white 0 0) content-box, linear-gradient($white 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    &:hover::before {
+      opacity: 0.5;
+    }
+  }
   position: relative;
-  border: none;
-  border-radius: 22px;
-  padding: 3px 0 0 2px;
-
-  &::before {
-    content: "";
+  .btn__image {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    padding: 2px;
-
-    background: linear-gradient(
-      180deg,
-      rgba(188, 156, 255, 1) 0%,
-      rgba(139, 164, 248, 1) 100%
-    ); // Градиент рамки
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    top: calc(50% - 10px);
+    right: 10px;
   }
-
-  &:hover::before {
-    opacity: 0.5;
+  .btn__image-none {
+    display: none;
   }
 }
-
 .menu__list {
   li {
     color: $darkShade-50;
@@ -86,19 +83,84 @@
   width: 380px;
   height: 374px;
   border-radius: 4px;
-  background-color: 1px solid rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+  background-color: 1px solid $darkShade-50;
+  box-shadow: 0px 0px 25px 0px $darkShade-20;
+  background-color: $white;
+  .calendar__wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 40px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29.26px;
+      color: $darkShade-100;
+    }
+    label {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 14.63px;
+      text-transform: uppercase;
+      color: $darkShade-100;
+    }
+    // .calendar__period {
+    // }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: $white;
+        width: 100%;
+        z-index: 1;
+        a {
+          text-decoration: none;
+          display: block;
+          &:hover {
+          }
+        }
+      }
+      .show {
+        display: block;
+      }
+    }
+    .dropdown + button {
+      width: 100%;
+    }
+  }
+}
+// for value control ============================================================================
+.value__control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 92px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 14.63px;
+  color: $darkShade-100;
 
-  background-color: rgba(255, 255, 255, 1);
+  button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $darkShade-25;
+    background-color: $white;
+  }
 }
 
+// for registration =============================================================================
 .forRegistration {
   max-width: 380px;
   width: 100%;
   background-color: $white;
   border: 1px solid $darkShade-12;
   border-radius: 4px;
-  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 25px 0px $darkShade-20;
+  margin-top: 19px;
 
   .registration__block {
     width: 100%;
@@ -116,6 +178,13 @@
         width: 100%;
         margin-bottom: 10px;
       }
+
+      & + div {
+        margin-top: 20px;
+      }
+    }
+    .registration + button {
+      height: 44px;
     }
     .registrationEmail,
     .registrationPassword,
@@ -140,18 +209,64 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        margin-right: 20px;
+
+        input [type="radio"] {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+
+          // background-color: $purple;
+          width: 18px;
+          height: 18px;
+          border: 1px solid $purple;
+          border-radius: 50%;
+          cursor: pointer;
+          background-color: transparent;
+
+          &:checked {
+            background-color: $purple;
+            border-color: $purple;
+            color: $darkShade-50;
+          }
+          transition: background-color 0.3s, border-color 0.3s;
+        }
       }
     }
     .born {
-      width: 64px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       margin: 20px 0;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 14.63px;
+      font-weight: 700;
+      input {
+        width: 100%;
+        text-transform: uppercase;
+        color: $darkShade-25;
+        margin-top: 5px;
+        // &::-webkit-inner-spin-button,
+        // &::-webkit-calendar-picker-indicator {
+        //   display: none; /* Скрыть значок выбора даты */
+        // }
+        // -moz-appearance: textfield;
+      }
+    }
+    .registration__forEnter {
+      font-size: 12px;
+      line-height: 14.63px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $darkShade-100;
+    }
+    .registrationEmail {
+      margin: 5px 0 10px 0;
     }
     .toggle {
       display: flex;
       align-items: center;
-      margin-bottom: 20px;
       font-size: 14px;
       line-height: 24px;
       color: $darkShade-75;
@@ -162,16 +277,22 @@
         width: 40px;
         height: 20px;
         z-index: 1;
+        cursor: pointer;
       }
       .toggle-label {
         width: 40px;
         height: 20px;
+        margin-top: 10px;
+        // gap: 10px;
+
         background-color: $white;
         border-radius: 25px;
         position: relative;
         border: 1px solid $darkShade-25;
         cursor: pointer;
         transition: background-color 0.3s;
+        display: flex;
+        align-items: center;
       }
       .toggle-label::after {
         content: "";
@@ -186,12 +307,15 @@
         transition: transform 0.3s;
       }
       input:checked + .toggle-label {
-        // background-color: #4caf50;
         border-color: $purple;
       }
       input:checked + .toggle-label::after {
         transform: translateX(18px);
-        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        background: linear-gradient(180deg, $purple 0%, $purple-grand 100%);
+        cursor: pointer;
+      }
+      span {
+        margin: 10px 0 0 10px;
       }
     }
     .registration__footer {

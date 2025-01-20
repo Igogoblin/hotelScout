@@ -11,10 +11,11 @@
     "style-loader": "^4.0.0",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.0"
+    "webpack-dev-server": "^5.2.0",
+    "webpack-watch-files-plugin": "^1.2.1"
   },
   "scripts": {
-    "start": "webpack serve --mode development",
+    "start": "webpack serve --mode development --hot",
     "build": "webpack",
     "deploy": "npm run build && gh-pages -d dist --dotfiles --silent",
     "clean": "rimraf node_modules/.cache/webpack"

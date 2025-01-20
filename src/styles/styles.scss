@@ -78,10 +78,19 @@ input {
   padding: 0 15px;
   border: 1px solid $darkShade-25;
   border-radius: 4px;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    display: none; /* Скрыть значок выбора даты */
+  }
+
   &::placeholder {
     color: $darkShade-25;
     font-size: 14px;
     line-height: 18px;
+  }
+  &:focus {
+    border: 1px solid $darkShade-50;
   }
 }
 
