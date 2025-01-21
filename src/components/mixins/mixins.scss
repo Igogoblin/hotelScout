@@ -97,6 +97,7 @@
       font-size: 24px;
       line-height: 29.26px;
       color: $darkShade-100;
+      margin-bottom: 21px;
     }
     label {
       font-weight: 700;
@@ -105,21 +106,84 @@
       text-transform: uppercase;
       color: $darkShade-100;
     }
-    // .calendar__period {
-    // }
+    .calendar__period {
+      display: flex;
+      gap: 20px;
+      label {
+        width: 47%;
+        display: flex;
+        flex-direction: column;
+        input {
+          margin: 5px 0 20px 0;
+        }
+      }
+    }
     .dropdown {
       position: relative;
-      display: inline-block;
-      .dropdown-content {
-        display: none;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      .guest-title {
+        width: 100%;
+        position: relative;
+        .show-dropdown {
+          width: 100%;
+          height: 44px;
+          border: 1px solid $darkShade-25;
+          border-radius: 4px;
+          margin-top: 5px;
+          background-color: $white;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 15px;
+          font-size: 14px;
+          line-height: 18px;
+          color: $darkShade-75;
+        }
+        img {
+          position: absolute;
+          top: 24px;
+          right: 20px;
+        }
+      }
+      .dropdown__content {
+        // display: none;
         position: absolute;
         background-color: $white;
+        top: 48px;
         width: 100%;
         z-index: 1;
+        border: 1px solid $darkShade-25;
+        width: 700;
+        font-size: 12px;
+        line-height: 14.63px;
+        color: $darkShade-100;
+        text-transform: uppercase;
         a {
           text-decoration: none;
-          display: block;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 5px;
+          padding: 5px 7px 0 15px;
+          cursor: auto;
           &:hover {
+          }
+        }
+        .guest-design {
+          display: flex;
+          justify-content: space-between;
+          padding: 19px 7px 13px 14px;
+          button {
+            color: $purple;
+            border: none;
+            background-color: $white;
+            width: 700;
+            font-size: 12px;
+            line-height: 14.63px;
+            text-transform: uppercase;
+            cursor: pointer;
           }
         }
       }
@@ -127,8 +191,9 @@
         display: block;
       }
     }
-    .dropdown + button {
+    .dropdown + .btn__block > .btn {
       width: 100%;
+      height: 44px;
     }
   }
 }
@@ -149,6 +214,11 @@
     border-radius: 50%;
     border: 1px solid $darkShade-25;
     background-color: $white;
+    cursor: pointer;
+  }
+  span {
+    margin: 0 0 3px 0;
+    width: 700;
   }
 }
 

@@ -30,19 +30,36 @@
           <div class="calendar__wrapper">
             <h2>Найдём номера под ваши пожелания</h2>
             <div class="calendar__period"> 
-              <label for="arrival">прибытие</label>
-              <input class="main__arrival" type="date" name="arrival">
-              <label for="departure">выезд</label>
-              <input class="main__departure" type="date" name="departure">
+              <label for="arrival">прибытие
+                <input class="main__arrival" type="date" name="arrival">
+              </label>
+              <label for="departure">выезд
+                <input class="main__departure" type="date" name="departure">
+              </label>
             </div>
-            <label for="guest"></label>
             <div class="dropdown" id="dropdownContent">
-              <button onclick="toggleDropdown()">Гости</button>
-              <div class="dropdown__content"><a href="#">взрослые 
-                    <div class="value__control"> 
-                      <button class="value__control-btn--minus">-</button><span class="value__control-value">0</span>
-                      <button class="value__control-btn--plus">+</button>
-                    </div></a></div>
+              <label for="guest">Гости</label>
+              <div class="guest-title"> 
+                <button class="show-dropdown" onclick="toggleDropdown()">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+                <div class="dropdown__content"><a class="dropdown__link" href="#">взрослые 
+                      <div class="value__control"> 
+                        <button class="value__control-btn--minus">-</button><span class="value__control-value">0</span>
+                        <button class="value__control-btn--plus">+</button>
+                      </div></a><a class="dropdown__link" href="#">дети 
+                      <div class="value__control"> 
+                        <button class="value__control-btn--minus">-</button><span class="value__control-value">0</span>
+                        <button class="value__control-btn--plus">+</button>
+                      </div></a><a class="dropdown__link" href="#">младенцы 
+                      <div class="value__control"> 
+                        <button class="value__control-btn--minus">-</button><span class="value__control-value">0</span>
+                        <button class="value__control-btn--plus">+</button>
+                      </div></a>
+                  <div class="guest-design"> 
+                    <button class="guest__button--clear">очистить</button>
+                    <button class="guest__button--apply">применить</button>
+                  </div>
+                </div>
+              </div>
             </div>
               <div class="btn__block">
                 <button class="btn btn--primary">подобрать номер</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">

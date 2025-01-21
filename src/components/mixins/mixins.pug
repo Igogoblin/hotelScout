@@ -18,13 +18,24 @@ mixin cardCalendar()
                     input(type="date", name="arrival", class="main__arrival")
                 label(for="departure") выезд
                     input(type="date", name="departure", class="main__departure")
-            label(for="guest")
+            
             div(class="dropdown", id="dropdownContent")
-                button(onclick="toggleDropdown()") Гости
-                .dropdown__content
-                    a(href="#" class="dropdown__link") взрослые 
-                        +valueControl()
+                label(for="guest") Гости
+                .guest-title 
+                    button(class="show-dropdown" onclick="toggleDropdown()") Сколько гостей
+                    img(src=require("./assets/expand_more.svg").default, alt="expend more")
+                    .dropdown__content
+                        a(href="#" class="dropdown__link") взрослые 
+                            +valueControl()
+                        a(href="#" class="dropdown__link") дети 
+                            +valueControl()
+                        a(href="#" class="dropdown__link") младенцы 
+                            +valueControl()
+                        .guest-design 
+                            button(class="guest__button--clear") очистить
+                            button(class="guest__button--apply") применить
             +button("подобрать номер", true, true)
+            //- button(onclick="toggleDropdown()")
 
 mixin valueControl()
     .value__control 

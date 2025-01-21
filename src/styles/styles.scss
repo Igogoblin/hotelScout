@@ -92,6 +92,10 @@ input {
   &:focus {
     border: 1px solid $darkShade-50;
   }
+  &[type="date"] {
+    text-transform: uppercase;
+    color: $darkShade-50;
+  }
 }
 
 .wrapper {
