@@ -1,10 +1,13 @@
 {
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "file-loader": "^6.2.0",
     "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.3",
     "pug": "^2.0.4",
+    "pug-html-loader": "^1.1.7",
     "pug-loader": "^2.4.0",
     "sass": "^1.83.1",
     "sass-loader": "^16.0.4",
@@ -20,5 +23,13 @@
     "deploy": "npm run build && gh-pages -d dist --dotfiles --silent",
     "clean": "rimraf node_modules/.cache/webpack"
   },
-  "homepage": "https://Igogoblin.github.io/hotelScout"
+  "homepage": "https://Igogoblin.github.io/hotelScout",
+  "dependencies": {
+    "browserify-zlib": "^0.2.0",
+    "express": "^4.21.2",
+    "path-browserify": "^1.0.1",
+    "pug-runtime": "^3.0.1",
+    "querystring-es3": "^0.2.1",
+    "webpack-node-externals": "^3.0.0"
+  }
 }

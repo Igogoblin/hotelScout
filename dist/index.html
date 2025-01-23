@@ -16,10 +16,10 @@
         <li>Новости</li>
         <li>Соглашения</li>
       </ul>
-        <div class="btn__block">
+        <div class="btn__block btn-login">
           <button class="btn btn--second">войти</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
         </div>
-        <div class="btn__block">
+        <div class="btn__block btn-register">
           <button class="btn btn--primary">зарегистрироваться</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
         </div>
     </div>
@@ -40,20 +40,26 @@
             <div class="dropdown" id="dropdownContent">
               <label for="guest">Гости</label>
               <div class="guest-title"> 
-                <button class="show-dropdown" onclick="toggleDropdown()">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
-                <div class="dropdown__content"><a class="dropdown__link" href="#">взрослые 
-                      <div class="value__control"> 
-                        <button class="value__control-btn--minus">-</button><span class="value__control-value">0</span>
-                        <button class="value__control-btn--plus">+</button>
-                      </div></a><a class="dropdown__link" href="#">дети 
-                      <div class="value__control"> 
-                        <button class="value__control-btn--minus">-</button><span class="value__control-value">0</span>
-                        <button class="value__control-btn--plus">+</button>
-                      </div></a><a class="dropdown__link" href="#">младенцы 
-                      <div class="value__control"> 
-                        <button class="value__control-btn--minus">-</button><span class="value__control-value">0</span>
-                        <button class="value__control-btn--plus">+</button>
-                      </div></a>
+                <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+                <div class="dropdown__content"> 
+                    <div class="value__control"> <span class="adults">взрослые</span>
+                      <div class="value__block">
+                        <button class="adults btn--minus">-</button><span class="adults btn-value">0</span>
+                        <button class="adults btn--plus">+</button>
+                      </div>
+                    </div>
+                    <div class="value__control"> <span class="children">дети</span>
+                      <div class="value__block">
+                        <button class="children btn--minus">-</button><span class="children btn-value">0</span>
+                        <button class="children btn--plus">+</button>
+                      </div>
+                    </div>
+                    <div class="value__control"> <span class="babies">младенцы</span>
+                      <div class="value__block">
+                        <button class="babies btn--minus">-</button><span class="babies btn-value">0</span>
+                        <button class="babies btn--plus">+</button>
+                      </div>
+                    </div>
                   <div class="guest-design"> 
                     <button class="guest__button--clear">очистить</button>
                     <button class="guest__button--apply">применить</button>
@@ -61,12 +67,12 @@
                 </div>
               </div>
             </div>
-              <div class="btn__block">
+              <div class="btn__block undefined">
                 <button class="btn btn--primary">подобрать номер</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
               </div>
           </div>
         </div>
-        <div class="forRegistration">
+        <div class="forRegistration showNone registration-form">
           <div class="registration__block">
             <h2>Войти</h2>
             <div class="registration enter__card">
@@ -96,12 +102,52 @@
                 <label class="toggle-label" for="special"> </label><span>Получать спецпредложения</span>
               </div>
             </div>
-              <div class="btn__block">
+              <div class="btn__block undefined">
                 <button class="btn btn--primary">войти</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
               </div>
             <div class="registration__footer"><span>Нет аккаунта на Toxin?</span>
-                <div class="btn__block">
+                <div class="btn__block undefined">
                   <button class="btn btn--second">создать</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="forRegistration showNone enter-form">
+          <div class="registration__block">
+            <h2>Регистрация аккаунта</h2>
+            <div class="registration">
+              <input class="registrationName" type="text" name="name" placeholder="Имя">
+              <input class="registrationSurname" type="text" name="surname" placeholder="Фамилия">
+              <div class="forMale">
+                <label for="male">
+                  <input class="registrationMale" type="radio" id="male" name="gender" value="male">Мужчина
+                </label>
+                <label for="female">
+                  <input class="registrationFemale" type="radio" id="female" name="gender" value="female">Женщина
+                </label>
+              </div>
+              <div class="born"> 
+                <label for="born">дата рождения
+                  <input type="date" name="born">
+                </label>
+              </div>
+            </div><span class="registration__forEnter">данные для входа в сервис</span>
+            <label for="enterEmail"> 
+              <input class="registrationEmail" type="email" name="enterEmail" placeholder="Email">
+              <input class="registrationPassword" type="password" name="enterEmail" placeholder="Пароль">
+            </label>
+            <div class="registration">
+              <div class="toggle"> 
+                <input class="toggle-checkbox" type="checkbox" name="special">
+                <label class="toggle-label" for="special"> </label><span>Получать спецпредложения</span>
+              </div>
+            </div>
+              <div class="btn__block undefined">
+                <button class="btn btn--primary">зарегистрироваться</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+              </div>
+            <div class="registration__footer"><span>Уже есть аккаунт на Toxin</span>
+                <div class="btn__block undefined">
+                  <button class="btn btn--second">войти</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
                 </div>
             </div>
           </div>

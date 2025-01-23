@@ -1,7 +1,9 @@
-mixin button(text, isPrimary, isImage=false)
-    .btn__block
-        button(class=isPrimary?'btn btn--primary': 'btn btn--second')=text
-        img(src=require("./assets/arrow_forwardWhite.svg").default, alt="enter", class=isImage?"btn__image":"btn__image-none")
+mixin button(options )
+    div(class=`btn__block ${options.className}`)
+        button(class=options.isPrimary?'btn btn--primary': 'btn btn--second')=options.text
+        img(src=require("./assets/arrow_forwardWhite.svg").default, alt="enter", class=options.isImage?"btn__image":"btn__image-none")
+
+//- {text, isPrimary, isImage=false, className?}
 
 mixin cardFooter(items, name )
     ul(class=`menu__list ${name}`) 
@@ -22,26 +24,25 @@ mixin cardCalendar()
             div(class="dropdown", id="dropdownContent")
                 label(for="guest") Гости
                 .guest-title 
-                    button(class="show-dropdown" onclick="toggleDropdown()") Сколько гостей
+                    button(class="show-dropdown") Сколько гостей
                     img(src=require("./assets/expand_more.svg").default, alt="expend more")
-                    .dropdown__content
-                        a(href="#" class="dropdown__link") взрослые 
-                            +valueControl()
-                        a(href="#" class="dropdown__link") дети 
-                            +valueControl()
-                        a(href="#" class="dropdown__link") младенцы 
-                            +valueControl()
+                    .dropdown__content 
+                        +valueControl("взрослые", "adults")
+                        +valueControl("дети", "children") 
+                        +valueControl("младенцы", "babies")
                         .guest-design 
                             button(class="guest__button--clear") очистить
                             button(class="guest__button--apply") применить
-            +button("подобрать номер", true, true)
-            //- button(onclick="toggleDropdown()")
+            +button({text:"подобрать номер", isPrimary:true, isImage:true})
 
-mixin valueControl()
+
+mixin valueControl(name, className)
     .value__control 
-        button(class="value__control-btn--minus") -
-        span(class="value__control-value")= 0
-        button(class="value__control-btn--plus") +
+        span(class=className)= name
+        .value__block
+            button(class=`${className} btn--minus`) -
+            span(class=`${className} btn-value`) 0
+            button(class=`${className} btn--plus`) +
 
 
 mixin registration(options)
@@ -52,7 +53,7 @@ mixin registration(options)
      var dataEnter = options.isEnter ? "данные для входа в сервис" : "";
      var registrationText = options.isEnter ? "Уже есть аккаунт на Toxin" : "Нет аккаунта на Toxin?";
      var registrationFinish = options.isEnter ? "войти" : "создать";
-    div(class = "forRegistration")
+    div(class = `forRegistration ${options.className ? "show" : "showNone"} ${options.isEnter ? "enter-form" : "registration-form"}`)
         .registration__block
             h2= registrationTitle
             div(class=registrationClassName)
@@ -77,7 +78,7 @@ mixin registration(options)
                     input(type="checkbox", name="special" class="toggle-checkbox")
                     label(for="special" class="toggle-label") 
                     span Получать спецпредложения
-            +button(forButton, true, true)
+            +button({text:forButton, isPrimary:true, isImage:true})
             .registration__footer
                 span= registrationText
-                +button(registrationFinish, false)
+                +button({text:registrationFinish, isPrimary:false})

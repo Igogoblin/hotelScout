@@ -5,27 +5,52 @@ import "./components/mixins/mixins.scss";
 import "./components/main/main.scss";
 import "./components/footer/footer.scss";
 
+// import pug from "pug";
+// import registrationTemplate from "./forMixins.js";
+
+// const pug = require("pug");
+
 console.log("hotelScout is running!");
 if (module.hot) {
   module.hot.accept();
 }
-function toggleDropdown() {
-  document.getElementById("dropdownContent").classList.toggle("show");
-}
+// function toggleDropdown() {
+//   document.getElementsByClassName("dropdown__content").classList.toggle("show");
+// }
 
-// Закрытие выпадающего списка при клике вне его
-window.onclick = function (event) {
-  if (!event.target.matches(".dropdown button")) {
-    const dropdowns = document.getElementsByClassName("dropdown__content");
-    for (let i = 0; i < dropdowns.length; i++) {
-      const openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
-    }
+const dropdownShow = document.querySelector(".show-dropdown");
+const dropdownContent = document.querySelector(".dropdown__content");
+
+dropdownShow.addEventListener("click", function () {
+  dropdownContent.classList.toggle("show");
+});
+
+window.addEventListener("click", (event) => {
+  if (!event.target.closest(".dropdown")) {
+    document.querySelectorAll(".dropdown__content").forEach((dropdown) => {
+      dropdown.classList.remove("show");
+    });
   }
-};
+});
+// ======================================================================================
+// document.addEventListener("DOMContentLoaded", () => {
+//   const dynamicContent = document.querySelector(".dynamic__content");
 
+//   const renderRegistrationForm = (isEnter) => {
+//     dynamicContent.innerHTML = registrationTemplate({ isEnter });
+//   };
+
+//   // Обработчик для кнопки "войти"
+//   document.querySelector(".btn-login").addEventListener("click", () => {
+//     renderRegistrationForm(true);
+//   });
+
+//   // Обработчик для кнопки "зарегистрироваться"
+//   document.querySelector(".btn-register").addEventListener("click", () => {
+//     renderRegistrationForm(false);
+//   });
+// });
+// =====================================================================================
 // <style>
 //     body {
 //         font-family: Arial, sans-serif;
@@ -55,3 +80,21 @@ window.onclick = function (event) {
 //         display: block;
 //     }
 // </style>
+
+const btnLogin = document.querySelector(".btn-login");
+const btnRegister = document.querySelector(".btn-register");
+const showEnterForm = document.querySelector(".enter-form");
+const showRegisterForm = document.querySelector(".registration-form");
+const calendarBlock = document.querySelector(".calendar__block");
+
+btnLogin.addEventListener("click", () => {
+  showRegisterForm.style.display = "block";
+  showEnterForm.style.display = "none";
+  calendarBlock.style.display = "none";
+});
+
+btnRegister.addEventListener("click", () => {
+  showEnterForm.style.display = "block";
+  showRegisterForm.style.display = "none";
+  calendarBlock.style.display = "none";
+});

@@ -56,6 +56,16 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
     ],
   },
   plugins: [
@@ -96,5 +106,12 @@ module.exports = {
   // },
   resolve: {
     extensions: [".js", ".pug", ".scss"],
+    // fallback: {
+    //   zlib: require.resolve("browserify-zlib"),
+    //   path: require.resolve("path-browserify"),
+    //   querystring: require.resolve("querystring-es3"),
+    //   fs: false, // Если не используется файловая система
+    //   async_hooks: false, // Если async_hooks не нужен в браузере
+    // },
   },
 };

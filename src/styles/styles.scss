@@ -96,6 +96,9 @@ input {
     text-transform: uppercase;
     color: $darkShade-50;
   }
+  &:hover {
+    border: 1px solid $darkShade-50;
+  }
 }
 
 .wrapper {
