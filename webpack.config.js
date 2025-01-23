@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const WatchFilesPlugin = require("webpack-watch-files-plugin").default;
 
 module.exports = {
   mode: "development",
@@ -9,6 +10,7 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "/hotelScout/",
+    clean: true,
     // publicPath: "/",
   },
   module: {
@@ -54,6 +56,16 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
     ],
   },
   plugins: [
@@ -61,16 +73,45 @@ module.exports = {
       title: "hotelScout",
       filename: "index.html",
       template: "./src/index.pug",
+      cache: false,
+    }),
+    new WatchFilesPlugin({
+      files: ["./src/**/*.pug"],
+      options: {
+        force: true,
+      },
     }),
   ],
   devServer: {
-    static: path.join(__dirname, "dist"),
+    static: {
+      directory: path.join(__dirname, "dist"),
+      watch: true,
+    },
+    hot: true,
     compress: true,
     port: 8080,
     open: true,
+    watchFiles: ["src/**/*.pug", "src/**/*.scss", "src/**/*.js"],
+    liveReload: true,
+    client: {
+      overlay: true,
+      reconnect: true,
+    },
     watchFiles: ["src/**/*"],
   },
+  // watchOptions: {
+  //   aggregateTimeout: 200,
+  //   poll: 1000,
+  //   ignored: /node_modules/,
+  // },
   resolve: {
     extensions: [".js", ".pug", ".scss"],
+    // fallback: {
+    //   zlib: require.resolve("browserify-zlib"),
+    //   path: require.resolve("path-browserify"),
+    //   querystring: require.resolve("querystring-es3"),
+    //   fs: false, // Если не используется файловая система
+    //   async_hooks: false, // Если async_hooks не нужен в браузере
+    // },
   },
 };

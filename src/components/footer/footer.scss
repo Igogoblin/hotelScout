@@ -57,16 +57,16 @@ footer {
           input {
             position: absolute;
             width: 260px;
-            height: 44px;
-            border: 1px solid $darkShade-25;
-            border-radius: 4px;
+            // height: 44px;
+            // border: 1px solid $darkShade-25;
+            // border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 15px;
-            &::placeholder {
-              color: $darkShade-25;
-            }
+            // padding: 0 15px;
+            // &::placeholder {
+            //   color: $darkShade-25;
+            // }
           }
           img {
             position: absolute;

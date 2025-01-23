@@ -1,3 +1,5 @@
+@use "../styles/_const.scss" as *;
+
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat-Medium.ttf") format("truetype");
@@ -69,6 +71,34 @@ h3 {
   font-weight: 700;
   font-size: 12px;
   line-height: 14.63px;
+}
+
+input {
+  height: 44px;
+  padding: 0 15px;
+  border: 1px solid $darkShade-25;
+  border-radius: 4px;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    display: none; /* Скрыть значок выбора даты */
+  }
+
+  &::placeholder {
+    color: $darkShade-25;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  &:focus {
+    border: 1px solid $darkShade-50;
+  }
+  &[type="date"] {
+    text-transform: uppercase;
+    color: $darkShade-50;
+  }
+  &:hover {
+    border: 1px solid $darkShade-50;
+  }
 }
 
 .wrapper {
