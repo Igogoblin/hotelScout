@@ -63,6 +63,9 @@
   .btn__image-none {
     display: none;
   }
+  // img {
+  //   background: url("../../assets/arrow_forwardWhite.svg");
+  // }
 }
 .menu__list {
   li {
@@ -145,6 +148,7 @@
           }
         }
         img {
+          // background: url("../../assets/expand_more.svg");
           position: absolute;
           top: 24px;
           right: 20px;

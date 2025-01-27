@@ -1,13 +1,13 @@
-include ../mixins/mixins.pug
+//- include ../mixins/mixins.pug
 
 main
     img(src=require("./assets/mainImage.jpg").default, alt="background", class="main__image")
     .wrapper 
         +cardCalendar
-        //- .dynamic__content
+        .dynamic__content
         
-        +registration({isEnter: false, className: false })
-        +registration({isEnter: true, className: false })
+        //- +registration({isEnter: false, className: false })
+        //- +registration({isEnter: true, className: false })
 
         span
             | Лучшие номера для вашей работы,

@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WatchFilesPlugin = require("webpack-watch-files-plugin").default;
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -22,6 +23,7 @@ module.exports = {
             loader: "pug-loader",
             options: {
               pretty: true, // Отключает минификацию Pug для удобства отладки
+              // basedir: path.resolve(__dirname, "src"),
             },
           },
         ],
@@ -75,11 +77,35 @@ module.exports = {
       template: "./src/index.pug",
       cache: false,
     }),
+    new HtmlWebpackPlugin({
+      title: "about",
+      filename: "about.html",
+      template: "./src/pages/about.pug",
+      cache: false,
+    }),
+    // new HtmlWebpackPlugin({
+    //   filename: "main.html",
+    //   template: "./src/components/main/main.pug",
+    //   cache: false,
+    // }),
+    new HtmlWebpackPlugin({
+      filename: "registration.html",
+      template: "./src/pages/registration.pug",
+      cache: false,
+    }),
     new WatchFilesPlugin({
       files: ["./src/**/*.pug"],
       options: {
         force: true,
       },
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "src/assets",
+          to: "assets",
+        },
+      ],
     }),
   ],
   devServer: {
@@ -91,13 +117,14 @@ module.exports = {
     compress: true,
     port: 8080,
     open: true,
-    watchFiles: ["src/**/*.pug", "src/**/*.scss", "src/**/*.js"],
+    // watchFiles: ["src/**/*.pug", "src/**/*.scss", "src/**/*.js"],
     liveReload: true,
     client: {
       overlay: true,
       reconnect: true,
     },
     watchFiles: ["src/**/*"],
+    historyApiFallback: true,
   },
   // watchOptions: {
   //   aggregateTimeout: 200,

@@ -6,7 +6,8 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title HotelScout
     body 
-    include ./components/header/header.pug
-    include ./components/main/main.pug
-
-    include ./components/footer/footer.pug
+        include ./components/header/header.pug
+        #content
+            include ./components/main/main.pug
+        //- include ./components/main/main.pug
+        include ./components/footer/footer.pug

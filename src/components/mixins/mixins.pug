@@ -1,6 +1,8 @@
+
 mixin button(options )
     div(class=`btn__block ${options.className}`)
         button(class=options.isPrimary?'btn btn--primary': 'btn btn--second')=options.text
+        //- img( alt="enter", class=options.isImage?"btn__image":"btn__image-none")
         img(src=require("./assets/arrow_forwardWhite.svg").default, alt="enter", class=options.isImage?"btn__image":"btn__image-none")
 
 //- {text, isPrimary, isImage=false, className?}
@@ -17,9 +19,9 @@ mixin cardCalendar()
             h2 Найдём номера под ваши пожелания
             .calendar__period 
                 label(for="arrival") прибытие
-                    input(type="date", name="arrival", class="main__arrival")
+                    input(type="date", name="arrival", id="arrival", class="main__arrival")
                 label(for="departure") выезд
-                    input(type="date", name="departure", class="main__departure")
+                    input(type="date", name="departure", id="departure" class="main__departure")
             
             div(class="dropdown", id="dropdownContent")
                 label(for="guest") Гости
@@ -68,14 +70,15 @@ mixin registration(options)
                         | Женщина
                 .born 
                     label(for="born") дата рождения
-                        input(type="date", name="born")
+                        input(type="date", name="born", id="born")
             span(class="registration__forEnter")= dataEnter
             label(for="enterEmail") 
-                input(type="email", name="enterEmail" class="registrationEmail" placeholder="Email")
-                input(type="password", name="enterEmail" class="registrationPassword" placeholder="Пароль")
+                input(type="email", id="enterEmail" name="enterEmail" class="registrationEmail" placeholder="Email")
+            label(for="enterPassword")
+                input(type="password", id="enterPassword" name="enterEmail" class="registrationPassword" placeholder="Пароль")
             div(class=registrationClassName)
                 .toggle 
-                    input(type="checkbox", name="special" class="toggle-checkbox")
+                    input(type="checkbox", id="special" name="special" class="toggle-checkbox")
                     label(for="special" class="toggle-label") 
                     span Получать спецпредложения
             +button({text:forButton, isPrimary:true, isImage:true})
