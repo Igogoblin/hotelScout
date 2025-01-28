@@ -1,0 +1,6 @@
+include ../components/mixins/mixins.pug
+
+section.registration__area
+    img(src=require("@assets/registrationPage.jpg").default, alt="background", class="main__image")
+    .wrapper 
+        +registration({isEnter: true, className: true })

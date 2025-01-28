@@ -33,11 +33,27 @@ function loadContent(url) {
 // Проверяем текущий URL
 const path = window.location.pathname;
 console.log("Path", path);
+// switch (path) {
+//   case path.includes("about"):
+//     loadContent("./about.html");
+//     break;
+//   case path.includes("registration"):
+//     loadContent("./registration.html");
+//     break;
+//   case path.includes("enter"):
+//     loadContent("./enterPage.html");
+//     break;
+//   default:
+//   // loadContent("./index.html");
+// }
 if (path.includes("about")) {
   loadContent("./about.html"); // Загрузка страницы About
 }
 if (path.includes("registration")) {
   loadContent("./registration.html"); // Загрузка страницы Registration
+}
+if (path.includes("enter")) {
+  loadContent("./enter.html"); // Загрузка страницы Enter
 } else {
   // loadContent("./main.html"); // Загрузка главной страницы
 }

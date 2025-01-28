@@ -158,8 +158,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    .forRegistration {
+    .registration-form {
       margin: 172px 0;
+    }
+    .enter-form {
+      margin: 19px 0;
     }
   }
   position: relative;

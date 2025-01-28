@@ -96,6 +96,11 @@ module.exports = {
       template: "./src/pages/registration.pug",
       cache: false,
     }),
+    new HtmlWebpackPlugin({
+      filename: "enter.html",
+      template: "./src/pages/enterPage.pug",
+      cache: false,
+    }),
     new WatchFilesPlugin({
       files: ["./src/**/*.pug"],
       options: {
