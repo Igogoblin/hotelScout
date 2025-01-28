@@ -57,6 +57,9 @@ module.exports = {
             outputPath: "assets/",
           },
         },
+        generator: {
+          filename: "assets/[name][ext]",
+        },
       },
       {
         test: /\.js$/,
@@ -78,7 +81,7 @@ module.exports = {
       cache: false,
     }),
     new HtmlWebpackPlugin({
-      title: "about",
+      // title: "about",
       filename: "about.html",
       template: "./src/pages/about.pug",
       cache: false,
@@ -133,6 +136,9 @@ module.exports = {
   // },
   resolve: {
     extensions: [".js", ".pug", ".scss"],
+    alias: {
+      "@assets": path.resolve(__dirname, "dist/assets"),
+    },
     // fallback: {
     //   zlib: require.resolve("browserify-zlib"),
     //   path: require.resolve("path-browserify"),

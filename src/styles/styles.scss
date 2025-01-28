@@ -145,3 +145,29 @@ header {
 //   background-repeat: no-repeat;
 //   background-size: cover;
 // }
+.registration__area {
+  // background: url("../assets/registrationPage.jpg");
+  // background-image: url("../assets/registrationPage.jpg");
+  // background: url("~assets/registrationPage.jpg");
+  // background-color: aqua;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .forRegistration {
+      margin: 172px 0;
+    }
+  }
+  position: relative;
+  overflow: hidden;
+  .main__image {
+    position: absolute;
+    min-width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}

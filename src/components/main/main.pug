@@ -1,10 +1,11 @@
 //- include ../mixins/mixins.pug
 
 main
+    //- img(src=require("@assets/mainImage.jpg").default, alt="background", class="main__image")
     img(src=require("./assets/mainImage.jpg").default, alt="background", class="main__image")
     .wrapper 
         +cardCalendar
-        .dynamic__content
+        //- .dynamic__content
         
         //- +registration({isEnter: false, className: false })
         //- +registration({isEnter: true, className: false })

@@ -5,6 +5,7 @@ import "./styles/styles.scss";
 import "./components/mixins/mixins.scss";
 import "./components/main/main.scss";
 import "./components/footer/footer.scss";
+
 // import "./pages/about.pug";
 // import pug from "pug";
 // import registrationTemplate from "./forMixins.js";

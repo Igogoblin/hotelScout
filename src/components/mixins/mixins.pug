@@ -3,7 +3,7 @@ mixin button(options )
     div(class=`btn__block ${options.className}`)
         button(class=options.isPrimary?'btn btn--primary': 'btn btn--second')=options.text
         //- img( alt="enter", class=options.isImage?"btn__image":"btn__image-none")
-        img(src=require("./assets/arrow_forwardWhite.svg").default, alt="enter", class=options.isImage?"btn__image":"btn__image-none")
+        img(src=require("@assets/arrow_forwardWhite.svg").default, alt="enter", class=options.isImage?"btn__image":"btn__image-none")
 
 //- {text, isPrimary, isImage=false, className?}
 
