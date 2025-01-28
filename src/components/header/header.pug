@@ -2,19 +2,19 @@ include ../mixins/mixins.pug
 
 header
     div(class='wrapper')
-        a(href="/")
+        a(href="/"  data-link)
             img(src=require("./assets/logo.svg").default, alt="logo")
         ul 
-            a(href="/about")
+            a(href="/about"  data-link)
                 li О нас
             li Услуги 
             li Вакансии
             li Новости
             li Соглашения
-        a(href="/registration")
+        a(href="/registration"  data-link)
             +button({text:"войти", isPrimary:false, className:"btn-login"})
         //- +button({text:"войти", isPrimary:false, className:"btn-login"})
-        a(href="/enter")
+        a(href="/enter"  data-link)
             +button({text:"зарегистрироваться", isPrimary:true, className:"btn-register"})
 
     

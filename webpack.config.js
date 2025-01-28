@@ -101,6 +101,11 @@ module.exports = {
       template: "./src/pages/enterPage.pug",
       cache: false,
     }),
+    new HtmlWebpackPlugin({
+      filename: "ui-kit.html",
+      template: "./src/pages/ui-kit.pug",
+      cache: false,
+    }),
     new WatchFilesPlugin({
       files: ["./src/**/*.pug"],
       options: {

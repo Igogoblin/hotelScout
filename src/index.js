@@ -9,9 +9,33 @@ import "./components/footer/footer.scss";
 // import "./pages/about.pug";
 // import pug from "pug";
 // import registrationTemplate from "./forMixins.js";
+// document.addEventListener("DOMContentLoaded", () => {
+//   const links = document.querySelectorAll("a[data-link]");
+
+//   links.forEach((link) => {
+//     link.addEventListener("click", (event) => {
+//       event.preventDefault(); // Предотвращаем переход по ссылке
+//       const url = link.getAttribute("href");
+//       loadContent(url);
+//       history.pushState(null, "", url); // Меняем URL без перезагрузки страницы
+//     });
+//   });
+
+//   // Обработка прямого захода на страницу
+//   const path = window.location.pathname;
+//   // const defaultRoute = "./index.html";
+//   // loadContent(path === "/" ? defaultRoute : `.${path}`);
+// });
+
+// window.addEventListener("popstate", () => {
+//   const path = window.location.pathname;
+//   loadContent(`.${path}`);
+// });
 
 function loadContent(url) {
   const contentDiv = document.getElementById("content");
+  const isFullPageLoad = url === "./ui-kit.html";
+
   console.log("url ", url);
   //Загрузка соответствующего файла
   fetch(url)
@@ -21,8 +45,13 @@ function loadContent(url) {
       return response.text();
     })
     .then((html) => {
-      console.log("html ", html);
-      contentDiv.innerHTML = html; // Заменяем содержимое #content
+      if (isFullPageLoad) {
+        document.body.innerHTML = html;
+        // return;
+      } else {
+        console.log("html ", html);
+        contentDiv.innerHTML = html; // Заменяем содержимое #content
+      }
     })
     .catch((err) => {
       contentDiv.innerHTML = "<h1>Error loading content</h1>";
@@ -33,30 +62,31 @@ function loadContent(url) {
 // Проверяем текущий URL
 const path = window.location.pathname;
 console.log("Path", path);
-// switch (path) {
-//   case path.includes("about"):
-//     loadContent("./about.html");
-//     break;
-//   case path.includes("registration"):
-//     loadContent("./registration.html");
-//     break;
-//   case path.includes("enter"):
-//     loadContent("./enterPage.html");
-//     break;
-//   default:
-//   // loadContent("./index.html");
+
+// if (path.includes("about")) {
+//   loadContent("./about.html");
+// } else if (path.includes("registration")) {
+//   loadContent("./registration.html");
+// } else if (path.includes("enter")) {
+//   loadContent("./enter.html");
+// } else {
+//   // loadContent("./main.html");
 // }
-if (path.includes("about")) {
-  loadContent("./about.html"); // Загрузка страницы About
+const routes = {
+  about: { url: "./about.html", isFullPageLoad: false },
+  registration: { url: "./registration.html", isFullPageLoad: false },
+  enter: { url: "./enter.html", isFullPageLoad: false },
+  "ui-kit": { url: "./ui-kit.html", isFullPageLoad: true },
+};
+
+const matchingRoute = Object.keys(routes).find((route) => path.includes(route));
+const routeConfig = routes[matchingRoute];
+
+if (routeConfig) {
+  loadContent(routeConfig.url, routeConfig.isFullPageLoad);
 }
-if (path.includes("registration")) {
-  loadContent("./registration.html"); // Загрузка страницы Registration
-}
-if (path.includes("enter")) {
-  loadContent("./enter.html"); // Загрузка страницы Enter
-} else {
-  // loadContent("./main.html"); // Загрузка главной страницы
-}
+
+// loadContent(routes[matchingRoute]);
 
 // document.querySelectorAll("a").forEach((link) => {
 //   link.addEventListener("click", (e) => {
