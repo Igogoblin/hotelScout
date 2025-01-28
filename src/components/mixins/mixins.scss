@@ -412,3 +412,78 @@
 .showNone {
   display: none;
 }
+
+// ui-kit ========================================================================================
+// for color  ==============================================================================
+
+.color__type {
+  justify-content: center;
+
+  .ui-color {
+    width: 281px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .color-item {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 40px;
+
+      .color__block {
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
+      }
+      .color__title {
+        display: flex;
+        flex-direction: column;
+        font-size: 19px;
+        line-height: 27.79px;
+        font-weight: 400;
+        span:first-child {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .ui-type {
+    max-width: 436px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 51px;
+    .type-item {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 30px;
+      .type__block {
+        max-width: 37px;
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        opacity: 0.25;
+        color: $darkShade-100;
+      }
+      &:nth-child(1) {
+        font-size: 24px;
+        line-height: 29.26px;
+      }
+      &:nth-child(2) {
+        font-size: 19px;
+        line-height: 23.16px;
+      }
+      &:nth-child(3) {
+        font-size: 12px;
+        line-height: 14.63px;
+      }
+      &:nth-child(4) {
+        font-size: 14px;
+        line-height: 24px;
+        color: $darkShade-75;
+      }
+    }
+  }
+}

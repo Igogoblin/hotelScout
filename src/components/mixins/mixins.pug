@@ -85,3 +85,91 @@ mixin registration(options)
             .registration__footer
                 span= registrationText
                 +button({text:registrationFinish, isPrimary:false})
+
+
+mixin ui-header(options)
+    header.ui-header
+        div(class='wrapper')
+            a(href="/"  data-link)
+                img(src=require("@assets/ui-logo.svg").default, alt="logo")
+            span(class='ui__title')= options.title
+            //- ul
+            //-     if(options.active === "colors")
+            //-         li Colors & Type
+            //-     else
+            //-         a(href="/ui-kit"  data-link)
+            //-             li Colors & Type
+            //-     if(options.active === "forms")
+            //-         li Form elements
+            //-     else
+            //-         a(href="/ui-forms"  data-link)
+            //-             li Form elements
+            //-     if(options.active === "cards")
+            //-         li Cards
+            //-     else
+            //-         a(href="/ui-cards"  data-link)
+            //-             li Cards
+            //-     if(options.active === "headers")
+            //-         li Headers & Footers
+            //-     else
+            //-         a(href="/ui-headers"  data-link)
+            //-             li Headers & Footers
+            +menu([
+            { key: "colors", label: "Colors & Type" },
+            { key: "forms", label: "Form Elements" },
+            { key: "cards", label: "Cards" },
+            { key: "headers", label: "Headers & Footers" }
+            ], options.active)
+
+
+mixin menu(items, active)
+    ul
+        each item in items
+            if active === item.key
+                li #{item.label}
+            else
+                a(href=`/ui-${item.key}` data-link)
+                    li #{item.label}
+
+mixin ui-color 
+    .ui-color 
+        +color-list([
+            { color: "#1F2041", title: "Dark Shade 100%",opacity: 1},
+            { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.75},
+            { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.50},
+            { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.25},
+            { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.05},
+            { color: "#BC9CFF", title: "Purple",opacity: 1},
+            { color: "#6FCF97", title: "Green",opacity: 1},
+            
+        ]) 
+        
+
+mixin color-list(colors)
+    each color in colors
+        .color-item 
+            .color__block(style=`background-color: ${color.color}; opacity: ${color.opacity}`)
+                span
+            .color__title
+                span= color.title
+                span= color.color
+
+mixin ui-type
+    .ui-type
+        +type-list([
+            { title: "H1", text: "This one is the sub-section or widget title" },
+            { title: "H2", text: "Next one is the item title inside widgets" },
+            { title: "H3", text: "This is a label or CTA text" },
+            { title: "Body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc." },
+
+
+        ])
+
+
+mixin type-list(types)
+    each type in types
+        .type-item 
+            .type__block
+                span= type.title
+            .type__title
+                span= type.text
