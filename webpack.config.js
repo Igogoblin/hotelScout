@@ -102,8 +102,23 @@ module.exports = {
       cache: false,
     }),
     new HtmlWebpackPlugin({
-      filename: "ui-kit.html",
+      filename: "ui-colors.html",
       template: "./src/pages/ui-kit.pug",
+      cache: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "forms.html",
+      template: "./src/pages/forms.pug",
+      cache: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "cards.html",
+      template: "./src/pages/cards.pug",
+      cache: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "headers.html",
+      template: "./src/pages/headers.pug",
       cache: false,
     }),
     new WatchFilesPlugin({

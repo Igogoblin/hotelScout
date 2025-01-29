@@ -5,6 +5,7 @@ import "./styles/styles.scss";
 import "./components/mixins/mixins.scss";
 import "./components/main/main.scss";
 import "./components/footer/footer.scss";
+import "./components/main/forMain.js";
 
 // import "./pages/about.pug";
 // import pug from "pug";
@@ -32,9 +33,9 @@ import "./components/footer/footer.scss";
 //   loadContent(`.${path}`);
 // });
 
-function loadContent(url) {
+function loadContent(url, isFullPageLoad) {
   const contentDiv = document.getElementById("content");
-  const isFullPageLoad = url === "./ui-kit.html";
+  // const isFullPageLoad = url === "./ui-kit.html";
 
   console.log("url ", url);
   //Загрузка соответствующего файла
@@ -47,9 +48,8 @@ function loadContent(url) {
     .then((html) => {
       if (isFullPageLoad) {
         document.body.innerHTML = html;
-        // return;
+        return;
       } else {
-        console.log("html ", html);
         contentDiv.innerHTML = html; // Заменяем содержимое #content
       }
     })
@@ -76,7 +76,10 @@ const routes = {
   about: { url: "./about.html", isFullPageLoad: false },
   registration: { url: "./registration.html", isFullPageLoad: false },
   enter: { url: "./enter.html", isFullPageLoad: false },
-  "ui-kit": { url: "./ui-kit.html", isFullPageLoad: true },
+  "ui-colors": { url: "./ui-colors.html", isFullPageLoad: true },
+  forms: { url: "./forms.html", isFullPageLoad: true },
+  cards: { url: "./cards.html", isFullPageLoad: true },
+  headers: { url: "./headers.html", isFullPageLoad: true },
 };
 
 const matchingRoute = Object.keys(routes).find((route) => path.includes(route));
@@ -84,6 +87,8 @@ const routeConfig = routes[matchingRoute];
 
 if (routeConfig) {
   loadContent(routeConfig.url, routeConfig.isFullPageLoad);
+} else {
+  console.log("Default route or 404 handler here.");
 }
 
 // loadContent(routes[matchingRoute]);
@@ -143,21 +148,6 @@ if (module.hot) {
 // function toggleDropdown() {
 //   document.getElementsByClassName("dropdown__content").classList.toggle("show");
 // }
-
-// const dropdownShow = document.querySelector(".show-dropdown");
-// const dropdownContent = document.querySelector(".dropdown__content");
-
-// dropdownShow.addEventListener("click", function () {
-//   dropdownContent.classList.toggle("show");
-// });
-
-// window.addEventListener("click", (event) => {
-//   if (!event.target.closest(".dropdown")) {
-//     document.querySelectorAll(".dropdown__content").forEach((dropdown) => {
-//       dropdown.classList.remove("show");
-//     });
-//   }
-// });
 
 // const main = document.querySelector("main");
 // const btnLogin = document.querySelector(".btn-login");
