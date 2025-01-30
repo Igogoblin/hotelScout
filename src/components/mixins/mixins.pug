@@ -1,12 +1,12 @@
 
 mixin button(options )
-    div(class=`btn__block ${options.className}`)
-        button(class=options.isPrimary?'btn btn--primary': 'btn btn--second')=options.text
-        //- img( alt="enter", class=options.isImage?"btn__image":"btn__image-none")
-        img(src=require("@assets/arrow_forwardWhite.svg").default, alt="enter", class=options.isImage?"btn__image":"btn__image-none")
+        div(class=`btn__block ${options.className}`)
+            button(class=options.isPrimary?'btn btn--primary': 'btn btn--second', onclick=`location.href='${options.link}'`)=options.text
+            //- img( alt="enter", class=options.isImage?"btn__image":"btn__image-none")
+            img(src=require("@assets/arrow_forwardWhite.svg").default, alt="enter", class=options.isImage?"btn__image":"btn__image-none")
 
 //- {text, isPrimary, isImage=false, className?}
-
+ //- a(href=`/${options.link}` data-link)
 mixin cardFooter(items, name )
     ul(class=`menu__list ${name}`) 
         each name,index in items 
@@ -21,22 +21,23 @@ mixin cardCalendar()
                 label(for="arrival") прибытие
                     input(type="date", name="arrival", id="arrival", class="main__arrival")
                 label(for="departure") выезд
-                    input(type="date", name="departure", id="departure" class="main__departure")
-            
-            div(class="dropdown", id="dropdownContent")
-                label(for="guest") Гости
-                .guest-title 
-                    button(class="show-dropdown") Сколько гостей
-                    img(src=require("./assets/expand_more.svg").default, alt="expend more")
-                    .dropdown__content 
-                        +valueControl("взрослые", "adults")
-                        +valueControl("дети", "children") 
-                        +valueControl("младенцы", "babies")
-                        .guest-design 
-                            button(class="guest__button--clear") очистить
-                            button(class="guest__button--apply") применить
-            +button({text:"подобрать номер", isPrimary:true, isImage:true})
+                    input(type="date", name="departure", id="departure", class="main__departure")
+            +dropdownGuest
+            +button({text:"подобрать номер", isPrimary:true, isImage:true, link:"search"})
 
+mixin dropdownGuest 
+    div(class="dropdown")
+        label(for="guest") Гости
+        .guest-title 
+            button(class="show-dropdown") Сколько гостей
+            img(src=require("@assets/expand_more.svg").default, alt="expend more")
+            .dropdown__content 
+                +valueControl("взрослые", "adults")
+                +valueControl("дети", "children") 
+                +valueControl("младенцы", "babies")
+                .guest-design 
+                    button(class="guest__button--clear") очистить
+                    button(class="guest__button--apply") применить
 
 mixin valueControl(name, className)
     .value__control 

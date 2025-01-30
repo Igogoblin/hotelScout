@@ -121,6 +121,16 @@ module.exports = {
       template: "./src/pages/headers.pug",
       cache: false,
     }),
+    new HtmlWebpackPlugin({
+      filename: "search.html",
+      template: "./src/pages/search/search.pug",
+      cache: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "room.html",
+      template: "./src/pages/room/room.pug",
+      cache: false,
+    }),
     new WatchFilesPlugin({
       files: ["./src/**/*.pug"],
       options: {

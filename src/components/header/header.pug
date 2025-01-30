@@ -12,9 +12,7 @@ header
             li Новости
             a(href="/ui-colors"  data-link)
                 li Соглашения
-        a(href="/enter"  data-link)
-            +button({text:"войти", isPrimary:false, className:"btn-login"})
-        a(href="/registration"  data-link)
-            +button({text:"зарегистрироваться", isPrimary:true, className:"btn-register"})
+        +button({text:"войти", isPrimary:false, className:"btn-login", link:"enter"})
+        +button({text:"зарегистрироваться", isPrimary:true, className:"btn-register", link:"registration"})
 
     

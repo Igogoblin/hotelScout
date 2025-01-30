@@ -32,41 +32,77 @@ valueGuestsApply.addEventListener("click", () => {
 
 btnMinus.forEach((btn, index) => {
   btn.addEventListener("click", () => {
-    if (parseInt(valueGuests[index].textContent) > 0) {
-      valueGuests[index].textContent =
-        parseInt(valueGuests[index].textContent) - 1;
-      showValueDropdown();
+    if (!btn.classList.contains("babies")) {
+      if (parseInt(valueGuests[index].textContent) > 0) {
+        valueGuests[index].textContent =
+          parseInt(valueGuests[index].textContent) - 1;
+        showValueDropdown();
+      }
+    } else {
+      if (parseInt(valueGuests[index].textContent) > 0) {
+        valueGuests[index].textContent =
+          parseInt(valueGuests[index].textContent) - 1;
+        showValueDropdown();
+      }
     }
   });
 });
 
 btnPlus.forEach((btn, index) => {
   btn.addEventListener("click", () => {
-    valueGuests[index].textContent =
-      parseInt(valueGuests[index].textContent) + 1;
-    showValueDropdown();
+    if (!btn.classList.contains("babies")) {
+      valueGuests[index].textContent =
+        parseInt(valueGuests[index].textContent) + 1;
+      showValueDropdown();
+    } else {
+      valueGuests[index].textContent =
+        parseInt(valueGuests[index].textContent) + 1;
+      showValueDropdown();
+    }
   });
 });
 
 function showValueDropdown() {
   const buttonElement = document.querySelector(".show-dropdown");
   const guestShow = checkGuests();
+  const babiesCount = checkGuests(true);
   if (!buttonElement) return;
+  let displayText = "";
 
   if (guestShow === 0) {
-    buttonElement.textContent = "Сколько гостей";
+    displayText = "Сколько гостей";
   } else if (guestShow === 1) {
-    buttonElement.textContent = "1 гость";
+    displayText = "1 гость";
   } else if (guestShow > 1 && guestShow < 5) {
-    buttonElement.textContent = `${guestShow} гостя`;
+    displayText = `${guestShow} гостя`;
   } else {
-    buttonElement.textContent = `${guestShow} гостей`;
+    displayText = `${guestShow} гостей`;
   }
+
+  if (babiesCount > 0) {
+    displayText += `, ${babiesCount} ${
+      babiesCount === 1
+        ? "младенец"
+        : babiesCount < 5
+        ? "младенца"
+        : "младенцев"
+    }`;
+  }
+  buttonElement.textContent = displayText;
 }
-
-function checkGuests() {
+function showValueDropdownBabies() {
+  const buttonElement = document.querySelector(".show-dropdown");
+}
+function checkGuests(isBabies = false) {
   let count = 0;
-
+  if (isBabies) {
+    valueGuests.forEach((value) => {
+      if (value.classList.contains("babies")) {
+        count += parseInt(value.textContent) || 0;
+      }
+    });
+    return count;
+  }
   valueGuests.forEach((value) => {
     count += parseInt(value.textContent) || 0;
   });

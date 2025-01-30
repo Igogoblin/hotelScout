@@ -80,6 +80,8 @@ const routes = {
   forms: { url: "./forms.html", isFullPageLoad: true },
   cards: { url: "./cards.html", isFullPageLoad: true },
   headers: { url: "./headers.html", isFullPageLoad: true },
+  room: { url: "./room.html", isFullPageLoad: true },
+  search: { url: "./search.html", isFullPageLoad: true },
 };
 
 const matchingRoute = Object.keys(routes).find((route) => path.includes(route));
