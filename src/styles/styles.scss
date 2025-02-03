@@ -58,19 +58,22 @@ table {
 }
 
 h1 {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29.26px;
+  // font-weight: 700;
+  // font-size: 24px;
+  // line-height: 29.26px;
+  @include font-style(h1);
 }
 h2 {
-  font-weight: 700;
-  font-size: 19px;
-  line-height: 23.16px;
+  //   font-weight: 700;
+  //   font-size: 19px;
+  //   line-height: 23.16px;
+  @include font-style(h2);
 }
 h3 {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14.63px;
+  // font-weight: 700;
+  // font-size: 12px;
+  // line-height: 14.63px;
+  @include font-style(h3);
 }
 
 input {
@@ -100,15 +103,45 @@ input {
     border: 1px solid $darkShade-50;
   }
 }
-
 .wrapper {
-  max-width: 1160px;
+  max-width: 1200px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
 }
+// for input[date] =========================================================
+.air-datepicker-body--day-names {
+  .air-datepicker-body--day-name {
+    color: $purple;
+    text-transform: none;
+  }
+}
+
+.air-datepicker-cell.-day-.-current- {
+  background: linear-gradient(180deg, $green 0%, $green-grand 100%);
+  border-radius: 50%;
+  color: $white;
+}
+.air-datepicker-cell.-day-.-in-range- {
+  background: linear-gradient(180deg, $purple 0%, $purple-grand 100%);
+  opacity: 0.25;
+}
+.air-datepicker-cell.-day-.-selected-.-range-from-,
+.air-datepicker-cell.-day-.-selected-.-range-to- {
+  background: linear-gradient(180deg, $purple 0%, $purple-grand 100%);
+  border-radius: 22px;
+}
+.air-datepicker.-inline- .air-datepicker--buttons,
+.air-datepicker--time {
+  border-top: none;
+  @include font-style(h3);
+  .air-datepicker-button {
+    color: $purple;
+  }
+}
+// finish air-datepicker =========================================================
 header {
   max-width: 1440px;
   width: 100%;
@@ -119,22 +152,24 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  img {
-    cursor: pointer;
-    width: 105.69px;
-    height: 40px;
-  }
-  ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    color: rgba(31, 32, 65, 0.5);
-  }
-  .btn--second {
-    width: 87px;
-  }
-  .btn--primary {
-    width: 196px;
+  .wrapper {
+    img {
+      cursor: pointer;
+      width: 105.69px;
+      height: 40px;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      color: rgba(31, 32, 65, 0.5);
+    }
+    .btn--second {
+      width: 87px;
+    }
+    .btn--primary {
+      width: 196px;
+    }
   }
 }
 

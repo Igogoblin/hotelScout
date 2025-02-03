@@ -44,7 +44,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.scss$/, // Для обычных SCSS файлов
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.scss$/,
         exclude: /\.module\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },

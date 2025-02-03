@@ -25,8 +25,8 @@ mixin cardCalendar()
             +dropdownGuest
             +button({text:"подобрать номер", isPrimary:true, isImage:true, link:"search"})
 
-mixin dropdownGuest 
-    div(class="dropdown")
+mixin dropdownGuest(className)
+    div(class='dropdown')
         label(for="guest") Гости
         .guest-title 
             button(class="show-dropdown") Сколько гостей
@@ -38,6 +38,8 @@ mixin dropdownGuest
                 .guest-design 
                     button(class="guest__button--clear") очистить
                     button(class="guest__button--apply") применить
+
+//- valueControl for dropdownGuest
 
 mixin valueControl(name, className)
     .value__control 
@@ -94,27 +96,6 @@ mixin ui-header(options)
             a(href="/"  data-link)
                 img(src=require("@assets/ui-logo.svg").default, alt="logo")
             span(class='ui__title')= options.title
-            //- ul
-            //-     if(options.active === "colors")
-            //-         li Colors & Type
-            //-     else
-            //-         a(href="/ui-kit"  data-link)
-            //-             li Colors & Type
-            //-     if(options.active === "forms")
-            //-         li Form elements
-            //-     else
-            //-         a(href="/ui-forms"  data-link)
-            //-             li Form elements
-            //-     if(options.active === "cards")
-            //-         li Cards
-            //-     else
-            //-         a(href="/ui-cards"  data-link)
-            //-             li Cards
-            //-     if(options.active === "headers")
-            //-         li Headers & Footers
-            //-     else
-            //-         a(href="/ui-headers"  data-link)
-            //-             li Headers & Footers
             +menu([
             { key: "colors", label: "Colors & Type" },
             { key: "forms", label: "Form Elements" },

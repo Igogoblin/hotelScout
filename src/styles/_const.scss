@@ -1,3 +1,4 @@
+@use "sass:map";
 $darkShade-100: rgba(31, 32, 65, 1);
 $darkShade-75: rgba(31, 32, 65, 0.75);
 $darkShade-50: rgba(31, 32, 65, 0.5);
@@ -9,3 +10,62 @@ $purple: rgba(188, 156, 255, 1);
 $purple-grand: rgba(139, 164, 248, 1);
 $green: rgba(111, 207, 151, 1);
 $white: rgba(255, 255, 255, 1);
+$green-grand: rgba(102, 210, 234, 1);
+
+$fontFamily: "Montserrat", sans-serif;
+
+$fontSize: (
+  h1: 24px,
+  h2: 19px,
+  h3: 12px,
+  body: 14px,
+);
+
+$lineHeight: (
+  h1: 29.26px,
+  h2: 23.16px,
+  h3: 14.63px,
+  body: 24px,
+);
+
+$fontWeight: (
+  h1: 700,
+  h2: 700,
+  h3: 400,
+  body: 400,
+);
+
+@mixin font-style($key) {
+  font-family: $fontFamily;
+  font-size: map.get($fontSize, $key);
+  font-weight: map.get($fontWeight, $key);
+  line-height: map.get($lineHeight, $key);
+}
+
+// @mixin font-header {
+//   font-family: $fontFamily;
+//   font-size: map.get($fontSize, h1);
+//   font-weight: map.get($fontWeight, h1);
+//   line-height: map.get($lineHeight, h1);
+// }
+
+// @mixin font-title {
+//   font-family: $fontFamily;
+//   font-size: map.get($fontSize, h2);
+//   font-weight: map.get($fontWeight, h2);
+//   line-height: map.get($lineHeight, h2);
+// }
+
+// @mixin font-subtitle {
+//   font-family: $fontFamily;
+//   font-size: map.get($fontSize, h3);
+//   font-weight: map.get($fontWeight, h3);
+//   line-height: map.get($lineHeight, h3);
+// }
+
+// @mixin font-body {
+//   font-family: $fontFamily;
+//   font-size: map.get($fontSize, body);
+//   font-weight: map.get($fontWeight, body);
+//   line-height: map.get($lineHeight, body);
+// }

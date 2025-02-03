@@ -6,6 +6,14 @@ import "./components/mixins/mixins.scss";
 import "./components/main/main.scss";
 import "./components/footer/footer.scss";
 import "./components/main/forMain.js";
+// import arrowBack from "@assets/arrow_back.svg";
+
+// import flatpickr from "flatpickr";
+// import { Russian } from "flatpickr/dist/l10n/ru.js";
+
+import AirDatepicker from "air-datepicker";
+import "air-datepicker/air-datepicker.css";
+// import "air-datepicker/air-datepicker.css";
 
 // import "./pages/about.pug";
 // import pug from "pug";
@@ -171,3 +179,52 @@ if (module.hot) {
 //   calendarBlock.style.display = "none";
 //   main.background = "url(./assets/registrationPage.jpg)";
 // });
+
+// flatpickr("#myId", {
+//   mode: "range",
+//   dateFormat: "d-m-Y",
+//   locale: Russian,
+//   onChange: function (selectedDates) {
+//     console.log(selectedDates);
+//   },
+
+//   // prevArrow: arrowBack,
+//   // nextArrow: "",
+// });
+
+// new AirDatepicker("myId", {});
+document.addEventListener("DOMContentLoaded", () => {
+  new AirDatepicker("#myId", {
+    range: true,
+    multipleDatesSeparator: " - ",
+    inline: true,
+    navTitles: {
+      days: `<strong>MMMM</strong>${" "}<strong> yyyy</strong>`,
+    },
+    // selectedDates: [new Date()],
+    onSelect: (datepicker) => {
+      console.log(datepicker.selectedDates);
+      console.log(datepicker);
+    },
+    buttons: [
+      // "clear",
+      {
+        content: "Очистить", // Russian translation for "Clear"
+        onClick: (datepicker) => {
+          datepicker.clear(); // Example action: Clear selected dates
+        },
+      },
+      {
+        content: "Применить", // Russian translation for "Apply"
+        onClick: (datepicker) => {
+          datepicker.hide(); // Example action: Close the picker on apply
+        },
+      },
+    ],
+  });
+  // new AirDatepicker("#my-element", {
+  //   buttons: ["очистить", "применить"],
+  //   multipleDatesSeparator: " - ",
+  //   range: true,
+  // });
+});
