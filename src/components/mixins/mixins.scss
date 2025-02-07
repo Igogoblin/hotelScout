@@ -122,8 +122,14 @@
         width: 47%;
         display: flex;
         flex-direction: column;
+        position: relative;
         input {
           margin: 5px 0 0 0;
+        }
+        img {
+          position: absolute;
+          bottom: 19px;
+          right: 19px;
         }
       }
     }
@@ -149,6 +155,7 @@
           font-size: 14px;
           line-height: 18px;
           color: $darkShade-75;
+          @include font-style(body);
           &:hover {
             border: 1px solid $darkShade-50;
           }

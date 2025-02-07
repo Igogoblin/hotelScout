@@ -6,6 +6,8 @@ import "./components/mixins/mixins.scss";
 import "./components/main/main.scss";
 import "./components/footer/footer.scss";
 import "./components/main/forMain.js";
+import "./components/mixins/roomCard/roomCard.pug";
+import "./components/mixins/roomCard/roomCard.scss";
 import arrowBack from "@assets/arrow_back.svg";
 
 // import flatpickr from "flatpickr";
