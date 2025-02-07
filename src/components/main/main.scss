@@ -24,6 +24,9 @@ main {
     align-items: flex-start;
     .calendar__block {
       margin-top: 70px;
+      .calendar__period {
+        position: relative;
+      }
     }
     .main__text {
       align-self: flex-end;
@@ -38,4 +41,8 @@ main {
 #my-element {
   width: 200px;
   height: 40px;
+}
+.air-datepicker.-inline-.showNone {
+  // display: none !important;
+  z-index: -10;
 }

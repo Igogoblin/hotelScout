@@ -13,17 +13,25 @@ mixin cardFooter(items, name )
             li(class=`menu__item${index+1}`)
                 a(href="#")= name
 
-mixin cardCalendar()
+mixin cardCalendar(options)
     .calendar__block
         .calendar__wrapper
             h2 Найдём номера под ваши пожелания
-            .calendar__period 
-                label(for="arrival") прибытие
-                    input(type="date", name="arrival", id="arrival", class="main__arrival")
-                label(for="departure") выезд
-                    input(type="date", name="departure", id="departure", class="main__departure")
+            +calendarCheck(options)
+            //- .calendar__period#options.idCalendar 
+            //-     label(for=`arrival-${options.idCalendar}`) прибытие
+            //-         input(type="date", name="arrival", id=`arrival-${options.idCalendar}`, class="main__arrival")
+            //-     label(for=`departure-${options.idCalendar}`) выезд
+            //-         input(type="date", name="departure", id=`departure-${options.idCalendar}`, class="main__departure")
             +dropdownGuest
             +button({text:"подобрать номер", isPrimary:true, isImage:true, link:"search"})
+
+mixin calendarCheck(options)
+            .calendar__period(id=options.idCalendar) 
+                label(for=`arrival-${options.idCalendar}`) прибытие
+                    input(type="date", name="arrival", id=`arrival-${options.idCalendar}`, class="main__arrival")
+                label(for=`departure-${options.idCalendar}`) выезд
+                    input(type="date", name="departure", id=`departure-${options.idCalendar}`, class="main__departure")
 
 mixin dropdownGuest(className)
     div(class='dropdown')

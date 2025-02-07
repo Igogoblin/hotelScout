@@ -32,14 +32,14 @@
               <div class="calendar__block">
                 <div class="calendar__wrapper">
                   <h2>Найдём номера под ваши пожелания</h2>
-                  <div class="calendar__period"> 
-                    <label for="arrival">прибытие
-                      <input class="main__arrival" type="date" name="arrival" id="arrival">
-                    </label>
-                    <label for="departure">выезд
-                      <input class="main__departure" type="date" name="departure" id="departure">
-                    </label>
-                  </div>
+                      <div class="calendar__period" id="mainCalendar"> 
+                        <label for="arrival-mainCalendar">прибытие
+                          <input class="main__arrival" type="date" name="arrival" id="arrival-mainCalendar">
+                        </label>
+                        <label for="departure-mainCalendar">выезд
+                          <input class="main__departure" type="date" name="departure" id="departure-mainCalendar">
+                        </label>
+                      </div>
                       <div class="dropdown">
                         <label for="guest">Гости</label>
                         <div class="guest-title"> 
@@ -74,9 +74,7 @@
                         <button class="btn btn--primary" onclick="location.href='search'">подобрать номер</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
                       </div>
                 </div>
-              </div>
-          <input id="myId">
-          <input id="my-element"><span class="main__text">Лучшие номера для вашей работы,<br>отдыха и просто вдохновения</span>
+              </div><span class="main__text">Лучшие номера для вашей работы,<br>отдыха и просто вдохновения</span>
         </div>
       </main>
     </div>

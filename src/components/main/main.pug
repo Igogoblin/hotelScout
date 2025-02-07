@@ -4,10 +4,10 @@ main
     //- img(src=require("@assets/mainImage.jpg").default, alt="background", class="main__image")
     img(src=require("./assets/mainImage.jpg").default, alt="background", class="main__image")
     .wrapper 
-        +cardCalendar
+        +cardCalendar({idCalendar: "mainCalendar"} )
         //- .dynamic__content
-        input#myId
-        input#my-element
+        //- input#myId(style="position: relative")
+        //- input#my-element
         //- +registration({isEnter: false, className: false })
         //- +registration({isEnter: true, className: false })
 
