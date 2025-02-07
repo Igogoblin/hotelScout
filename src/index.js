@@ -4,6 +4,8 @@ import "./styles/_const.scss";
 import "./styles/styles.scss";
 import "./components/mixins/mixins.scss";
 import "./components/main/main.scss";
+import "./components/header/header.pug";
+import "./components/footer/footer.pug";
 import "./components/footer/footer.scss";
 import "./components/main/forMain.js";
 import "./components/mixins/roomCard/roomCard.pug";
@@ -43,12 +45,7 @@ import "air-datepicker/air-datepicker.css";
 //   loadContent(`.${path}`);
 // });
 
-function loadContent(url, isFullPageLoad) {
-  const contentDiv = document.getElementById("content");
-  // const isFullPageLoad = url === "./ui-kit.html";
-
-  console.log("url ", url);
-  //Загрузка соответствующего файла
+function loadContent(url) {
   fetch(url)
     .then((response) => {
       if (!response.ok)
@@ -56,53 +53,58 @@ function loadContent(url, isFullPageLoad) {
       return response.text();
     })
     .then((html) => {
-      if (isFullPageLoad) {
-        document.body.innerHTML = html;
-        return;
-      } else {
-        contentDiv.innerHTML = html; // Заменяем содержимое #content
-      }
+      document.body.innerHTML = html;
     })
     .catch((err) => {
-      contentDiv.innerHTML = "<h1>Error loading content</h1>";
+      document.body.innerHTML = "<h1>Error loading content</h1>";
       console.error(err);
     });
 }
 
-// Проверяем текущий URL
-const path = window.location.pathname;
-console.log("Path", path);
+function navigateTo(route) {
+  if (routes[route]) {
+    history.pushState({}, "", route);
+    loadContent(routes[route]);
+  } else {
+    console.log("Default route or 404 handler here.");
+  }
+}
 
-// if (path.includes("about")) {
-//   loadContent("./about.html");
-// } else if (path.includes("registration")) {
-//   loadContent("./registration.html");
-// } else if (path.includes("enter")) {
-//   loadContent("./enter.html");
-// } else {
-//   // loadContent("./main.html");
-// }
 const routes = {
-  about: { url: "./about.html", isFullPageLoad: false },
-  registration: { url: "./registration.html", isFullPageLoad: false },
-  enter: { url: "./enter.html", isFullPageLoad: false },
-  "ui-colors": { url: "./ui-colors.html", isFullPageLoad: true },
-  forms: { url: "./forms.html", isFullPageLoad: true },
-  cards: { url: "./cards.html", isFullPageLoad: true },
-  headers: { url: "./headers.html", isFullPageLoad: true },
-  room: { url: "./room.html", isFullPageLoad: true },
-  search: { url: "./search.html", isFullPageLoad: true },
+  "/": "./index.html",
+  "/hotelScout/": "./index.html",
+  "/hotelScout/about": "./about.html",
+  "/hotelScout/registration": "./registration.html",
+  "/hotelScout/enter": "./enter.html",
+  "/hotelScout/ui-colors": "./ui-colors.html",
+  "/hotelScout/ui-forms": "./forms.html",
+  "/hotelScout/ui-cards": "./cards.html",
+  "/hotelScout/ui-headers": "./headers.html",
+  "/hotelScout/room": "./room.html",
+  "/hotelScout/search": "./search.html",
 };
 
-const matchingRoute = Object.keys(routes).find((route) => path.includes(route));
-const routeConfig = routes[matchingRoute];
-
-if (routeConfig) {
-  loadContent(routeConfig.url, routeConfig.isFullPageLoad);
+// Инициализация контента при загрузке
+const initialRoute = window.location.pathname;
+if (routes[initialRoute]) {
+  loadContent(routes[initialRoute]);
 } else {
   console.log("Default route or 404 handler here.");
 }
 
+// Обработка навигации без перезагрузки страницы
+document.addEventListener("click", (event) => {
+  const target = event.target.closest("a");
+  if (target && target.href.startsWith(window.location.origin)) {
+    event.preventDefault();
+    navigateTo(new URL(target.href).pathname);
+  }
+});
+
+// Обработка кнопок "Назад" и "Вперед"
+window.addEventListener("popstate", () => {
+  loadContent(routes[window.location.pathname]);
+});
 // loadContent(routes[matchingRoute]);
 
 // document.querySelectorAll("a").forEach((link) => {

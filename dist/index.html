@@ -11,73 +11,71 @@
   <body> 
     <header>
       <div class="wrapper"><a href="/" data-link><img src="/hotelScout/assets/logo.svg" alt="logo"></a>
-        <ul> <a href="/about" data-link>
+        <ul> <a href="/hotelScout/about" data-link>
             <li>О нас</li></a>
           <li>Услуги </li>
           <li>Вакансии</li>
-          <li>Новости</li><a href="/ui-colors" data-link>
+          <li>Новости</li><a href="/hotelScout/ui-colors" data-link>
             <li>Соглашения</li></a>
         </ul>
             <div class="btn__block btn-login">
-              <button class="btn btn--second" onclick="location.href='enter'">войти</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+              <button class="btn btn--second" onclick="location.href='/hotelScout/enter'">войти</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
             </div>
             <div class="btn__block btn-register">
-              <button class="btn btn--primary" onclick="location.href='registration'">зарегистрироваться</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+              <button class="btn btn--primary" onclick="location.href='/hotelScout/registration'">зарегистрироваться</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
             </div>
       </div>
     </header>
-    <div id="content">
-      <main><img class="main__image" src="/hotelScout/assets/mainImage.jpg" alt="background">
-        <div class="wrapper"> 
-              <div class="calendar__block">
-                <div class="calendar__wrapper">
-                  <h2>Найдём номера под ваши пожелания</h2>
-                      <div class="calendar__period" id="mainCalendar"> 
-                        <label for="arrival-mainCalendar">прибытие
-                          <input class="main__arrival" type="date" name="arrival" id="arrival-mainCalendar"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
-                        </label>
-                        <label for="departure-mainCalendar">выезд
-                          <input class="main__departure" type="date" name="departure" id="departure-mainCalendar"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
-                        </label>
-                      </div>
-                      <div class="dropdown">
-                        <label for="guest">Гости</label>
-                        <div class="guest-title"> 
-                          <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
-                          <div class="dropdown__content"> 
-                                <div class="value__control"> <span class="adults">взрослые</span>
-                                  <div class="value__block">
-                                    <button class="adults btn--minus">-</button><span class="adults btn-value">0</span>
-                                    <button class="adults btn--plus">+</button>
-                                  </div>
+    <main><img class="main__image" src="/hotelScout/assets/mainImage.jpg" alt="background">
+      <div class="wrapper"> 
+            <div class="calendar__block">
+              <div class="calendar__wrapper">
+                <h2>Найдём номера под ваши пожелания</h2>
+                    <div class="calendar__period" id="mainCalendar"> 
+                      <label for="arrival-mainCalendar">прибытие
+                        <input class="main__arrival" type="date" name="arrival" id="arrival-mainCalendar"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+                      </label>
+                      <label for="departure-mainCalendar">выезд
+                        <input class="main__departure" type="date" name="departure" id="departure-mainCalendar"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+                      </label>
+                    </div>
+                    <div class="dropdown">
+                      <label for="guest">Гости</label>
+                      <div class="guest-title"> 
+                        <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+                        <div class="dropdown__content"> 
+                              <div class="value__control"> <span class="adults">взрослые</span>
+                                <div class="value__block">
+                                  <button class="adults btn--minus">-</button><span class="adults btn-value">0</span>
+                                  <button class="adults btn--plus">+</button>
                                 </div>
-                                <div class="value__control"> <span class="children">дети</span>
-                                  <div class="value__block">
-                                    <button class="children btn--minus">-</button><span class="children btn-value">0</span>
-                                    <button class="children btn--plus">+</button>
-                                  </div>
+                              </div>
+                              <div class="value__control"> <span class="children">дети</span>
+                                <div class="value__block">
+                                  <button class="children btn--minus">-</button><span class="children btn-value">0</span>
+                                  <button class="children btn--plus">+</button>
                                 </div>
-                                <div class="value__control"> <span class="babies">младенцы</span>
-                                  <div class="value__block">
-                                    <button class="babies btn--minus">-</button><span class="babies btn-value">0</span>
-                                    <button class="babies btn--plus">+</button>
-                                  </div>
+                              </div>
+                              <div class="value__control"> <span class="babies">младенцы</span>
+                                <div class="value__block">
+                                  <button class="babies btn--minus">-</button><span class="babies btn-value">0</span>
+                                  <button class="babies btn--plus">+</button>
                                 </div>
-                            <div class="guest-design"> 
-                              <button class="guest__button--clear">очистить</button>
-                              <button class="guest__button--apply">применить</button>
-                            </div>
+                              </div>
+                          <div class="guest-design"> 
+                            <button class="guest__button--clear">очистить</button>
+                            <button class="guest__button--apply">применить</button>
                           </div>
                         </div>
                       </div>
-                      <div class="btn__block undefined">
-                        <button class="btn btn--primary" onclick="location.href='search'">подобрать номер</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
-                      </div>
-                </div>
-              </div><span class="main__text">Лучшие номера для вашей работы,<br>отдыха и просто вдохновения</span>
-        </div>
-      </main>
-    </div>
+                    </div>
+                    <div class="btn__block undefined">
+                      <button class="btn btn--primary" onclick="location.href='search'">подобрать номер</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+                    </div>
+              </div>
+            </div><span class="main__text">Лучшие номера для вашей работы,<br>отдыха и просто вдохновения</span>
+      </div>
+    </main>
     <footer> 
       <div class="wrapper">
         <div class="footer__head">

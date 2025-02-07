@@ -78,6 +78,9 @@ module.exports = {
     ],
   },
   plugins: [
+//     new HtmlWebpackPlugin({
+// title: 
+//     }),
     new HtmlWebpackPlugin({
       title: "hotelScout",
       filename: "index.html",
