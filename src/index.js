@@ -10,6 +10,10 @@ import "./components/footer/footer.scss";
 import "./components/main/forMain.js";
 import "./components/mixins/roomCard/roomCard.pug";
 import "./components/mixins/roomCard/roomCard.scss";
+import "./components/mixins/roomCard/roomCard.js";
+import "./components/mixins/slider/slider.scss";
+import "./components/mixins/slider/slider.js";
+
 import arrowBack from "@assets/arrow_back.svg";
 
 // import flatpickr from "flatpickr";

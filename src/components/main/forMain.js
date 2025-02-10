@@ -6,12 +6,12 @@ const btnPlus = document.querySelectorAll(".btn--plus");
 const valueGuests = document.querySelectorAll(".btn-value");
 const valueGuestsClear = document.querySelector(".guest__button--clear");
 const valueGuestsApply = document.querySelector(".guest__button--apply");
-const dropdownShow = document.querySelector(".show-dropdown");
+// const dropdownShow = document.querySelector(".show-dropdown");
 const dropdownContent = document.querySelector(".dropdown__content");
 
-dropdownShow.addEventListener("click", function () {
-  dropdownContent.classList.toggle("show");
-});
+// dropdownShow.addEventListener("click", function () {
+//   dropdownContent.classList.toggle("show");
+// });
 
 window.addEventListener("click", (event) => {
   if (!event.target.closest(".dropdown")) {
@@ -92,9 +92,9 @@ function showValueDropdown() {
   }
   buttonElement.textContent = displayText;
 }
-function showValueDropdownBabies() {
-  const buttonElement = document.querySelector(".show-dropdown");
-}
+// function showValueDropdownBabies() {
+//   const buttonElement = document.querySelector(".show-dropdown");
+// }
 function checkGuests(isBabies = false) {
   let count = 0;
   if (isBabies) {

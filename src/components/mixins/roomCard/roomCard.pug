@@ -1,10 +1,25 @@
+include ../slider/slider.pug
 mixin room-card(options)
     .room__card 
         .room__card-image 
-            .card-image-slider
-        .room__card-body 
-            .card-number 
-            .card-cash 
-        .room__card-footer
-            .card-star 
-            .card-review
+            +slider()
+        .room__card-wrapper
+            .room__card-body 
+                .card-number № #{options.number} 
+                    if(options.lux)
+                        span люкс
+                .card-cash  #{options.price}₽
+                    span в сутки
+            .room_separator
+            .room__card-footer
+                .card-star
+                    +feedbackQuality(options.star)
+                .card-review #{options.reviewNumbers}
+                    span  отзывов
+
+mixin feedbackQuality(options)
+    -for(var x=0;x<5;x++)
+        if x>=options
+            img(src=require("@assets/star_border.svg").default, alt="filled star") 
+        else 
+            img(src=require("@assets/star.svg").default, alt="empty star")

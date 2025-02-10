@@ -85,10 +85,10 @@ mixin registration(options)
                     label(for="born") дата рождения
                         input(type="date", name="born", id="born")
             span(class="registration__forEnter")= dataEnter
-            label(for="enterEmail") 
-                input(type="email", id="enterEmail" name="enterEmail" class="registrationEmail" placeholder="Email")
-            label(for="enterPassword")
-                input(type="password", id="enterPassword" name="enterEmail" class="registrationPassword" placeholder="Пароль")
+            label(for=`enterEmail-${options.page}`) 
+                input(type="email", id=`enterEmail-${options.page}` name="enterEmail" class="registrationEmail" placeholder="Email")
+            label(for=`enterPassword-${options.page}`)
+                input(type="password", id=`enterPassword-${options.page}` name="enterEmail" class="registrationPassword" placeholder="Пароль")
             div(class=registrationClassName)
                 .toggle 
                     input(type="checkbox", id="special" name="special" class="toggle-checkbox")
