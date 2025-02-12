@@ -35,7 +35,7 @@ mixin calendarCheck(options)
                     input(type="date", name="departure", id=`departure-${options.idCalendar}`, class="main__departure")
                     img(src=require("@assets/expand_more.svg").default, alt="expend more")
 
-mixin dropdownGuest(className)
+mixin dropdownGuest()
     div(class='dropdown')
         label(for="guest") Гости
         .guest-title 
@@ -103,7 +103,7 @@ mixin registration(options)
 mixin ui-header(options)
     header.ui-header
         div(class='wrapper')
-            a(href="/"  data-link)
+            a(href="/"  data-link, onclick="initializeCalendar()")
                 img(src=require("@assets/ui-logo.svg").default, alt="logo")
             span(class='ui__title')= options.title
             +menu([

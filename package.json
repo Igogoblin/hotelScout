@@ -32,6 +32,7 @@
     "air-datepicker": "^3.5.3",
     "browserify-zlib": "^0.2.0",
     "express": "^4.21.2",
+    "mburger-webcomponent": "^3.1.4",
     "path-browserify": "^1.0.1",
     "pug-runtime": "^3.0.1",
     "querystring-es3": "^0.2.1",

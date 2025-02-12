@@ -13,8 +13,12 @@ import "./components/mixins/roomCard/roomCard.scss";
 import "./components/mixins/roomCard/roomCard.js";
 import "./components/mixins/slider/slider.scss";
 import "./components/mixins/slider/slider.js";
+import "./components/mixins/mburger/mburger.pug";
+import "./components/mixins/mburger/mburger.scss";
+import "./components/mixins/mburger/mburger.js";
 
-import arrowBack from "@assets/arrow_back.svg";
+import { initializeCalendar } from "./components/main/forMain.js";
+import { mburger } from "./components/mixins/mburger/mburger.js";
 
 // import flatpickr from "flatpickr";
 // import { Russian } from "flatpickr/dist/l10n/ru.js";
@@ -58,6 +62,13 @@ function loadContent(url) {
     })
     .then((html) => {
       document.body.innerHTML = html;
+      console.log("html ", url);
+      setTimeout(initializeScripts(url), 100);
+      // initializeScripts();
+      // console.log("html ", url);
+      // if (url === "./index.html") {
+      //   initializeCalendar();
+      // }
     })
     .catch((err) => {
       document.body.innerHTML = "<h1>Error loading content</h1>";
@@ -196,10 +207,6 @@ if (module.hot) {
 //     console.log(selectedDates);
 //   },
 
-//   // prevArrow: arrowBack,
-//   // nextArrow: "",
-// });
-
 // new AirDatepicker("myId", {});
 document.addEventListener("DOMContentLoaded", () => {
   new AirDatepicker("#myId", {
@@ -243,3 +250,27 @@ document.addEventListener("DOMContentLoaded", () => {
   //   range: true,
   // });
 });
+
+function initializeScripts(url) {
+  const forPage = url.split("/")[1].split(".")[0];
+  console.log("forPage ", forPage);
+  switch (url) {
+    case "/about.html":
+      // initializeCalendar();
+      mburger();
+      break;
+    case "/index":
+    default:
+      initializeCalendar();
+      mburger();
+  }
+  // if (document.getElementById("mainCalendar")) {
+  //   initializeCalendar();
+  // } else {
+  //   console.warn("mainCalendar не найден, повторный вызов через 100ms");
+  //   setTimeout(initializeScripts, 100);
+  // }
+  // if (document.querySelector(".menu-btn")) {
+  //   mburger();
+  // }
+}

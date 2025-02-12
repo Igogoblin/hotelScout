@@ -226,9 +226,8 @@ div.air-datepicker.-inline- {
 
 // finish air-datepicker =========================================================
 header {
+  background-color: $white;
   max-width: 1440px;
-  width: 100%;
-  background-color: #fff;
   width: 100%;
   height: 70px;
   display: flex;
@@ -256,40 +255,31 @@ header {
   }
 }
 
-// main {
-//   width: 100%;
-//   height: 830px;
-//   background-image: url("../assets/img/mainImage.jpg");
-//   background-repeat: no-repeat;
-//   background-size: cover;
-// }
-.registration__area {
-  // background: url("../assets/registrationPage.jpg");
-  // background-image: url("../assets/registrationPage.jpg");
-  // background: url("~assets/registrationPage.jpg");
-  // background-color: aqua;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+@media (max-width: 900px) {
+  .registration__area {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .registration-form {
-      margin: 172px 0;
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .registration-form {
+        margin: 172px 0;
+      }
+      .enter-form {
+        margin: 19px 0;
+      }
     }
-    .enter-form {
-      margin: 19px 0;
+    position: relative;
+    overflow: hidden;
+    .main__image {
+      position: absolute;
+      min-width: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
-  }
-  position: relative;
-  overflow: hidden;
-  .main__image {
-    position: absolute;
-    min-width: 100%;
-    object-fit: cover;
-    z-index: -1;
   }
 }
 // ui-kit=======================================================

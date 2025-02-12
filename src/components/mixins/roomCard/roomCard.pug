@@ -2,20 +2,20 @@ include ../slider/slider.pug
 mixin room-card(options)
     .room__card 
         .room__card-image 
-            +slider()
+            +slider(options)
         .room__card-wrapper
             .room__card-body 
                 .card-number № #{options.number} 
                     if(options.lux)
                         span люкс
                 .card-cash  #{options.price}₽
-                    span в сутки
+                    span  в сутки
             .room_separator
             .room__card-footer
                 .card-star
                     +feedbackQuality(options.star)
                 .card-review #{options.reviewNumbers}
-                    span  отзывов
+                    span  Отзывов
 
 mixin feedbackQuality(options)
     -for(var x=0;x<5;x++)
