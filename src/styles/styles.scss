@@ -246,11 +246,16 @@ header {
       gap: 20px;
       color: rgba(31, 32, 65, 0.5);
     }
-    .btn--second {
-      width: 87px;
-    }
-    .btn--primary {
-      width: 196px;
+    .in-area {
+      width: 303px;
+      display: flex;
+      justify-content: space-between;
+      .btn--second {
+        width: 87px;
+      }
+      .btn--primary {
+        width: 196px;
+      }
     }
   }
 }

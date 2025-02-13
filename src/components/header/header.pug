@@ -5,7 +5,7 @@ header
     .wrapper
         a(href="/"  data-link, class="link-to-main")
             img(src=require("@assets/logo.svg").default, alt="logo")
-        ul 
+        ul.header-navigation
             a(href="/hotelScout/about"  data-link)
                 li О нас
             li Услуги 
@@ -13,23 +13,11 @@ header
             li Новости
             a(href="/hotelScout/ui-colors"  data-link)
                 li Соглашения
-        +button({text:"войти", isPrimary:false, className:"btn-login", link:"/hotelScout/enter"})
-        +button({text:"зарегистрироваться", isPrimary:true, className:"btn-register", link:"/hotelScout/registration"})
+        .in-area
+            +button({text:"войти", isPrimary:false, className:"btn-login", link:"/hotelScout/enter"})
+            +button({text:"зарегистрироваться", isPrimary:true, className:"btn-register", link:"/hotelScout/registration"})
         .menu-btn 
             span.bar
             span.bar
             span.bar
-        +burger()
-        //- mm-burger(menu="menu", fx="collapse", ease="elastic", role="button", tabindex="0", title="Open the menu") Menu
-        //- +mburger
-        //- #header 
-        //-     nm-burger
-        //- #my-menu
-        //-     ul 
-        //-         a(href="/hotelScout/about"  data-link)
-        //-             li О нас
-        //-         li Услуги 
-        //-         li Вакансии
-        //-         li Новости
-        //- button.menu-toggle Toggle menu
-    
+        +burger(true)   

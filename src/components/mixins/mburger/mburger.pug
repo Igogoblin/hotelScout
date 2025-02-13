@@ -1,12 +1,27 @@
-mixin burger()
-    .header__nav 
-        nav.nav 
-            ul.nav__list 
-                li 
-                    a(href="/hotelScout/about"  data-link) О нас
-            li Услуги 
-            li Вакансии
-            li Новости
+mixin burger(isMain)
+    if(isMain)
+        .header__nav 
+            nav.nav 
+                ul.nav__list 
+                    li 
+                        a(href="/hotelScout/about"  data-link) О нас
+                    li Услуги 
+                    li Вакансии
+                    li Новости
+    else 
+        .header__nav 
+            nav.nav 
+                ul.nav__list
+                    li 
+                        a(href="/hotelScout/ui-colors" data-link) Colors & type
+                    li 
+                        a(href="/hotelScout/ui-forms" data-link) Form Element
+                    li 
+                        a(href="/hotelScout/ui-cards" data-link) Cards 
+                    li  
+                        a(href="/hotelScout/ui-headers" data-link) Headers & Footers
+
+
 
 
 

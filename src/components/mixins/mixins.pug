@@ -1,4 +1,4 @@
-
+include ./mburger/mburger.pug
 mixin button(options )
         div(class=`btn__block ${options.className}`)
             button(class=options.isPrimary?'btn btn--primary': 'btn btn--second', onclick=`location.href='${options.link}'`)=options.text
@@ -35,7 +35,7 @@ mixin calendarCheck(options)
                     input(type="date", name="departure", id=`departure-${options.idCalendar}`, class="main__departure")
                     img(src=require("@assets/expand_more.svg").default, alt="expend more")
 
-mixin dropdownGuest()
+mixin dropdownGuest
     div(class='dropdown')
         label(for="guest") Гости
         .guest-title 
@@ -112,10 +112,15 @@ mixin ui-header(options)
             { key: "cards", label: "Cards" },
             { key: "headers", label: "Headers & Footers" }
             ], options.active)
+            .menu-btn.bar-second 
+                span.bar
+                span.bar
+                span.bar
+            +burger(false)
 
 
 mixin menu(items, active)
-    ul
+    ul.header-navigation
         each item in items
             if active === item.key
                 li #{item.label}

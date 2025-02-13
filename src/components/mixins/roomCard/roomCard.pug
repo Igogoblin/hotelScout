@@ -1,15 +1,11 @@
 include ../slider/slider.pug
 mixin room-card(options)
+    - console.log("room-card вызывается!", options)
     .room__card 
         .room__card-image 
             +slider(options)
         .room__card-wrapper
-            .room__card-body 
-                .card-number № #{options.number} 
-                    if(options.lux)
-                        span люкс
-                .card-cash  #{options.price}₽
-                    span  в сутки
+            +roomCardBody(options)
             .room_separator
             .room__card-footer
                 .card-star
@@ -23,3 +19,11 @@ mixin feedbackQuality(options)
             img(src=require("@assets/star_border.svg").default, alt="filled star") 
         else 
             img(src=require("@assets/star.svg").default, alt="empty star")
+
+mixin roomCardBody(options)
+    .room__card-body 
+        .card-number № #{options.number} 
+            if(options.lux)
+                span люкс
+        .card-cash  #{options.price}₽
+            span  в сутки

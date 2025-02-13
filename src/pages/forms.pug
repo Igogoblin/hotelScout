@@ -1,7 +1,9 @@
 include ../components/mixins/mixins.pug
 include ../components/mixins/roomCard/roomCard.pug
+include ../components/mixins/finishCardRoom/finishCardRoom.pug
 
 +ui-header({title: "Form Elements", active: "forms"})
 .wrapper.formsPage 
     h1 this is a form.pug file
-    +room-card({star: 3, lux:true, price:9990, number:888, reviewNumbers: 145, images:["room-888-1.jpg", "room-888-2.jpg", "room-888-3.jpg"]})
+    +room-card({star: 3, lux: true, price: 9990, number: 888, reviewNumbers: 145, images: ["room-888-1.jpg", "room-888-2.jpg", "room-888-3.jpg"]})
+    +finishCardRoom({number: 888, price: 9990, lux: true})

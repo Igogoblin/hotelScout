@@ -1,0 +1,31 @@
+@use "../../../styles/const" as *;
+// .card__room {
+//   width: 380px;
+//   height: 512px;
+//   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+//   border-radius: 4px;
+//   .card__wrapper {
+//     width: 320px;
+//     margin: 0 auto;
+//     .room__card-body {
+//       .card-number {
+//         font-size: 19px;
+//         line-height: 23.16px;
+//         letter-spacing: 0;
+//         font-weight: 700;
+
+//         &::first-letter {
+//           font-size: 14px;
+//           line-height: 17.07px;
+//           // letter-spacing: 0;
+//           // font-weight: 700;
+//         }
+
+//         span {
+//           @include font-style(h3);
+//           color: $purple;
+//         }
+//       }
+//     }
+//   }
+// }

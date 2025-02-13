@@ -72,11 +72,19 @@ function initializeScripts(url) {
   const forPage = url.split("/").pop().split(".")[0];
   console.log("forPage ", forPage);
   switch (forPage) {
-    case "/about.html":
-      // initializeCalendar();
+    case "index":
+      initializeCalendar();
       mburger();
       break;
-    case "/index":
+    case "colors":
+    case "forms":
+    case "cards":
+    case "headers":
+    case "about":
+      mburger();
+      break;
+    // case "ui-forms":
+    //   break;
     default:
       initializeCalendar();
       mburger();
