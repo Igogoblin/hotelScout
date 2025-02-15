@@ -1,10 +1,34 @@
 include ../roomCard/roomCard.pug 
+include ../mixins.pug
 
 mixin finishCardRoom(options)
     .card__room
         .card__wrapper 
             +roomCardBody(options)
+            +calendarCheck(options)
+            +dropdownGuest
+            +cardRoomCost(options)
+            +button({text: "забронировать", isImage: true, isPrimary: true})
 
+mixin cardRoomCost(options)
+    .card__title
+        .serviceTitle 
+            span #{options.price}₽
+                if(options.day && options.day > 1)
+                    span  x #{options.day} сутки
+            span.serviceTitle-total 
+        .serviceFee 
+            .serviceFee-text Сбор за услуги: скидка 2 179₽
+            img(src=require("@assets/information.svg").default, alt="information", title="сбор фиксированный 300₽")
+            .serviceFee-total 
+        .serviceAddFee
+            .serviceAddFee-text Сбор за дополнительные услуги
+            img(src=require("@assets/information.svg").default, alt="information", title="сбор фиксированный 300₽")
+            .serviceAddFee-total 
+        .serviceTotal 
+            span Итого
+            .dottedLine
+            span.serviceTotal-value 
 
 
             

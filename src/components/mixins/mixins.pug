@@ -101,7 +101,7 @@ mixin registration(options)
 
 
 mixin ui-header(options)
-    header.ui-header
+    header(class=`ui-header ${options.className? "ui__area":"" }`)
         div(class='wrapper')
             a(href="/"  data-link, onclick="initializeCalendar()")
                 img(src=require("@assets/ui-logo.svg").default, alt="logo")
@@ -171,13 +171,13 @@ mixin type-list(types)
             .type__title
                 span= type.text
 
-mixin room-card()
-    .room__card 
-        .room__card-image 
-            .card-image-slider
-        .room__card-body 
-            .card-number 
-            .card-cash 
-        .room__card-footer
-            .card-star 
-            .card-review
+//- mixin room-card()
+//-     .room__card 
+//-         .room__card-image 
+//-             .card-image-slider
+//-         .room__card-body 
+//-             .card-number 
+//-             .card-cash 
+//-         .room__card-footer
+//-             .card-star 
+//-             .card-review

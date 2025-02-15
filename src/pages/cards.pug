@@ -1,7 +1,8 @@
 include ../components/mixins/mixins.pug
+include ../components/mixins/findYourRoom/findYourRoom.pug
 
-+ui-header({title: "Cards", active: "cards"})
-.wrapper.cardsPage 
-    h1 this is a cards.pug file
++ui-header({title: "Cards", active: "cards", className:"ui__area"})
+.wrapper.cardsPage.ui__area 
+    +findYourRoom
     +registration({isEnter: false, className: true, page: "cards" })
     +registration({isEnter: true, className: true, page: "ui" })

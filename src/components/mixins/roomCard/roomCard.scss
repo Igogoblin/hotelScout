@@ -13,46 +13,6 @@
     justify-content: space-between;
     margin: 20px auto 0 auto;
 
-    .room__card-body {
-      display: flex;
-      justify-content: space-between;
-      .card-number {
-        font-size: 19px;
-        line-height: 23.16px;
-        letter-spacing: 0;
-        font-weight: 700;
-
-        &::first-letter {
-          font-size: 14px;
-          line-height: 17.07px;
-          // letter-spacing: 0;
-          // font-weight: 700;
-        }
-
-        span {
-          @include font-style(h3);
-          color: $purple;
-        }
-      }
-      .card-cash {
-        font-size: 14px;
-        line-height: 18px;
-        letter-spacing: 0;
-        color: $darkShade-75;
-        align-content: end;
-        font-weight: 700;
-
-        &::first-letter {
-          margin-right: 5px;
-        }
-        span {
-          font-style: 12px;
-          color: $darkShade-50;
-          font-weight: 400;
-          // margin-left: 5px;
-        }
-      }
-    }
     .room_separator {
       width: 230px;
       height: 1px;
@@ -84,19 +44,43 @@
     }
   }
 }
+.room__card-body {
+  display: flex;
+  justify-content: space-between;
+  .card-number {
+    font-size: 19px;
+    line-height: 23.16px;
+    letter-spacing: 0;
+    font-weight: 700;
 
-// <nav id="my-menu">
-//   <ul>
-//     <li><a href="#">Home</a></li>
-//     <li><a href="#">About</a></li>
-//     <li><a href="#">Services</a>
-//       <ul>
-//         <li><a href="#">Web Design</a></li>
-//         <li><a href="#">SEO</a></li>
-//       </ul>
-//     </li>
-//     <li><a href="#">Contact</a></li>
-//   </ul>
-// </nav>
+    &::first-letter {
+      font-size: 14px;
+      line-height: 17.07px;
+      // letter-spacing: 0;
+      // font-weight: 700;
+    }
 
-// <button class="menu-toggle">Toggle Menu</button>
+    span {
+      @include font-style(h3);
+      color: $purple;
+    }
+  }
+  .card-cash {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: $darkShade-75;
+    align-content: end;
+    font-weight: 700;
+
+    &::first-letter {
+      margin-right: 5px;
+    }
+    span {
+      font-style: 12px;
+      color: $darkShade-50;
+      font-weight: 400;
+      // margin-left: 5px;
+    }
+  }
+}

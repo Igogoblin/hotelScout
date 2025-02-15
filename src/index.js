@@ -20,6 +20,8 @@ import "./components/mixins/mburger/mburger.js";
 import "air-datepicker/air-datepicker.css";
 import "./components/mixins/finishCardRoom/finishCardRoom.pug";
 import "./components/mixins/finishCardRoom/finishCardRoom.scss";
+import "./components/mixins/findYourRoom/findYourRoom.pug";
+import "./components/mixins/findYourRoom/findYourRoom.scss";
 
 console.log("hotelScout is running!");
 if (module.hot) {

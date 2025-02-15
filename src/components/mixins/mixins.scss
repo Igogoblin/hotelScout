@@ -112,100 +112,102 @@
       text-transform: uppercase;
       color: $darkShade-100;
     }
-    .calendar__period {
-      max-height: 65px;
-      height: 100%;
-      display: flex;
-      gap: 20px;
-      position: relative;
-      box-sizing: content-box;
-      label {
-        width: 47%;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        input {
-          margin: 5px 0 0 0;
-        }
-        img {
-          position: absolute;
-          bottom: 19px;
-          right: 19px;
-        }
-      }
+  }
+}
+// for calendarCheck mixin ======================================================================
+.calendar__period {
+  max-height: 65px;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  box-sizing: content-box;
+  label {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    input {
+      margin: 5px 0 0 0;
     }
-    .dropdown {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      margin: 20px 0 30px 0;
-      .guest-title {
-        width: 100%;
-        position: relative;
-        .show-dropdown {
-          width: 100%;
-          height: 44px;
-          border: 1px solid $darkShade-25;
-          border-radius: 4px;
-          margin-top: 5px;
-          background-color: $white;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 0 15px;
-          font-size: 14px;
-          line-height: 18px;
-          color: $darkShade-75;
-          @include font-style(body);
-          &:hover {
-            border: 1px solid $darkShade-50;
-          }
-        }
-        img {
-          // background: url("../../assets/expand_more.svg");
-          position: absolute;
-          top: 24px;
-          right: 20px;
-        }
-      }
-      .dropdown__content {
-        display: none;
-        position: absolute;
-        background-color: $white;
-        top: 48px;
-        width: 100%;
-        z-index: 1;
-        border: 1px solid $darkShade-25;
-        font-size: 12px;
-        line-height: 14.63px;
-        color: $darkShade-100;
-        text-transform: uppercase;
-
-        .guest-design {
-          display: flex;
-          justify-content: space-between;
-          padding: 19px 7px 13px 14px;
-          button {
-            color: $purple;
-            border: none;
-            background-color: $white;
-            width: 700;
-            font-size: 12px;
-            line-height: 14.63px;
-            text-transform: uppercase;
-            cursor: pointer;
-          }
-        }
-      }
-      .show {
-        display: block;
-      }
-    }
-    .dropdown + .btn__block > .btn {
-      width: 100%;
-      height: 44px;
+    img {
+      position: absolute;
+      bottom: 19px;
+      right: 19px;
     }
   }
+}
+// for dropdown mixin ============================================================================
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 30px 0;
+  .guest-title {
+    width: 100%;
+    position: relative;
+    .show-dropdown {
+      width: 100%;
+      height: 44px;
+      border: 1px solid $darkShade-25;
+      border-radius: 4px;
+      margin-top: 5px;
+      background-color: $white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      font-size: 14px;
+      line-height: 18px;
+      color: $darkShade-75;
+      @include font-style(body);
+      &:hover {
+        border: 1px solid $darkShade-50;
+      }
+    }
+    img {
+      // background: url("../../assets/expand_more.svg");
+      position: absolute;
+      top: 24px;
+      right: 20px;
+    }
+  }
+  .dropdown__content {
+    display: none;
+    position: absolute;
+    background-color: $white;
+    top: 48px;
+    width: 100%;
+    z-index: 1;
+    border: 1px solid $darkShade-25;
+    font-size: 12px;
+    line-height: 14.63px;
+    color: $darkShade-100;
+    text-transform: uppercase;
+
+    .guest-design {
+      display: flex;
+      justify-content: space-between;
+      padding: 19px 7px 13px 14px;
+      button {
+        color: $purple;
+        border: none;
+        background-color: $white;
+        width: 700;
+        font-size: 12px;
+        line-height: 14.63px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+  }
+  .show {
+    display: block;
+  }
+}
+.dropdown + .btn__block > .btn {
+  width: 100%;
+  height: 44px;
 }
 // for value control ============================================================================
 .value__control {
