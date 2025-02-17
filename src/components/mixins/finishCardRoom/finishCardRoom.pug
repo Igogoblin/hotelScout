@@ -14,21 +14,21 @@ mixin cardRoomCost(options)
     .card__title
         .serviceTitle 
             span #{options.price}₽
-                if(options.day && options.day > 1)
+                if(options.reservation && options.reservation > 1)
                     span  x #{options.day} сутки
-            span.serviceTitle-total 
+            span.serviceTitle-total 39 960₽
         .serviceFee 
             .serviceFee-text Сбор за услуги: скидка 2 179₽
             img(src=require("@assets/information.svg").default, alt="information", title="сбор фиксированный 300₽")
-            .serviceFee-total 
+            .serviceFee-total 0₽
         .serviceAddFee
             .serviceAddFee-text Сбор за дополнительные услуги
             img(src=require("@assets/information.svg").default, alt="information", title="сбор фиксированный 300₽")
-            .serviceAddFee-total 
+            .serviceAddFee-total 300₽
         .serviceTotal 
             span Итого
             .dottedLine
-            span.serviceTotal-value 
+            span.serviceTotal-value 38 081₽
 
 
             

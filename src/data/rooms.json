@@ -1,0 +1,120 @@
+[
+  {
+    "number": "350",
+    "price": 5000,
+    "reviewNumbers": 77,
+    "images": [],
+    "reservation": 0,
+    "lux": false,
+    "star": 3
+  },
+  {
+    "number": "352",
+    "price": 5000,
+    "reviewNumbers": 55,
+    "images": [],
+    "reservation": 0,
+    "lux": false,
+    "star": 3
+  },
+  {
+    "number": "444",
+    "price": 5000,
+    "reviewNumbers": 15,
+    "images": [],
+    "reservation": 0,
+    "lux": false,
+    "star": 3
+  },
+  {
+    "number": "450",
+    "price": 5300,
+    "reviewNumbers": 39,
+    "images": [],
+    "reservation": 0,
+    "lux": false,
+    "star": 4
+  },
+  {
+    "number": "666",
+    "price": 5000,
+    "reviewNumbers": 25,
+    "images": [],
+    "reservation": 0,
+    "lux": false,
+    "star": 5
+  },
+  {
+    "number": "678",
+    "price": 5500,
+    "reviewNumbers": 45,
+    "images": [],
+    "reservation": 0,
+    "lux": false,
+    "star": 5
+  },
+  {
+    "number": "740",
+    "price": 6000,
+    "reviewNumbers": 44,
+    "images": [],
+    "reservation": 0,
+    "lux": false,
+    "star": 4
+  },
+  {
+    "number": "840",
+    "price": 9900,
+    "reviewNumbers": 65,
+    "images": [
+      "room-840-1.jpg",
+      "room-840-2.jpg",
+      "room-840-3.jpg",
+      "room-840-4.jpg"
+    ],
+    "reservation": 0,
+    "lux": false,
+    "star": 4
+  },
+  {
+    "number": "856",
+    "price": 7300,
+    "reviewNumbers": 19,
+    "images": [],
+    "reservation": 0,
+    "lux": false,
+    "star": 5
+  },
+  {
+    "number": "888",
+    "price": 9990,
+    "reviewNumbers": 145,
+    "images": [
+      "room-888-1.jpg",
+      "room-888-2.jpg",
+      "room-888-3.jpg",
+      "room-888-4.jpg"
+    ],
+    "reservation": 4,
+    "lux": true,
+    "star": 5
+  },
+  {
+    "number": "980",
+    "price": 8500,
+    "reviewNumbers": 35,
+    "images": [],
+    "reservation": 0,
+    "lux": true,
+    "star": 3
+  },
+  {
+    "number": "982",
+    "price": 5800,
+    "reviewNumbers": 56,
+    "images": [],
+    "reservation": 0,
+    "lux": false,
+    "star": 3
+  }
+]

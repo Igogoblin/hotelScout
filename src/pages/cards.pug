@@ -1,8 +1,12 @@
 include ../components/mixins/mixins.pug
 include ../components/mixins/findYourRoom/findYourRoom.pug
+include ../components/mixins/finishCardRoom/finishCardRoom.pug
+//- include ../components/mixins/roomCard/roomCard.pug
 
 +ui-header({title: "Cards", active: "cards", className:"ui__area"})
 .wrapper.cardsPage.ui__area 
     +findYourRoom
     +registration({isEnter: false, className: true, page: "cards" })
     +registration({isEnter: true, className: true, page: "ui" })
+    +finishCardRoom({number: 888, price: 9990, lux: true, day: 4 })
+    //- +room-card({star: 4, reviewNumbers: 145,number: 888, price: 9990})

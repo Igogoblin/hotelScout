@@ -21,7 +21,6 @@
   </div>
 </header>
 <div class="wrapper cardsPage ui__area"> 
-  <h1>this is a cards.pug file</h1>
   <div class="find-room">
     <h2>Найдём номера под ваши пожелания</h2>
     <div class="calendar__period" id="findRoom"> 
@@ -147,6 +146,70 @@
         <div class="btn__block undefined">
           <button class="btn btn--second" onclick="location.href='undefined'">войти</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="card__room">
+    <div class="card__wrapper"> 
+      <div class="room__card-body"> 
+        <div class="card-number">№ 888 <span>люкс</span>
+        </div>
+        <div class="card-cash"> 9990₽<span> в сутки</span></div>
+      </div>
+      <div class="calendar__period"> 
+        <label for="arrival-undefined">прибытие
+          <input class="main__arrival" type="date" name="arrival" id="arrival-undefined"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+        </label>
+        <label for="departure-undefined">выезд
+          <input class="main__departure" type="date" name="departure" id="departure-undefined"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+        </label>
+      </div>
+      <div class="dropdown">
+        <label for="guest">Гости</label>
+        <div class="guest-title"> 
+          <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+          <div class="dropdown__content"> 
+            <div class="value__control"> <span class="adults">взрослые</span>
+              <div class="value__block">
+                <button class="adults btn--minus">-</button><span class="adults btn-value">0</span>
+                <button class="adults btn--plus">+</button>
+              </div>
+            </div>
+            <div class="value__control"> <span class="children">дети</span>
+              <div class="value__block">
+                <button class="children btn--minus">-</button><span class="children btn-value">0</span>
+                <button class="children btn--plus">+</button>
+              </div>
+            </div>
+            <div class="value__control"> <span class="babies">младенцы</span>
+              <div class="value__block">
+                <button class="babies btn--minus">-</button><span class="babies btn-value">0</span>
+                <button class="babies btn--plus">+</button>
+              </div>
+            </div>
+            <div class="guest-design"> 
+              <button class="guest__button--clear">очистить</button>
+              <button class="guest__button--apply">применить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card__title">
+        <div class="serviceTitle"> <span>9990₽</span><span class="serviceTitle-total">39 960₽</span></div>
+        <div class="serviceFee"> 
+          <div class="serviceFee-text">Сбор за услуги: скидка 2 179₽</div><img src="/hotelScout/assets/information.svg" alt="information" title="сбор фиксированный 300₽">
+          <div class="serviceFee-total">0₽</div>
+        </div>
+        <div class="serviceAddFee">
+          <div class="serviceAddFee-text">Сбор за дополнительные услуги</div><img src="/hotelScout/assets/information.svg" alt="information" title="сбор фиксированный 300₽">
+          <div class="serviceAddFee-total">300₽</div>
+        </div>
+        <div class="serviceTotal"> <span>Итого</span>
+          <div class="dottedLine"></div><span class="serviceTotal-value">38 081₽</span>
+        </div>
+      </div>
+      <div class="btn__block undefined">
+        <button class="btn btn--primary" onclick="location.href='undefined'">забронировать</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
       </div>
     </div>
   </div>

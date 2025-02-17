@@ -2,6 +2,7 @@
 .card__room {
   width: 380px;
   height: 512px;
+  background: $white;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   .card__wrapper {
@@ -43,18 +44,28 @@
       color: $darkShade-75;
       letter-spacing: 0;
       .serviceTitle {
+        display: flex;
+        justify-content: space-between;
       }
       .serviceFee {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         margin: 10px 0;
+        img {
+          margin: 0 auto 0 0;
+        }
         .serviceFee-text {
           width: 218px;
         }
       }
       .serviceAddFee {
         display: flex;
-
+        justify-content: space-between;
+        align-items: start;
+        img {
+          margin: 0 auto 0 0;
+        }
         .serviceAddFee-text {
           width: 218px;
           height: 36px;
@@ -63,6 +74,16 @@
       }
       .serviceTotal {
         margin: 10px 0 30px 0;
+        @include font-style(h2);
+        display: flex;
+        justify-content: space-between;
+        .dottedLine {
+          width: 60%;
+          border-bottom: 1px dotted $darkShade-50;
+        }
+        .serviceTotal-value {
+          width: 77px;
+        }
       }
     }
     .btn.btn--primary {

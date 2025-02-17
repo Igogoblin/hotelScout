@@ -22,6 +22,7 @@ import "./components/mixins/finishCardRoom/finishCardRoom.pug";
 import "./components/mixins/finishCardRoom/finishCardRoom.scss";
 import "./components/mixins/findYourRoom/findYourRoom.pug";
 import "./components/mixins/findYourRoom/findYourRoom.scss";
+import "./data/rooms.json";
 
 console.log("hotelScout is running!");
 if (module.hot) {
