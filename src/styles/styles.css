@@ -1,0 +1,277 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.26px;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23.16px;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.63px;
+}
+
+input {
+  height: 44px;
+  padding: 0 15px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+}
+input::-webkit-inner-spin-button, input::-webkit-calendar-picker-indicator {
+  display: none; /* Скрыть значок выбора даты */
+}
+input::-moz-placeholder {
+  color: rgba(31, 32, 65, 0.25);
+  font-size: 14px;
+  line-height: 18px;
+}
+input::placeholder {
+  color: rgba(31, 32, 65, 0.25);
+  font-size: 14px;
+  line-height: 18px;
+}
+input:focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+input[type=date] {
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.5);
+}
+input:hover {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+div.air-datepicker.-inline- {
+  z-index: 1;
+  position: absolute;
+  width: 318px;
+  height: 367px;
+  top: 67px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+div.air-datepicker.-inline- .air-datepicker--navigation .air-datepicker-nav {
+  padding: 10px 20px;
+  border-bottom: 0;
+}
+div.air-datepicker.-inline- .air-datepicker--navigation .air-datepicker-nav .air-datepicker-nav--action svg {
+  width: 13px;
+  height: 11px;
+  fill: rgb(188, 156, 255);
+}
+div.air-datepicker.-inline- .air-datepicker--navigation .air-datepicker-nav .air-datepicker-nav--title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23.16px;
+  gap: 5px;
+}
+div.air-datepicker.-inline- .air-datepicker--navigation .air-datepicker-nav .air-datepicker-nav--title .air-datepicker-cell.-day-.-current- {
+  background: linear-gradient(180deg, rgb(111, 207, 151) 0%, rgb(102, 210, 234) 100%);
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+}
+div.air-datepicker.-inline- .air-datepicker--content {
+  height: 240px;
+  border-top: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.63px;
+}
+div.air-datepicker.-inline- .air-datepicker--content .air-datepicker-body.-days- {
+  width: 280px;
+  height: 240px;
+  margin: 0 auto;
+}
+div.air-datepicker.-inline- .air-datepicker--content .air-datepicker-body.-days- .air-datepicker-body--day-names {
+  width: 280px;
+  height: 40px;
+  margin: 8px auto 3px auto;
+}
+div.air-datepicker.-inline- .air-datepicker--content .air-datepicker-body.-days- .air-datepicker-body--day-names .air-datepicker-body--day-name {
+  color: rgb(188, 156, 255);
+  text-transform: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.63px;
+}
+div.air-datepicker.-inline- .air-datepicker--content .air-datepicker-body.-days- .air-datepicker-body--cells.-days- {
+  width: 280px;
+  height: 200px;
+  grid-auto-rows: 40px;
+}
+div.air-datepicker.-inline- .air-datepicker--content .air-datepicker-body.-days- .air-datepicker-body--cells.-days- .air-datepicker-cell.-current- {
+  background: linear-gradient(180deg, rgb(111, 207, 151) 0%, rgb(102, 210, 234) 100%);
+  border-radius: 22px;
+  color: rgb(255, 255, 255);
+}
+div.air-datepicker.-inline- .air-datepicker--buttons {
+  margin: 0 0 10px 0;
+}
+div.air-datepicker.-inline- .air-datepicker--buttons .air-datepicker-buttons .air-datepicker-button:first-child span:first-child {
+  justify-content: start;
+  margin-left: 20px;
+}
+div.air-datepicker.-inline- .air-datepicker--buttons .air-datepicker-buttons .air-datepicker-button:last-child span:first-child {
+  justify-content: end;
+  margin-right: 20px;
+}
+
+.air-datepicker-cell.-day- {
+  width: 40px;
+  height: 40px;
+  color: rgba(31, 32, 65, 0.5);
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.63px;
+}
+
+.air-datepicker-cell.-day-.-in-range- {
+  background: linear-gradient(180deg, rgb(188, 156, 255) 0%, rgb(139, 164, 248) 100%);
+  opacity: 0.25;
+  color: rgb(31, 32, 65);
+}
+
+.air-datepicker-cell.-day-.-selected-.-range-from-,
+.air-datepicker-cell.-day-.-selected-.-range-to- {
+  background: linear-gradient(180deg, rgb(188, 156, 255) 0%, rgb(139, 164, 248) 100%);
+  border-radius: 22px;
+}
+
+.air-datepicker.-inline- .air-datepicker--buttons,
+.air-datepicker--time {
+  border-top: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.63px;
+}
+.air-datepicker.-inline- .air-datepicker--buttons .air-datepicker-button,
+.air-datepicker--time .air-datepicker-button {
+  color: rgb(188, 156, 255);
+}
+
+.registration__area {
+  max-width: 1440px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.registration__area .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registration__area .wrapper .registration-form {
+  margin: 172px 0;
+}
+.registration__area .wrapper .enter-form {
+  margin: 19px 0;
+}
+.registration__area .main__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.ui-header {
+  height: 108px;
+}
+
+.color__type {
+  padding-top: 37px;
+  align-items: start;
+}
+
+.ui__area {
+  max-width: 1440px;
+  background: rgb(244, 244, 246);
+}
+
+.cardsPage {
+  max-height: 1200px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  gap: 40px;
+}/*# sourceMappingURL=styles.css.map */

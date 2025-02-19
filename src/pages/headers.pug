@@ -1,10 +1,11 @@
 include ../components/mixins/mixins.pug
+include ../components/header/header.pug
 
 +ui-header({title: "Headers & Footers", active: "headers", className:"ui__area"})
-include ../components/header/header.pug
++header()
 .wrapper.headersPage.ui__area 
 
-include ../components/header/header.pug
++header()
 
 .wrapper.headersPage.ui__area 
     h1 this is a headers.pug file

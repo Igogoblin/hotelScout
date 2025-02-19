@@ -1,0 +1,493 @@
+.btn__block {
+  position: relative;
+}
+.btn__block .btn {
+  height: 34px;
+  border-radius: 22px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14.63px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn__block .btn.btn--primary {
+  background: linear-gradient(180deg, rgb(188, 156, 255) 0%, rgb(139, 164, 248) 100%);
+  color: rgb(255, 255, 255);
+  border: none;
+}
+.btn__block .btn.btn--primary:hover {
+  background: linear-gradient(180deg, rgb(188, 156, 255) 0%, rgb(139, 164, 248) 100%);
+  opacity: 0.5;
+}
+.btn__block .btn.btn--second {
+  height: 30px;
+  background: rgb(255, 255, 255);
+  color: rgb(188, 156, 255);
+  -o-border-image: linear-gradient(180deg, rgb(188, 156, 255) 0%, rgb(139, 164, 248) 100%) 1;
+     border-image: linear-gradient(180deg, rgb(188, 156, 255) 0%, rgb(139, 164, 248) 100%) 1;
+  position: relative;
+  border: none;
+  border-radius: 22px;
+  padding: 3px 0 0 2px;
+}
+.btn__block .btn.btn--second::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(180deg, rgb(188, 156, 255) 0%, rgb(139, 164, 248) 100%);
+  -webkit-mask: linear-gradient(rgb(255, 255, 255) 0 0) content-box, linear-gradient(rgb(255, 255, 255) 0 0);
+  mask: linear-gradient(rgb(255, 255, 255) 0 0) content-box, linear-gradient(rgb(255, 255, 255) 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.btn__block .btn.btn--second:hover::before {
+  opacity: 0.5;
+}
+.btn__block .btn__image {
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 10px;
+}
+.btn__block .btn__image-none {
+  display: none;
+}
+
+.menu__list li {
+  color: rgba(31, 32, 65, 0.5);
+  padding-bottom: 20px;
+}
+.menu__list .menu__item1 {
+  text-transform: uppercase;
+  color: rgb(31, 32, 65);
+  line-height: 14.63px;
+  font-weight: 700;
+  font-size: 12px;
+  padding-bottom: 21px;
+}
+
+.calendar__block {
+  max-width: 380px;
+  width: 100%;
+  height: 374px;
+  border-radius: 4px;
+  background-color: 1px solid rgba(31, 32, 65, 0.5);
+  box-shadow: 0px 0px 25px 0px rgba(31, 32, 65, 0.2);
+  background-color: rgb(255, 255, 255);
+}
+.calendar__block .calendar__wrapper {
+  width: 320px;
+  height: 100%;
+  padding: 40px 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.calendar__block .calendar__wrapper h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29.26px;
+  color: rgb(31, 32, 65);
+  margin-bottom: 21px;
+}
+.calendar__block .calendar__wrapper label {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14.63px;
+  text-transform: uppercase;
+  color: rgb(31, 32, 65);
+}
+
+.calendar__period {
+  max-height: 65px;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  box-sizing: content-box;
+}
+.calendar__period label {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.calendar__period label input {
+  margin: 5px 0 0 0;
+}
+.calendar__period label img {
+  position: absolute;
+  bottom: 19px;
+  right: 19px;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 30px 0;
+}
+.dropdown .guest-title {
+  width: 100%;
+  position: relative;
+}
+.dropdown .guest-title .show-dropdown {
+  width: 100%;
+  height: 44px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  margin-top: 5px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.dropdown .guest-title .show-dropdown:hover {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+.dropdown .guest-title img {
+  position: absolute;
+  top: 24px;
+  right: 20px;
+}
+.dropdown .dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  top: 48px;
+  width: 100%;
+  z-index: 1;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  font-size: 12px;
+  line-height: 14.63px;
+  color: rgb(31, 32, 65);
+  text-transform: uppercase;
+}
+.dropdown .dropdown__content .guest-design {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 7px 13px 14px;
+}
+.dropdown .dropdown__content .guest-design button {
+  color: rgb(188, 156, 255);
+  border: none;
+  background-color: rgb(255, 255, 255);
+  width: 700;
+  font-size: 12px;
+  line-height: 14.63px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.dropdown .show {
+  display: block;
+}
+
+.dropdown + .btn__block > .btn {
+  width: 100%;
+  height: 44px;
+}
+
+.value__control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  font-size: 12px;
+  line-height: 14.63px;
+  color: rgb(31, 32, 65);
+  text-decoration: none;
+  margin-bottom: 5px;
+  padding: 5px 7px 0 15px;
+  cursor: auto;
+}
+.value__control .value__block {
+  width: 92px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.value__control .value__block button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.value__control .value__block span {
+  margin: 0 0 3px 0;
+  width: 700;
+}
+
+.forRegistration {
+  max-width: 380px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(31, 32, 65, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px 0px rgba(31, 32, 65, 0.2);
+}
+.forRegistration .registration__block {
+  width: 100%;
+  height: 100%;
+  padding: 40px 30px 30px 30px;
+}
+.forRegistration .registration__block h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 20px;
+  color: rgb(31, 32, 65);
+  margin-bottom: 20px;
+}
+.forRegistration .registration__block .registration > input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.forRegistration .registration__block .registration + div {
+  margin-top: 20px;
+}
+.forRegistration .registration__block .registration + button {
+  height: 44px;
+}
+.forRegistration .registration__block .registrationEmail,
+.forRegistration .registration__block .registrationPassword,
+.forRegistration .registration__block .btn--primary {
+  width: 100%;
+  height: 44px;
+}
+.forRegistration .registration__block .btn--second {
+  width: 99px;
+}
+.forRegistration .registration__block .enter__card {
+  display: none;
+}
+.forRegistration .registration__block .forMale {
+  height: 24.4px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+}
+.forRegistration .registration__block .forMale label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
+}
+.forRegistration .registration__block .forMale label input [type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgb(188, 156, 255);
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.forRegistration .registration__block .forMale label input [type=radio]:checked {
+  background-color: rgb(188, 156, 255);
+  border-color: rgb(188, 156, 255);
+  color: rgba(31, 32, 65, 0.5);
+}
+.forRegistration .registration__block .born {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14.63px;
+  font-weight: 700;
+}
+.forRegistration .registration__block .born input {
+  width: 100%;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.25);
+  margin-top: 5px;
+}
+.forRegistration .registration__block .registration__forEnter {
+  font-size: 12px;
+  line-height: 14.63px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(31, 32, 65);
+}
+.forRegistration .registration__block .registrationEmail {
+  margin: 5px 0 10px 0;
+}
+.forRegistration .registration__block .toggle {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  position: relative;
+}
+.forRegistration .registration__block .toggle .toggle-checkbox {
+  opacity: 0;
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  z-index: 1;
+  cursor: pointer;
+}
+.forRegistration .registration__block .toggle .toggle-label {
+  width: 40px;
+  height: 20px;
+  margin-top: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  position: relative;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+}
+.forRegistration .registration__block .toggle .toggle-label::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: transform 0.3s;
+}
+.forRegistration .registration__block .toggle input:checked + .toggle-label {
+  border-color: rgb(188, 156, 255);
+}
+.forRegistration .registration__block .toggle input:checked + .toggle-label::after {
+  transform: translateX(18px);
+  background: linear-gradient(180deg, rgb(188, 156, 255) 0%, rgb(139, 164, 248) 100%);
+  cursor: pointer;
+}
+.forRegistration .registration__block .toggle span {
+  margin: 10px 0 0 10px;
+}
+.forRegistration .registration__block .registration__footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.forRegistration .registration__block .registration__footer span {
+  margin: auto 0;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(31, 32, 65);
+}
+
+.showNone {
+  display: none;
+}
+
+.ui-header {
+  height: 110px;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+.ui-header img {
+  margin: 0 0 0 30px;
+}
+.ui-header .header-navigation {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.ui-header .header-navigation .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.ui-header .header-navigation .wrapper .menu-btn.bar-second {
+  margin: 0 0 0 auto;
+}
+
+.color__type {
+  justify-content: center;
+}
+.color__type .ui-color {
+  width: 281px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.color__type .ui-color .color-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 40px;
+}
+.color__type .ui-color .color-item .color__block {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+}
+.color__type .ui-color .color-item .color__title {
+  display: flex;
+  flex-direction: column;
+  font-size: 19px;
+  line-height: 27.79px;
+  font-weight: 400;
+}
+.color__type .ui-color .color-item .color__title span:first-child {
+  font-weight: 700;
+}
+.color__type .ui-type {
+  max-width: 436px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 51px;
+}
+.color__type .ui-type .type-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+}
+.color__type .ui-type .type-item .type__block {
+  max-width: 37px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  opacity: 0.25;
+  color: rgb(31, 32, 65);
+}
+.color__type .ui-type .type-item:nth-child(1) {
+  font-size: 24px;
+  line-height: 29.26px;
+}
+.color__type .ui-type .type-item:nth-child(2) {
+  font-size: 19px;
+  line-height: 23.16px;
+}
+.color__type .ui-type .type-item:nth-child(3) {
+  font-size: 12px;
+  line-height: 14.63px;
+}
+.color__type .ui-type .type-item:nth-child(4) {
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+}/*# sourceMappingURL=mixins.css.map */

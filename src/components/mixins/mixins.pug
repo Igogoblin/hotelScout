@@ -23,24 +23,24 @@ mixin cardCalendar(options)
             //-         input(type="date", name="arrival", id=`arrival-${options.idCalendar}`, class="main__arrival")
             //-     label(for=`departure-${options.idCalendar}`) выезд
             //-         input(type="date", name="departure", id=`departure-${options.idCalendar}`, class="main__departure")
-            +dropdownGuest
+            +dropdownGuest("Гости")
             +button({text:"подобрать номер", isPrimary:true, isImage:true, link:"search"})
 
 mixin calendarCheck(options)
             .calendar__period(id=options.idCalendar) 
-                label(for=`arrival-${options.idCalendar}`) прибытие
+                label(for=`arrival-${options.idCalendar}`) #{options.arrival}
                     input(type="date", name="arrival", id=`arrival-${options.idCalendar}`, class="main__arrival")
                     img(src=require("@assets/expand_more.svg").default, alt="expend more")
-                label(for=`departure-${options.idCalendar}`) выезд
+                label(for=`departure-${options.idCalendar}`) #{options.departure}
                     input(type="date", name="departure", id=`departure-${options.idCalendar}`, class="main__departure")
                     img(src=require("@assets/expand_more.svg").default, alt="expend more")
 
-mixin dropdownGuest
+mixin dropdownGuest(options)
     div(class='dropdown')
-        label(for="guest") Гости
+        label(for="guest") #{options}
         .guest-title 
             button(class="show-dropdown") Сколько гостей
-            img(src=require("@assets/expand_more.svg").default, alt="expend more")
+            img(src=require("@assets/expand_more.svg").default, alt="expand more")
             .dropdown__content 
                 +valueControl("взрослые", "adults")
                 +valueControl("дети", "children") 

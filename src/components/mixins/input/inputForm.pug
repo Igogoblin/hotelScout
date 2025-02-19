@@ -1,0 +1,11 @@
+mixin inputForm(options)
+    div(class=`input__block ${options.class_name}`)
+        if options.label
+            label 
+                span #{options.label}
+                span #{options.labelText}
+        input(type=options.type, placeholder=options.placeholder, class=options.className?options.className:"")
+        if(options.isImage==="down")
+            img(src=require("@assets/expand_more.svg").default, alt="expend more")
+        if(options.isImage==="go") 
+            img(src=require('@assets/arrow_forward.svg').default, alt='enter')

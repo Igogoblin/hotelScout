@@ -132,7 +132,7 @@
     }
     img {
       position: absolute;
-      bottom: 19px;
+      bottom: 13px;
       right: 19px;
     }
   }
@@ -252,7 +252,7 @@
   border: 1px solid $darkShade-12;
   border-radius: 4px;
   box-shadow: 0px 0px 25px 0px $darkShade-20;
-  margin-top: 19px;
+  // margin-top: 19px;
 
   .registration__block {
     width: 100%;
@@ -430,6 +430,28 @@
 }
 
 // ui-kit ========================================================================================
+.ui-header {
+  height: 110px;
+  padding-top: 30px;
+  margin: 0 auto;
+  img {
+    margin: 0 0 0 30px;
+  }
+  .header-navigation {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkShade-50;
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      .menu-btn.bar-second {
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+}
 // for color  ==============================================================================
 
 .color__type {

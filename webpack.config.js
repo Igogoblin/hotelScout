@@ -78,9 +78,9 @@ module.exports = {
     ],
   },
   plugins: [
-//     new HtmlWebpackPlugin({
-// title: 
-//     }),
+    //     new HtmlWebpackPlugin({
+    // title:
+    //     }),
     new HtmlWebpackPlugin({
       title: "hotelScout",
       filename: "index.html",
@@ -115,7 +115,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "forms.html",
-      template: "./src/pages/forms.pug",
+      template: "./src/pages/forms/forms.pug",
       cache: false,
     }),
     new HtmlWebpackPlugin({

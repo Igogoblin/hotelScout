@@ -1,0 +1,8 @@
+@use "../../styles/_const.scss" as *;
+.forms__input {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}

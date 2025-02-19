@@ -1,0 +1,25 @@
+include ../../components/mixins/mixins.pug
+include ../../components/mixins/input/inputForm.pug
+
++ui-header({title: "Form Elements", active: "forms"})
+.wrapper.formsPage 
+    .forms__input 
+        +inputForm({placeholder:"Email",type:"email", label: "Text Field", labelText:"Default"})
+        +inputForm({placeholder:"This is pretty awesome",type:"email", label: "Text Field", labelText:"Hover / Focus", className:"input__active"})
+        +dropdownGuest("Dropdown")
+        +inputForm({type:"date", label:"masked text field"})
+        +calendarCheck({idCalendar:"forCalendarShow", arrival:"date Dropdown", departure: "date Dropdown"})
+        +inputForm({type: "text", placeholder:"19 авг - 23 авг", label:"filter date dropdown",isImage: "down", class_name: "short"})
+        +inputForm({type: "email", placeholder:"Email", label:"subscription text field", isImage: "go", class_name: "short"})
+
+    .forms__checkbox 
+
+    .forms__button 
+
+    .forms__dropdown 
+
+    .forms__dropdownMin 
+
+    .forms__dropdownMax 
+
+    .forms__grade

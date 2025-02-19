@@ -1,0 +1,12 @@
+.find-room {
+  width: 380px;
+  height: 374px;
+  padding: 40px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  background: rgb(255, 255, 255);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=findYourRoom.css.map */

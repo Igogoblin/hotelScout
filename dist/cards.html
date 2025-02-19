@@ -24,17 +24,17 @@
   <div class="find-room">
     <h2>Найдём номера под ваши пожелания</h2>
     <div class="calendar__period" id="findRoom"> 
-      <label for="arrival-findRoom">прибытие
+      <label for="arrival-findRoom">
         <input class="main__arrival" type="date" name="arrival" id="arrival-findRoom"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
       </label>
-      <label for="departure-findRoom">выезд
+      <label for="departure-findRoom">
         <input class="main__departure" type="date" name="departure" id="departure-findRoom"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
       </label>
     </div>
     <div class="dropdown">
-      <label for="guest">Гости</label>
+      <label for="guest"></label>
       <div class="guest-title"> 
-        <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+        <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
         <div class="dropdown__content"> 
           <div class="value__control"> <span class="adults">взрослые</span>
             <div class="value__block">
@@ -63,48 +63,6 @@
     </div>
     <div class="btn__block undefined">
       <button class="btn btn--primary" onclick="location.href='undefined'">подобрать номер</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
-    </div>
-  </div>
-  <div class="forRegistration show registration-form">
-    <div class="registration__block">
-      <h2>Войти</h2>
-      <div class="registration enter__card">
-        <input class="registrationName" type="text" name="name" placeholder="Имя">
-        <input class="registrationSurname" type="text" name="surname" placeholder="Фамилия">
-        <div class="forMale">
-          <label for="male">
-            <input class="registrationMale" type="radio" id="male" name="gender" value="male">Мужчина
-          </label>
-          <label for="female">
-            <input class="registrationFemale" type="radio" id="female" name="gender" value="female">Женщина
-          </label>
-        </div>
-        <div class="born"> 
-          <label for="born">дата рождения
-            <input type="date" name="born" id="born">
-          </label>
-        </div>
-      </div><span class="registration__forEnter"></span>
-      <label for="enterEmail-cards"> 
-        <input class="registrationEmail" type="email" id="enterEmail-cards" name="enterEmail" placeholder="Email">
-      </label>
-      <label for="enterPassword-cards">
-        <input class="registrationPassword" type="password" id="enterPassword-cards" name="enterEmail" placeholder="Пароль">
-      </label>
-      <div class="registration enter__card">
-        <div class="toggle"> 
-          <input class="toggle-checkbox" type="checkbox" id="special" name="special">
-          <label class="toggle-label" for="special"> </label><span>Получать спецпредложения</span>
-        </div>
-      </div>
-      <div class="btn__block undefined">
-        <button class="btn btn--primary" onclick="location.href='undefined'">войти</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
-      </div>
-      <div class="registration__footer"><span>Нет аккаунта на Toxin?</span>
-        <div class="btn__block undefined">
-          <button class="btn btn--second" onclick="location.href='undefined'">создать</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
-        </div>
-      </div>
     </div>
   </div>
   <div class="forRegistration show enter-form">
@@ -157,17 +115,17 @@
         <div class="card-cash"> 9990₽<span> в сутки</span></div>
       </div>
       <div class="calendar__period"> 
-        <label for="arrival-undefined">прибытие
+        <label for="arrival-undefined">
           <input class="main__arrival" type="date" name="arrival" id="arrival-undefined"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
         </label>
-        <label for="departure-undefined">выезд
+        <label for="departure-undefined">
           <input class="main__departure" type="date" name="departure" id="departure-undefined"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
         </label>
       </div>
       <div class="dropdown">
-        <label for="guest">Гости</label>
+        <label for="guest"></label>
         <div class="guest-title"> 
-          <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+          <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
           <div class="dropdown__content"> 
             <div class="value__control"> <span class="adults">взрослые</span>
               <div class="value__block">
@@ -210,6 +168,104 @@
       </div>
       <div class="btn__block undefined">
         <button class="btn btn--primary" onclick="location.href='undefined'">забронировать</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+      </div>
+    </div>
+  </div>
+  <div class="forRegistration show registration-form">
+    <div class="registration__block">
+      <h2>Войти</h2>
+      <div class="registration enter__card">
+        <input class="registrationName" type="text" name="name" placeholder="Имя">
+        <input class="registrationSurname" type="text" name="surname" placeholder="Фамилия">
+        <div class="forMale">
+          <label for="male">
+            <input class="registrationMale" type="radio" id="male" name="gender" value="male">Мужчина
+          </label>
+          <label for="female">
+            <input class="registrationFemale" type="radio" id="female" name="gender" value="female">Женщина
+          </label>
+        </div>
+        <div class="born"> 
+          <label for="born">дата рождения
+            <input type="date" name="born" id="born">
+          </label>
+        </div>
+      </div><span class="registration__forEnter"></span>
+      <label for="enterEmail-cards"> 
+        <input class="registrationEmail" type="email" id="enterEmail-cards" name="enterEmail" placeholder="Email">
+      </label>
+      <label for="enterPassword-cards">
+        <input class="registrationPassword" type="password" id="enterPassword-cards" name="enterEmail" placeholder="Пароль">
+      </label>
+      <div class="registration enter__card">
+        <div class="toggle"> 
+          <input class="toggle-checkbox" type="checkbox" id="special" name="special">
+          <label class="toggle-label" for="special"> </label><span>Получать спецпредложения</span>
+        </div>
+      </div>
+      <div class="btn__block undefined">
+        <button class="btn btn--primary" onclick="location.href='undefined'">войти</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+      </div>
+      <div class="registration__footer"><span>Нет аккаунта на Toxin?</span>
+        <div class="btn__block undefined">
+          <button class="btn btn--second" onclick="location.href='undefined'">создать</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="room__card"> 
+    <div class="room__card-image"> 
+      <div class="swiper"> 
+        <div class="swiper-wrapper"> 
+          <div class="swiper-slide" style="background-image: url('./assets/rooms/room-888-1.jpg')"></div>
+          <div class="swiper-slide" style="background-image: url('./assets/rooms/room-888-2.jpg')"></div>
+          <div class="swiper-slide" style="background-image: url('./assets/rooms/room-888-3.jpg')"></div>
+          <div class="swiper-slide" style="background-image: url('./assets/rooms/room-888-4.jpg')"></div>
+        </div>
+        <div class="swiper-pagination"> </div>
+        <div class="swiper-button-prev"> </div>
+        <div class="swiper-button-next"> </div>
+      </div>
+    </div>
+    <div class="room__card-wrapper">
+      <div class="room__card-body"> 
+        <div class="card-number">№ 888 <span>люкс</span>
+        </div>
+        <div class="card-cash"> 9990₽<span> в сутки</span></div>
+      </div>
+      <div class="room_separator"></div>
+      <div class="room__card-footer">
+        <div class="card-star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star">
+        </div>
+        <div class="card-review">145<span> Отзывов</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="room__card"> 
+    <div class="room__card-image"> 
+      <div class="swiper"> 
+        <div class="swiper-wrapper"> 
+          <div class="swiper-slide" style="background-image: url('./assets/rooms/room-840-1.jpg')"></div>
+          <div class="swiper-slide" style="background-image: url('./assets/rooms/room-840-2.jpg')"></div>
+          <div class="swiper-slide" style="background-image: url('./assets/rooms/room-840-3.jpg')"></div>
+          <div class="swiper-slide" style="background-image: url('./assets/rooms/room-840-4.jpg')"></div>
+        </div>
+        <div class="swiper-pagination"> </div>
+        <div class="swiper-button-prev"> </div>
+        <div class="swiper-button-next"> </div>
+      </div>
+    </div>
+    <div class="room__card-wrapper">
+      <div class="room__card-body"> 
+        <div class="card-number">№ 840 
+        </div>
+        <div class="card-cash"> 9900₽<span> в сутки</span></div>
+      </div>
+      <div class="room_separator"></div>
+      <div class="room__card-footer">
+        <div class="card-star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star_border.svg" alt="filled star">
+        </div>
+        <div class="card-review">65<span> Отзывов</span></div>
       </div>
     </div>
   </div>

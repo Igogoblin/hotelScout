@@ -1,10 +1,12 @@
 //- include ../mixins/mixins.pug
 include ../header/header.pug
+
++header()
 main
     //- img(src=require("@assets/mainImage.jpg").default, alt="background", class="main__image")
     img(src=require("./assets/mainImage.jpg").default, alt="background", class="main__image")
     .wrapper 
-        +cardCalendar({idCalendar: "mainCalendar"} )
+        +cardCalendar({idCalendar: "mainCalendar", arrival:"прибытие", departure: "выезд"} )
         //- .dynamic__content
         //- input#myId(style="position: relative")
         //- input#my-element

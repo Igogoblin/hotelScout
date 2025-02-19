@@ -1,23 +1,24 @@
 include ../mixins/mixins.pug
 include ../mixins/mburger/mburger.pug
 
-header
-    .wrapper
-        a(href="/"  data-link, class="link-to-main")
-            img(src=require("@assets/logo.svg").default, alt="logo")
-        ul.header-navigation
-            a(href="/hotelScout/about"  data-link)
-                li О нас
-            li Услуги 
-            li Вакансии
-            li Новости
-            a(href="/hotelScout/ui-colors"  data-link)
-                li Соглашения
-        .in-area
-            +button({text:"войти", isPrimary:false, className:"btn-login", link:"/hotelScout/enter"})
-            +button({text:"зарегистрироваться", isPrimary:true, className:"btn-register", link:"/hotelScout/registration"})
-        .menu-btn 
-            span.bar
-            span.bar
-            span.bar
-        +burger(true)   
+mixin header()
+    .header
+        .wrapper
+            a(href="/"  data-link, class="link-to-main")
+                img(src=require("@assets/logo.svg").default, alt="logo")
+            ul.header-navigation
+                a(href="/hotelScout/about"  data-link)
+                    li О нас
+                li Услуги 
+                li Вакансии
+                li Новости
+                a(href="/hotelScout/ui-colors"  data-link)
+                    li Соглашения
+            .in-area
+                +button({text:"войти", isPrimary:false, className:"btn-login", link:"/hotelScout/enter"})
+                +button({text:"зарегистрироваться", isPrimary:true, className:"btn-register", link:"/hotelScout/registration"})
+            .menu-btn 
+                span.bar
+                span.bar
+                span.bar
+            +burger(true)   

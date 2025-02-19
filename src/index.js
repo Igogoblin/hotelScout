@@ -5,6 +5,7 @@ import "./styles/styles.scss";
 import "./components/mixins/mixins.scss";
 import "./components/main/main.scss";
 import "./components/header/header.pug";
+import "./components/header/header.scss";
 import "./components/footer/footer.pug";
 import "./components/footer/footer.scss";
 import "./routing/router.js";
@@ -22,6 +23,8 @@ import "./components/mixins/finishCardRoom/finishCardRoom.pug";
 import "./components/mixins/finishCardRoom/finishCardRoom.scss";
 import "./components/mixins/findYourRoom/findYourRoom.pug";
 import "./components/mixins/findYourRoom/findYourRoom.scss";
+import "./components/mixins/input/inputForm.scss";
+import "./pages/forms/forms.scss";
 import "./data/rooms.json";
 
 console.log("hotelScout is running!");
