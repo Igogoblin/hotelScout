@@ -1,8 +1,147 @@
 @use "../../styles/_const.scss" as *;
+.formsPage {
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 .forms__input {
   width: 320px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   position: relative;
+}
+.forms__checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .forms__radioButton {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-transform: uppercase;
+
+    @include font-style(h3);
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  & span:first-child {
+    @include font-style(h3);
+    font-weight: 700;
+    color: $darkShade-100;
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+  .forms__radioButton div span,
+  .forms__toggle div span,
+  .forms__like div span {
+    @include font-style(body);
+    color: $darkShade-75;
+    text-transform: lowercase;
+    letter-spacing: 0;
+    font-weight: 400;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+  .forms__toggle {
+    @include font-style(h3);
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+}
+.forms__like {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .forms__like-area {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+  }
+}
+.forms__rate {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .forms__rate-area {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+  }
+}
+.forms__button {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  & span:first-child {
+    @include font-style(h3);
+    font-weight: 700;
+    color: $darkShade-100;
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+  .forms__range {
+  }
+
+  .forms__buttons {
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    justify-content: start;
+    gap: 20px;
+    .forms__buttons-area {
+      display: flex;
+      // flex-direction: column;
+      flex-wrap: wrap;
+      gap: 20px;
+      .btn__block.buttonSize {
+        width: 99px;
+        height: 44px;
+        button {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .btn__block.buttonSize:nth-child(3),
+      .btn__block.buttonSize:nth-child(4) {
+        width: 95px;
+        height: 40px;
+      }
+      .btn__block.buttonSize:nth-child(2),
+      .btn__block.buttonSize:nth-child(4) {
+        color: inherit;
+        opacity: 0.5;
+        &:hover {
+          opacity: 1;
+          color: inherit;
+        }
+      }
+      .text-buttons {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        span {
+          @include font-style(h3);
+          color: $darkShade-50;
+          text-transform: uppercase;
+          letter-spacing: 0;
+          font-weight: 700;
+        }
+
+        & span:first-child {
+          color: $purple;
+        }
+      }
+      .text-buttons + .btn__block {
+        width: 100%;
+        button {
+          width: 100%;
+          height: 44px;
+        }
+      }
+    }
+  }
 }

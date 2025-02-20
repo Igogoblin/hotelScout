@@ -24,6 +24,8 @@ import "./components/mixins/finishCardRoom/finishCardRoom.scss";
 import "./components/mixins/findYourRoom/findYourRoom.pug";
 import "./components/mixins/findYourRoom/findYourRoom.scss";
 import "./components/mixins/input/inputForm.scss";
+import "./components/mixins/checkbox/checkbox.scss";
+import "./components/mixins/buttons/buttons.scss";
 import "./pages/forms/forms.scss";
 import "./data/rooms.json";
 

@@ -14,11 +14,12 @@ mixin room-card(options)
                     span  Отзывов
 
 mixin feedbackQuality(options)
-    -for(var x=0;x<5;x++)
-        if x>=options
-            img(src=require("@assets/star_border.svg").default, alt="filled star") 
-        else 
-            img(src=require("@assets/star.svg").default, alt="empty star")
+    .feedbackQuality__block
+        -for(var x=0;x<5;x++)
+            if x>=options
+                img(src=require("@assets/star_border.svg").default, alt="filled star") 
+            else 
+                img(src=require("@assets/star.svg").default, alt="empty star")
 
 mixin roomCardBody(options)
     .room__card-body 

@@ -1,5 +1,13 @@
 include ../../components/mixins/mixins.pug
 include ../../components/mixins/input/inputForm.pug
+include ../../components/mixins/checkbox/checkbox.pug
+include ../../components/mixins/buttons/buttons.pug
+include ../../components/mixins/roomCard/roomCard.pug
+//- const simpleBox = [
+//-  { feature: "smocking", text: "Можно курить" },
+//-  { feature: "pet", text: "Можно с питомцами" },
+//-  { feature: "guests", text: "Можно пригласить гостей (до 10 человек)" } 
+//- ]
 
 +ui-header({title: "Form Elements", active: "forms"})
 .wrapper.formsPage 
@@ -13,13 +21,54 @@ include ../../components/mixins/input/inputForm.pug
         +inputForm({type: "email", placeholder:"Email", label:"subscription text field", isImage: "go", class_name: "short"})
 
     .forms__checkbox 
+        +checkBox([
+ { feature: "smocking", text: "Можно курить" },
+ { feature: "pet", text: "Можно с питомцами" },
+ { feature: "guests", text: "Можно пригласить гостей (до 10 человек)" } 
+], "Checkbox Buttons")
+        .forms__radioButton
+            span radio button
+            +radioButton
+        .forms__toggle 
+            span toggle 
+            +toggleButton({className:"toggleButton"})
+        .forms__like 
+            span like button
+            .forms__like-area
+                +likeButton({checked: false})
+                +likeButton({className:"likeButton", checked: true})
+        .forms__rate 
+            span rate button
+            .forms__rate-area
+                +feedbackQuality(4)
+                +feedbackQuality(5)
+
 
     .forms__button 
+        .forms__range 
+            span range slider 
+        .forms__buttons 
+            span buttons 
+            .forms__buttons-area 
+                +button({isPrimary: true, text:"CLICK ME", className: "buttonSize"})
+                +button({isPrimary: true, text:"CLICK ME", className: "buttonSize"})
+                +button({isPrimary: false, text:"CLICK ME", className: "buttonSize"})
+                +button({isPrimary: false, text:"CLICK ME", className: "buttonSize"})
+                .text-buttons
+                    span click me
+                    span click me
+                +button({isPrimary: true, text:"перейти к оплате", className: "", isImage: true})
+        .forms__pagination 
+            span pagination
+    
 
     .forms__dropdown 
+
 
     .forms__dropdownMin 
 
     .forms__dropdownMax 
 
     .forms__grade
+        img(src=require("@assets/insert_emoticon.svg").default, alt="comfort")
+        img(src=require("@assets/location_city.svg").default, alt="comfort place")

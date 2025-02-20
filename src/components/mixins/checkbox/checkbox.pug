@@ -1,0 +1,25 @@
+
+//- const difBox = {
+//-     content: [
+//-         { feature: "corridor", text: "Широкий коридор", sup: "Ширина коридоров в номере не менее 91 см." },
+//-         { feature: "invalid", text: "Помощник для инвалидов", sup: "На 1 этаже вас встретит специалист и проводит до номера." },
+
+//-     ]
+//- }
+
+mixin checkBox(arr, title)
+    .checkBox__block 
+        h3 #{title}    
+        for item in arr
+            .checkBox__wrapper
+                input(type="checkbox", id=item.feature)
+                label(for=item.feature) #{item.text}
+
+//- mixin checkBoxDif(difBox)
+//-     .checkBoxDif__block 
+//-         for item in difBox.content
+//-             .checkBoxDif__wrapper
+//-                 input(type="checkbox", id=item.id)
+//-                 label(for=item.id) #{item.text}
+//-                 if(item.sup)
+//-                     span(class="sup") #{item.sup}
