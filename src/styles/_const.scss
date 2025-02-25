@@ -42,31 +42,3 @@ $fontWeight: (
   font-weight: map.get($fontWeight, $key);
   line-height: map.get($lineHeight, $key);
 }
-
-// @mixin font-header {
-//   font-family: $fontFamily;
-//   font-size: map.get($fontSize, h1);
-//   font-weight: map.get($fontWeight, h1);
-//   line-height: map.get($lineHeight, h1);
-// }
-
-// @mixin font-title {
-//   font-family: $fontFamily;
-//   font-size: map.get($fontSize, h2);
-//   font-weight: map.get($fontWeight, h2);
-//   line-height: map.get($lineHeight, h2);
-// }
-
-// @mixin font-subtitle {
-//   font-family: $fontFamily;
-//   font-size: map.get($fontSize, h3);
-//   font-weight: map.get($fontWeight, h3);
-//   line-height: map.get($lineHeight, h3);
-// }
-
-// @mixin font-body {
-//   font-family: $fontFamily;
-//   font-size: map.get($fontSize, body);
-//   font-weight: map.get($fontWeight, body);
-//   line-height: map.get($lineHeight, body);
-// }

@@ -1,0 +1,43 @@
+@use "../../../styles/const" as *;
+.pagination__block {
+  width: 241px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .pagination__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      @include font-style(h3);
+      color: $darkShade-50;
+    }
+    .pagination__item:nth-child(1) {
+      background: linear-gradient(180deg, $purple 0%, $purple-grand 100%);
+      color: $white;
+    }
+    .pagination__item:nth-child(6) {
+      background: linear-gradient(180deg, $green 0%, $green-grand 100%);
+      color: $green;
+      position: relative;
+      .forward {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .pagination__title {
+    font-size: 14px;
+    line-height: 24px;
+    color: $darkShade-75;
+  }
+}

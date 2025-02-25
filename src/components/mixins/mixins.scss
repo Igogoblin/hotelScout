@@ -166,7 +166,6 @@
       }
     }
     img {
-      // background: url("../../assets/expand_more.svg");
       position: absolute;
       top: 24px;
       right: 20px;
@@ -200,7 +199,17 @@
         cursor: pointer;
       }
     }
+    .guest-clear--inActive {
+      display: none;
+    }
+    .guest-clear--inActive + .guest__button--apply {
+      margin: 0 0 0 auto;
+    }
   }
+  .guest-design--active {
+    display: block;
+  }
+
   .show {
     display: block;
   }

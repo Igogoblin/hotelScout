@@ -1,3 +1,4 @@
+import "toolcool-range-slider";
 import "./index.pug";
 // import "./components/main/main.pug";
 import "./styles/_const.scss";
@@ -27,6 +28,11 @@ import "./components/mixins/input/inputForm.scss";
 import "./components/mixins/checkbox/checkbox.scss";
 import "./components/mixins/buttons/buttons.scss";
 import "./pages/forms/forms.scss";
+import "./components/mixins/rangeSlider/rangeSlider.scss";
+import "./components/mixins/rangeSlider/rangeSlider.js";
+import "./components/mixins/pagination/pagination.scss";
+import "./components/mixins/dropdown/dropdownRoom.scss";
+import "./components/mixins/bulletList/bulletList.scss";
 import "./data/rooms.json";
 
 console.log("hotelScout is running!");

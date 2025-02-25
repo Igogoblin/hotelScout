@@ -4,5 +4,5 @@ mixin findYourRoom
     .find-room
         h2 Найдём номера под ваши пожелания
         +calendarCheck({idCalendar: "findRoom"})
-        +dropdownGuest
+        +dropdownGuest({label: ""})
         +button({text: "подобрать номер", isImage: true, isPrimary: true})

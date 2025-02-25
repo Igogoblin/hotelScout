@@ -1,19 +1,33 @@
 @use "../../../styles/_const.scss" as *;
 .checkBox__block {
-  h3 {
-    @include font-style(h3);
-    font-weight: 700;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    margin-bottom: 17px;
+  .checkBox__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    h3 {
+      @include font-style(h3);
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    img {
+      position: absolute;
+      right: 20px;
+      // top: 20px;
+    }
+    .checkBox__title-active {
+      transform: scaleY(-1);
+    }
   }
+
   .checkBox__wrapper {
     max-width: 222px;
     width: 100%;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
+    margin: 17px 0 10px 0;
     input[type="checkbox"] {
       width: 20px;
       height: 20px;
@@ -121,5 +135,23 @@
   input[type="checkbox"]:checked + label:after,
   input[type="radio"]:checked + label:after {
     opacity: 1;
+  }
+}
+
+.checkBox__difficult {
+  width: 227px;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0;
+  p {
+    font-size: 14px;
+    line-height: 18px;
+    color: $darkShade-75;
+    font-weight: 700;
+  }
+  span {
+    font-size: 12px;
+    line-height: 14px;
+    color: $darkShade-50;
   }
 }

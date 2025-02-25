@@ -37,6 +37,7 @@
     "pug-runtime": "^3.0.1",
     "querystring-es3": "^0.2.1",
     "swiper": "^11.2.2",
+    "toolcool-range-slider": "^4.0.28",
     "webpack-node-externals": "^3.0.0"
   }
 }

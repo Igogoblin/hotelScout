@@ -23,7 +23,7 @@ mixin cardCalendar(options)
             //-         input(type="date", name="arrival", id=`arrival-${options.idCalendar}`, class="main__arrival")
             //-     label(for=`departure-${options.idCalendar}`) выезд
             //-         input(type="date", name="departure", id=`departure-${options.idCalendar}`, class="main__departure")
-            +dropdownGuest("Гости")
+            +dropdownGuest(options)
             +button({text:"подобрать номер", isPrimary:true, isImage:true, link:"search"})
 
 mixin calendarCheck(options)
@@ -37,16 +37,16 @@ mixin calendarCheck(options)
 
 mixin dropdownGuest(options)
     div(class='dropdown')
-        label(for="guest") #{options}
+        label(for="guest") #{options.label?options.label:""}
         .guest-title 
             button(class="show-dropdown") Сколько гостей
             img(src=require("@assets/expand_more.svg").default, alt="expand more")
-            .dropdown__content 
+            div(class=`dropdown__content ${options.isContent? "guest-design--active":""}`)
                 +valueControl("взрослые", "adults")
                 +valueControl("дети", "children") 
                 +valueControl("младенцы", "babies")
                 .guest-design 
-                    button(class="guest__button--clear") очистить
+                    button(class=`guest__button--clear ${options.isClear?options.isClear:""}`) очистить
                     button(class="guest__button--apply") применить
 
 //- valueControl for dropdownGuest

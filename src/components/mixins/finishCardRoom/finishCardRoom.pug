@@ -6,7 +6,7 @@ mixin finishCardRoom(options)
         .card__wrapper 
             +roomCardBody(options)
             +calendarCheck(options)
-            +dropdownGuest
+            +dropdownGuest(options)
             +cardRoomCost(options)
             +button({text: "забронировать", isImage: true, isPrimary: true})
 

@@ -1,5 +1,6 @@
 import { initializeCalendar } from "../components/main/forMain.js";
 import { mburger } from "../components/mixins/mburger/mburger.js";
+import { rangeSlider } from "../components/mixins/rangeSlider/rangeSlider.js";
 function loadContent(url) {
   fetch(url)
     .then((response) => {
@@ -77,11 +78,14 @@ function initializeScripts(url) {
       mburger();
       break;
     case "colors":
-    case "forms":
     case "cards":
     case "headers":
     case "about":
       mburger();
+      break;
+    case "forms":
+      mburger();
+      rangeSlider();
       break;
     // case "ui-forms":
     //   break;

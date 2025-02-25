@@ -6,7 +6,7 @@ main
     //- img(src=require("@assets/mainImage.jpg").default, alt="background", class="main__image")
     img(src=require("./assets/mainImage.jpg").default, alt="background", class="main__image")
     .wrapper 
-        +cardCalendar({idCalendar: "mainCalendar", arrival:"прибытие", departure: "выезд"} )
+        +cardCalendar({idCalendar: "mainCalendar", arrival:"прибытие", departure: "выезд",label:"Гости"} )
         //- .dynamic__content
         //- input#myId(style="position: relative")
         //- input#my-element

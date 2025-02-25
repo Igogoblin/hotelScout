@@ -1,0 +1,23 @@
+@use "../../../styles/_const.scss" as *;
+.bulletList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  @include font-style(body);
+  color: $darkShade-75;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    background-color: $darkShade-25; // Серый цвет
+    border-radius: 50%;
+    display: inline-block;
+  }
+}
