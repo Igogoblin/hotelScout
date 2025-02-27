@@ -108,11 +108,11 @@
 
   input[type="checkbox"]:checked + label:after,
   input[type="checkbox"]:not(:checked) + label:after {
-    left: 6px;
+    left: 7px;
     top: 5px;
     width: 8px;
     height: 6px;
-    border-left: 2px solid $purple;
+    border-left: 2px solid $purple-grand;
     border-bottom: 2px solid $purple;
     transform: rotate(-45deg);
   }

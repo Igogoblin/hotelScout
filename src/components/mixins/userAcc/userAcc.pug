@@ -1,0 +1,7 @@
+mixin userAcc(options)
+    div(class=`${options && options.classRegistration ? options.classRegistration : ""} user-acc`)
+        //- .user-acc__avatar
+        //-     img(src=require("@assets/avatar.svg").default, alt="avatar")
+        .user-acc__info
+            span.user-acc__name Юлий Цезарь
+            //- span.user-acc__email

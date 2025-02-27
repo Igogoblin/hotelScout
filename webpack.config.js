@@ -120,7 +120,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "cards.html",
-      template: "./src/pages/cards.pug",
+      template: "./src/pages/cards/cards.pug",
       cache: false,
     }),
     new HtmlWebpackPlugin({

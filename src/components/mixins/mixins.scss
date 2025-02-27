@@ -124,15 +124,18 @@
   box-sizing: content-box;
   label {
     width: 47%;
+    height: 65px;
     display: flex;
     flex-direction: column;
     position: relative;
+    justify-content: end;
     input {
+      // надо изменить -------------------------------------
       margin: 5px 0 0 0;
     }
     img {
       position: absolute;
-      bottom: 13px;
+      top: 40px;
       right: 19px;
     }
   }
@@ -444,28 +447,28 @@
   height: 110px;
   padding-top: 30px;
   margin: 0 auto;
-  img {
-    margin: 0 0 0 30px;
-  }
-  .header-navigation {
+  .wrapper {
     display: flex;
-    gap: 20px;
-    font-size: 14px;
-    line-height: 17px;
-    color: $darkShade-50;
-    .wrapper {
+    justify-content: space-between;
+    img {
+      margin: 0 0 0 30px;
+    }
+    .header-navigation {
       display: flex;
-      justify-content: space-between;
-      .menu-btn.bar-second {
-        margin: 0 0 0 auto;
-      }
+      gap: 20px;
+      font-size: 14px;
+      line-height: 17px;
+      color: $darkShade-50;
+    }
+    .menu-btn.bar-second {
+      margin: 0 0 0 auto;
     }
   }
 }
 // for color  ==============================================================================
 
 .color__type {
-  justify-content: center;
+  // justify-content: center;
 
   .ui-color {
     width: 281px;

@@ -1,0 +1,14 @@
+@use "../../../styles/const" as *;
+.userRegistration.user-acc {
+  padding-left: 20px;
+  height: 30px;
+  font-size: 14px;
+  line-height: 17px;
+  color: $darkShade-50;
+  border-left: 1px solid $darkShade-10;
+  display: flex;
+  align-items: center;
+}
+.user-acc {
+  display: none;
+}

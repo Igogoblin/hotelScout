@@ -12,11 +12,6 @@ function loadContent(url) {
       document.body.innerHTML = html;
       console.log("html ", url);
       setTimeout(() => initializeScripts(url), 100);
-      // initializeScripts();
-      // console.log("html ", url);
-      // if (url === "./index.html") {
-      //   initializeCalendar();
-      // }
     })
     .catch((err) => {
       document.body.innerHTML = "<h1>Error loading content</h1>";
@@ -81,6 +76,7 @@ function initializeScripts(url) {
     case "cards":
     case "headers":
     case "about":
+    case "search":
       mburger();
       break;
     case "forms":

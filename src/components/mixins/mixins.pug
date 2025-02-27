@@ -1,4 +1,6 @@
 include ./mburger/mburger.pug
+include ./buttons/buttons.pug
+
 mixin button(options )
         div(class=`btn__block ${options.className}`)
             button(class=options.isPrimary?'btn btn--primary': 'btn btn--second', onclick=`location.href='${options.link}'`)=options.text
@@ -24,7 +26,7 @@ mixin cardCalendar(options)
             //-     label(for=`departure-${options.idCalendar}`) выезд
             //-         input(type="date", name="departure", id=`departure-${options.idCalendar}`, class="main__departure")
             +dropdownGuest(options)
-            +button({text:"подобрать номер", isPrimary:true, isImage:true, link:"search"})
+            +button({text:"подобрать номер", isPrimary:true, isImage:true, link:"/hotelScout/search"})
 
 mixin calendarCheck(options)
             .calendar__period(id=options.idCalendar) 
@@ -74,13 +76,14 @@ mixin registration(options)
             div(class=registrationClassName)
                 input(type="text", name="name", class="registrationName", placeholder="Имя")
                 input(type="text", name="surname", class="registrationSurname", placeholder="Фамилия")
-                .forMale
-                    label(for="male")
-                        input(type="radio" id="male" name="gender" class="registrationMale" value="male")
-                        | Мужчина
-                    label(for="female")
-                        input(type="radio" id="female" name="gender" class="registrationFemale" value="female")
-                        | Женщина
+                +radioButton
+                //- .forMale
+                //-     label(for="male")
+                //-         input(type="radio" id="male" name="gender" class="registrationMale" value="male")
+                //-         | Мужчина
+                //-     label(for="female")
+                //-         input(type="radio" id="female" name="gender" class="registrationFemale" value="female")
+                //-         | Женщина
                 .born 
                     label(for="born") дата рождения
                         input(type="date", name="born", id="born")
@@ -103,7 +106,8 @@ mixin registration(options)
 mixin ui-header(options)
     header(class=`ui-header ${options.className? "ui__area":"" }`)
         div(class='wrapper')
-            a(href="/"  data-link, onclick="initializeCalendar()")
+            //- a(href="/"  data-link, onclick="initializeCalendar()")
+            a(href="/"  data-link)
                 img(src=require("@assets/ui-logo.svg").default, alt="logo")
             span(class='ui__title')= options.title
             +menu([

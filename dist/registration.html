@@ -8,7 +8,7 @@
       <li>Новости</li><a href="/hotelScout/ui-colors" data-link>
         <li>Соглашения</li></a>
     </ul>
-    <div class="in-area">
+    <div class=" in-area">
       <div class="btn__block btn-login">
         <button class="btn btn--second" onclick="location.href='/hotelScout/enter'">войти</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
       </div>
@@ -37,13 +37,15 @@
         <div class="registration">
           <input class="registrationName" type="text" name="name" placeholder="Имя">
           <input class="registrationSurname" type="text" name="surname" placeholder="Фамилия">
-          <div class="forMale">
-            <label for="male">
-              <input class="registrationMale" type="radio" id="male" name="gender" value="male">Мужчина
-            </label>
-            <label for="female">
-              <input class="registrationFemale" type="radio" id="female" name="gender" value="female">Женщина
-            </label>
+          <div class="radioButton__block"> 
+            <div class="radioButton__wrapper">
+              <input type="radio" id="radio1" name="radio">
+              <label for="radio1">Мужчина</label>
+            </div>
+            <div class="radioButton__wrapper">
+              <input type="radio" id="radio2" name="radio">
+              <label for="radio2">Женщина</label>
+            </div>
           </div>
           <div class="born"> 
             <label for="born">дата рождения

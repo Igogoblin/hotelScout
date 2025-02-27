@@ -5,11 +5,19 @@
   display: none;
 }
 /* Гамбургер иконка */
+
 @media (max-width: 900px) {
-  header {
+  .header,
+  .ui-header {
     .wrapper {
-      // justify-content: space-between;
+      justify-content: space-between;
       .header-navigation {
+        display: none;
+      }
+      .in-area {
+        margin: 0 30px 0 auto;
+      }
+      .in-area.userRegistration {
         display: none;
       }
     }
@@ -17,13 +25,19 @@
   .header__nav {
     display: block;
   }
-  .menu-btn {
+
+  .ui__title {
+    margin: 0 0 0 auto;
+  }
+  .menu-btn,
+  .menu-btn.bar-second {
     display: block;
     width: 30px;
     height: 30px;
     position: relative;
     z-index: 10;
     overflow: hidden;
+    margin: 0 30px 0 auto;
   }
 
   .menu-btn .bar {
@@ -87,5 +101,16 @@
 
   .nav .nav__list_item {
     list-style-type: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .header,
+  .ui-header {
+    .wrapper {
+      .in-area {
+        display: none;
+      }
+    }
   }
 }

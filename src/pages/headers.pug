@@ -3,10 +3,8 @@ include ../components/header/header.pug
 
 +ui-header({title: "Headers & Footers", active: "headers", className:"ui__area"})
 +header()
-.wrapper.headersPage.ui__area 
+.headerPage__wrapper
++header({classRegistration: "userRegistration"})
 
-+header()
-
-.wrapper.headersPage.ui__area 
-    h1 this is a headers.pug file
-include ../components/footer/footer.pug
+//- .headerPage__wrapper
+//- include ../components/footer/footer.pug
