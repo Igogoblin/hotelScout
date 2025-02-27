@@ -14,11 +14,34 @@
       width: 105.69px;
       height: 40px;
     }
+    .header-navigation.userRegistration {
+      margin: 0 20px 0 auto;
+    }
     ul {
       display: flex;
       list-style: none;
       gap: 20px;
       color: rgba(31, 32, 65, 0.5);
+      li {
+        display: flex;
+        align-items: center;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          img {
+            width: 15px;
+            height: 12px;
+            top: 4px;
+            margin-left: 5px;
+          }
+        }
+        img {
+          width: 15px;
+          height: 12px;
+          margin-left: 5px;
+        }
+      }
     }
     .in-area {
       width: 303px;

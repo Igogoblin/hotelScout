@@ -64,9 +64,6 @@
   .btn__image-none {
     display: none;
   }
-  // img {
-  //   background: url("../../assets/arrow_forwardWhite.svg");
-  // }
 }
 .menu__list {
   li {
@@ -264,7 +261,6 @@
   border: 1px solid $darkShade-12;
   border-radius: 4px;
   box-shadow: 0px 0px 25px 0px $darkShade-20;
-  // margin-top: 19px;
 
   .registration__block {
     width: 100%;
@@ -321,7 +317,6 @@
           -moz-appearance: none;
           appearance: none;
 
-          // background-color: $purple;
           width: 18px;
           height: 18px;
           border: 1px solid $purple;
@@ -461,15 +456,13 @@
       color: $darkShade-50;
     }
     .menu-btn.bar-second {
-      margin: 0 0 0 auto;
+      margin: 0 30px 0 auto;
     }
   }
 }
 // for color  ==============================================================================
 
 .color__type {
-  // justify-content: center;
-
   .ui-color {
     width: 281px;
     display: flex;

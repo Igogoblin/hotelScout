@@ -11,14 +11,13 @@
   .ui-header {
     .wrapper {
       justify-content: space-between;
-      .header-navigation {
+      .header-navigation,
+      .userRegistration.user-acc,
+      .in-area.userRegistration {
         display: none;
       }
       .in-area {
         margin: 0 30px 0 auto;
-      }
-      .in-area.userRegistration {
-        display: none;
       }
     }
   }

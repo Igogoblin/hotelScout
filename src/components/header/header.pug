@@ -7,14 +7,17 @@ mixin header(options)
         .wrapper
             a(href="/"  data-link, class="link-to-main")
                 img(src=require("@assets/logo.svg").default, alt="logo")
-            ul.header-navigation
-                a(href="/hotelScout/about"  data-link)
-                    li О нас
-                li Услуги 
+            ul(class=`${options && options.classRegistration ? options.classRegistration : ""} header-navigation`)  
+                li
+                    a(href="/hotelScout/about" data-link) О нас
+                li.showMore Услуги
+                    img(src=require("@assets/expand_more.svg").default, alt="expand more") 
                 li Вакансии
                 li Новости
-                a(href="/hotelScout/ui-colors"  data-link)
-                    li Соглашения
+                li.showMore 
+                    a(href="/hotelScout/ui-colors" data-link)
+                        span Соглашения
+                            img(src=require("@assets/expand_more.svg").default, alt="expand more")
             +userAcc(options)
             div(class=`${options && options.classRegistration ? options.classRegistration : ""} in-area`)
                 +button({text:"войти", isPrimary:false, className:"btn-login", link:"/hotelScout/enter"})

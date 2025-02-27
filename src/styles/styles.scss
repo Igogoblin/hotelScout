@@ -385,7 +385,9 @@ div.air-datepicker.-inline- {
   background: rgba(244, 244, 246, 1);
 }
 .headerPage__wrapper {
+  max-width: 1440px;
   width: 100%;
+  margin: 0 auto;
   height: 20px;
   background: rgba(244, 244, 246, 1);
 }
@@ -395,4 +397,12 @@ div.air-datepicker.-inline- {
   flex-flow: column wrap;
   justify-content: start;
   gap: 40px;
+}
+// for headers page ===============================================
+.headers {
+  max-width: 1440px;
+  width: 100%;
+  height: 1350px;
+  margin: 0 auto;
+  background: rgba(244, 244, 246, 1);
 }
