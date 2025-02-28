@@ -12,6 +12,9 @@ import "./components/footer/footer.scss";
 import "./routing/router.js";
 import "./components/main/forMain.js";
 import "./pages/cards/cards.js";
+import "./pages/search/search.js";
+import "./pages/search/search.scss";
+
 import "./components/mixins/roomCard/roomCard.pug";
 import "./components/mixins/roomCard/roomCard.scss";
 import "./components/mixins/roomCard/roomCard.js";

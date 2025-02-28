@@ -124,6 +124,10 @@ footer.footerMobile {
         display: none;
       }
     }
+    .footer__title {
+      align-items: center;
+      height: 40px;
+    }
     .footer__foot {
       flex-direction: column;
       border: none;
@@ -145,6 +149,10 @@ footer.footerMobile {
         .subscription {
           display: none;
         }
+      }
+      .footer__title {
+        align-items: center;
+        height: 40px;
       }
       .footer__foot {
         flex-direction: column;
