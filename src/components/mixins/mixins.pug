@@ -105,7 +105,8 @@ mixin registration(options)
 
 mixin ui-header(options)
     header(class=`ui-header ${options.className? "ui__area":"" }`)
-        div(class='wrapper')
+
+        div(class='header-wrapper')
             //- a(href="/"  data-link, onclick="initializeCalendar()")
             a(href="/"  data-link)
                 img(src=require("@assets/ui-logo.svg").default, alt="logo")

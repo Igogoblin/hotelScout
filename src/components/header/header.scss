@@ -13,49 +13,65 @@
       cursor: pointer;
       width: 105.69px;
       height: 40px;
+      margin-top: 4px;
     }
-    .header-navigation.userRegistration {
-      margin: 0 20px 0 auto;
-    }
-    ul {
+    .wrapper__content {
       display: flex;
-      list-style: none;
+      align-items: center;
       gap: 20px;
-      color: rgba(31, 32, 65, 0.5);
-      li {
+      // .header-navigation.userRegistration {
+      // margin: 0 20px 0 auto;
+      // }
+      ul {
         display: flex;
-        align-items: center;
-        a {
+        list-style: none;
+        gap: 20px;
+        color: rgba(31, 32, 65, 0.5);
+        @include font-style("title");
+        letter-spacing: 0;
+        margin-right: 2px;
+        li {
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img {
+              width: 13px;
+              height: 10px;
+              margin: 7px 0 0 5px;
+            }
+          }
           img {
             width: 15px;
             height: 12px;
-            top: 4px;
             margin-left: 5px;
           }
         }
-        img {
-          width: 15px;
-          height: 12px;
-          margin-left: 5px;
+        .showMore {
+          margin-right: 4px;
         }
       }
-    }
-    .in-area {
-      width: 303px;
-      display: flex;
-      justify-content: space-between;
-      .btn--second {
-        width: 87px;
+      .in-area {
+        width: 303px;
+        display: flex;
+        justify-content: space-between;
+
+        .btn--second {
+          width: 83px;
+          @include font-style(h3);
+          letter-spacing: 0;
+        }
+        .btn--primary {
+          width: 196px;
+          @include font-style(h3);
+          letter-spacing: 0;
+        }
       }
-      .btn--primary {
-        width: 196px;
+      .in-area.userRegistration {
+        display: none;
       }
-    }
-    .in-area.userRegistration {
-      display: none;
     }
   }
 }

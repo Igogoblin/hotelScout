@@ -20,6 +20,7 @@ $fontSize: (
   h2: 19px,
   h3: 12px,
   body: 14px,
+  title: 14px,
 );
 
 $lineHeight: (
@@ -27,6 +28,7 @@ $lineHeight: (
   h2: 23.16px,
   h3: 14.63px,
   body: 24px,
+  title: 17.07px,
 );
 
 $fontWeight: (
@@ -34,6 +36,7 @@ $fontWeight: (
   h2: 700,
   h3: 400,
   body: 400,
+  title: 400,
 );
 
 @mixin font-style($key) {
