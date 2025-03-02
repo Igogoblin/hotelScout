@@ -18,8 +18,11 @@
     @include font-style(h3);
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.25px;
+
     span:nth-child(2) {
       color: $darkShade-50;
+      letter-spacing: -0.3px;
     }
   }
   input {
@@ -29,6 +32,16 @@
     border: 1px solid $darkShade-50;
     &::placeholder {
       color: $darkShade-75;
+      letter-spacing: 0.6px;
+    }
+  }
+  &.for__forms__input {
+    input[type="date"] {
+      &::placeholder {
+        color: $darkShade-25;
+        @include font-style(body);
+        letter-spacing: 0.6px;
+      }
     }
   }
   img {

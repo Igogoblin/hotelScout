@@ -32,6 +32,7 @@ import "./components/mixins/input/inputForm.scss";
 import "./components/mixins/checkbox/checkbox.scss";
 import "./components/mixins/buttons/buttons.scss";
 import "./pages/forms/forms.scss";
+import "./pages/forms/forms.js";
 import "./components/mixins/rangeSlider/rangeSlider.scss";
 import "./components/mixins/rangeSlider/rangeSlider.js";
 import "./components/mixins/pagination/pagination.scss";

@@ -57,7 +57,7 @@ mixin valueControl(name, className)
     .value__control 
         span(class=className)= name
         .value__block
-            button(class=`${className} btn--minus`) -
+            button(class=`${className} btn--minus btn-active`) -
             span(class=`${className} btn-value`) 0
             button(class=`${className} btn--plus`) +
 
@@ -138,9 +138,9 @@ mixin ui-color
         +color-list([
             { color: "#1F2041", title: "Dark Shade 100%",opacity: 1},
             { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.75},
-            { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.50},
-            { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.25},
-            { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.05},
+            { color: "#1F2041", title: "Dark Shade 50%",opacity: 0.50},
+            { color: "#1F2041", title: "Dark Shade 25%",opacity: 0.25},
+            { color: "#1F2041", title: "Dark Shade 5%",opacity: 0.05},
             { color: "#BC9CFF", title: "Purple",opacity: 1},
             { color: "#6FCF97", title: "Green",opacity: 1},
             

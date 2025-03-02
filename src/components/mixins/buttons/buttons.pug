@@ -10,7 +10,7 @@ mixin radioButton
 mixin toggleButton(options) 
     .toggleButton__block 
         .toggleButton__wrapper
-            input(type="checkbox", id=options.className name=options.className class="toggle-checkbox")
+            input(type="checkbox", id=options.className name=options.className class="toggle-checkbox" checked=options.checked ? "checked" : null)
             label(for=options.className class="toggle-label") 
             span Получать спецпредложения
 

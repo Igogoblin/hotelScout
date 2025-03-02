@@ -1,7 +1,7 @@
 @use "../../../styles/const" as *;
 .pagination__block {
   width: 241px;
-  height: 75px;
+  height: 71px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,5 +39,6 @@
     font-size: 14px;
     line-height: 24px;
     color: $darkShade-75;
+    padding-left: 4px;
   }
 }

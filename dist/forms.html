@@ -1,6 +1,6 @@
 <head><script defer src="/hotelScout/bundle.js"></script></head>
-<header class="ui-header ">
-  <div class="wrapper"><a href="/" data-link><img src="/hotelScout/assets/ui-logo.svg" alt="logo"></a><span class="ui__title">Form Elements</span>
+<header class="ui-header ui__area">
+  <div class="header-wrapper"><a href="/" data-link><img src="/hotelScout/assets/ui-logo.svg" alt="logo"></a><span class="ui__title">Form Elements</span>
     <ul class="header-navigation"><a href="/hotelScout/ui-colors" data-link>
         <li>Colors &amp; Type</li></a>
       <li>Form Elements</li><a href="/hotelScout/ui-cards" data-link>
@@ -31,7 +31,7 @@
       <input class="input__active" type="email" placeholder="This is pretty awesome">
     </div>
     <div class="dropdown">
-      <label for="guest"></label>
+      <label for="guest">Dropdown</label>
       <div class="guest-title"> 
         <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
         <div class="dropdown__content ">
@@ -60,7 +60,7 @@
         </div>
       </div>
     </div>
-    <div class="input__block undefined">
+    <div class="input__block for__forms__input">
       <label> <span>masked text field</span><span></span></label>
       <input type="date">
     </div>
@@ -72,7 +72,7 @@
         <input class="main__departure" type="date" name="departure" id="departure-forCalendarShow"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
       </label>
     </div>
-    <div class="input__block short">
+    <div class="input__block short sixChild__forms__input">
       <label> <span>filter date dropdown</span><span></span></label>
       <input type="text" placeholder="19 авг - 23 авг"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
     </div>
@@ -99,7 +99,7 @@
         <label for="guests">Можно пригласить гостей (до 10 человек)</label>
       </div>
     </div>
-    <div class="forms__radioButton"><span>radio button</span>
+    <div class="forms__radioButton"><span>radio buttons</span>
       <div class="radioButton__block"> 
         <div class="radioButton__wrapper">
           <input type="radio" id="radio1" name="radio">
@@ -112,6 +112,12 @@
       </div>
     </div>
     <div class="forms__toggle"> <span>toggle </span>
+      <div class="toggleButton__block"> 
+        <div class="toggleButton__wrapper">
+          <input class="toggle-checkbox" type="checkbox" id="toggleButton" name="toggleButton" checked="checked">
+          <label class="toggle-label" for="toggleButton"> </label><span>Получать спецпредложения</span>
+        </div>
+      </div>
       <div class="toggleButton__block"> 
         <div class="toggleButton__wrapper">
           <input class="toggle-checkbox" type="checkbox" id="toggleButton" name="toggleButton">

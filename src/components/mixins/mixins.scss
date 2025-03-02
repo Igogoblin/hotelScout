@@ -6,6 +6,7 @@
     font-weight: 700;
     font-size: 12px;
     line-height: 14.63px;
+    letter-spacing: 0.65px;
     text-transform: uppercase;
     cursor: pointer;
   }
@@ -59,11 +60,15 @@
   .btn__image {
     position: absolute;
     top: calc(50% - 10px);
-    right: 10px;
+    right: 14px;
+    // исправил с 10 на 14
   }
   .btn__image-none {
     display: none;
   }
+  // &::placeholder {
+  //   letter-spacing: 0;
+  // }
 }
 .menu__list {
   li {
@@ -125,6 +130,9 @@
     flex-direction: column;
     position: relative;
     justify-content: end;
+    @include font-style(h3);
+    font-weight: 700;
+    text-transform: uppercase;
     input {
       // надо изменить -------------------------------------
       margin: 5px 0 0 0;
@@ -132,7 +140,7 @@
     img {
       position: absolute;
       top: 40px;
-      right: 19px;
+      right: 15px;
     }
   }
 }
@@ -141,7 +149,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 20px 0 30px 0;
+  // margin: 20px 0 30px 0;
+  label {
+    @include font-style(h3);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
   .guest-title {
     width: 100%;
     position: relative;
@@ -166,11 +179,12 @@
     }
     img {
       position: absolute;
-      top: 24px;
-      right: 20px;
+      top: 23px;
+      right: 15px;
     }
   }
   .dropdown__content {
+    height: 160px;
     display: none;
     position: absolute;
     background-color: $white;
@@ -186,7 +200,7 @@
     .guest-design {
       display: flex;
       justify-content: space-between;
-      padding: 19px 7px 13px 14px;
+      padding: 15px 7px 0 14px;
       button {
         color: $purple;
         border: none;
@@ -217,19 +231,23 @@
   width: 100%;
   height: 44px;
 }
+
+.btn-active {
+  opacity: 0.38;
+}
 // for value control ============================================================================
 .value__control {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 30px;
+  height: 39px;
   font-size: 12px;
   line-height: 14.63px;
   color: $darkShade-100;
   text-decoration: none;
-  margin-bottom: 5px;
-  padding: 5px 7px 0 15px;
+  // margin-bottom: 5px;
+  padding: 0 7px 0 14px;
   cursor: auto;
 
   .value__block {
@@ -438,8 +456,9 @@
 
 // ui-kit ========================================================================================
 .ui-header {
+  max-width: 1440px;
+  width: 100%;
   height: 100px;
-  // padding-top: 30px;
   margin: 0 auto;
 
   .header-wrapper {
@@ -475,7 +494,7 @@
 
 .color__type {
   .ui-color {
-    width: 281px;
+    width: 283px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -497,6 +516,7 @@
         font-size: 19px;
         line-height: 27.79px;
         font-weight: 400;
+        letter-spacing: 0.3px;
         span:first-child {
           font-weight: 700;
         }
@@ -506,13 +526,16 @@
   .ui-type {
     max-width: 436px;
     width: 100%;
+    height: 323px;
     display: flex;
     flex-direction: column;
+    justify-content: start;
     gap: 51px;
+    margin: 0 44px 0 0;
     .type-item {
       display: flex;
       justify-content: start;
-      align-items: center;
+      align-items: start;
       gap: 30px;
       .type__block {
         max-width: 37px;
@@ -525,19 +548,25 @@
       &:nth-child(1) {
         font-size: 24px;
         line-height: 29.26px;
+        letter-spacing: 0.43px;
       }
       &:nth-child(2) {
         font-size: 19px;
         line-height: 23.16px;
+        letter-spacing: 0.35px;
       }
       &:nth-child(3) {
         font-size: 12px;
         line-height: 14.63px;
+        text-transform: uppercase;
+        letter-spacing: 0.2px;
+        padding-top: 3px;
       }
       &:nth-child(4) {
         font-size: 14px;
         line-height: 24px;
         color: $darkShade-75;
+        width: 373px;
       }
     }
   }

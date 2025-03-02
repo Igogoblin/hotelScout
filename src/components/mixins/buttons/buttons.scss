@@ -97,7 +97,7 @@
   border-radius: 10px;
   font-size: 10px;
   line-height: 12.19px;
-  padding-right: 7px;
+  padding-right: 9px;
   color: $darkShade-25;
   position: relative; // добавлено для позиционирования изображений
 
@@ -117,7 +117,7 @@
     position: absolute;
     width: 11px;
     height: 11px;
-    top: 4px;
+    top: 3px;
     left: 4px;
     transition: opacity 0.3s ease;
   }

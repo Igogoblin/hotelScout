@@ -8,15 +8,15 @@ include ../../components/mixins/pagination/pagination.pug
 include ../../components/mixins/dropdown/dropdownRoom.pug
 include ../../components/mixins/bulletList/bulletList.pug
 
-+ui-header({title: "Form Elements", active: "forms"})
++ui-header({title: "Form Elements", active: "forms", className:"ui__area ui__header"})
 .wrapper.formsPage 
     .forms__input 
         +inputForm({placeholder:"Email",type:"email", label: "Text Field", labelText:"Default"})
         +inputForm({placeholder:"This is pretty awesome",type:"email", label: "Text Field", labelText:"Hover / Focus", className:"input__active"})
-        +dropdownGuest("Dropdown")
-        +inputForm({type:"date", label:"masked text field"})
+        +dropdownGuest({label:"Dropdown"})
+        +inputForm({type:"date", label:"masked text field", class_name:"for__forms__input" })
         +calendarCheck({idCalendar:"forCalendarShow", arrival:"date Dropdown", departure: "date Dropdown"})
-        +inputForm({type: "text", placeholder:"19 авг - 23 авг", label:"filter date dropdown",isImage: "down", class_name: "short"})
+        +inputForm({type: "text", placeholder:"19 авг - 23 авг", label:"filter date dropdown",isImage: "down", class_name: "short sixChild__forms__input"})
         +inputForm({type: "email", placeholder:"Email", label:"subscription text field", isImage: "go", class_name: "short"})
 
     .forms__checkbox 
@@ -26,10 +26,11 @@ include ../../components/mixins/bulletList/bulletList.pug
  { feature: "guests", text: "Можно пригласить гостей (до 10 человек)", checked: true} 
 ],title: "Checkbox Buttons"})
         .forms__radioButton
-            span radio button
+            span radio buttons
             +radioButton
         .forms__toggle 
             span toggle 
+            +toggleButton({className:"toggleButton", checked: true})
             +toggleButton({className:"toggleButton"})
         .forms__like 
             span like button
@@ -45,7 +46,11 @@ include ../../components/mixins/bulletList/bulletList.pug
 
     .forms__button 
         .forms__range 
-            span range slider 
+            .range-title
+                span range slider
+                .range-text 
+                    span.range-min 5 000₽ - 
+                    span.range-max 10 000₽
             +rangeSlider
         .forms__buttons 
             span buttons 
@@ -79,7 +84,7 @@ include ../../components/mixins/bulletList/bulletList.pug
     .forms__dropdownMin 
         +dropdownGuest({value: "Сколько гостей", label: "Dropdown",isContent: true, isClear: "guest-clear--inActive"})
         +checkBoxDifficult({arr:[
-            { feature: "k", text: "Широкий коридор", textSecond: "Ширина коридора в номере не менее 91 см." },
+            { feature: "k", text: "Широкий коридор", textSecond: "Ширина коридоров в номере не менее 91 см." },
             {feature: "hel", text: "Помощник для инвалидов", textSecond:"На 1 этаже вас встретит специалист  и проводит до номера."},
             ], title:"rich Checkbox Buttons", className: "checkBox__difficult"})
     
@@ -102,7 +107,7 @@ include ../../components/mixins/bulletList/bulletList.pug
                 img(src=require("@assets/location_city.svg").default, alt="comfort place")
                 div 
                     p Удобство
-                    span Окно в каждой спальне
+                    span Окно в каждой из спален
         .forms__grade-user 
             .grade-user 
                 .grade-user-image 

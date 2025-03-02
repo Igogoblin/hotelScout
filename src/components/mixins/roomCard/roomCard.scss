@@ -86,4 +86,7 @@
 }
 .feedbackQuality__block {
   width: 120px;
+  display: flex;
+  justify-content: start;
+  gap: 3px;
 }
