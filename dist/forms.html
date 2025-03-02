@@ -37,19 +37,19 @@
         <div class="dropdown__content ">
           <div class="value__control"> <span class="adults">взрослые</span>
             <div class="value__block">
-              <button class="adults btn--minus">-</button><span class="adults btn-value">0</span>
+              <button class="adults btn--minus btn-active">-</button><span class="adults btn-value">0</span>
               <button class="adults btn--plus">+</button>
             </div>
           </div>
           <div class="value__control"> <span class="children">дети</span>
             <div class="value__block">
-              <button class="children btn--minus">-</button><span class="children btn-value">0</span>
+              <button class="children btn--minus btn-active">-</button><span class="children btn-value">0</span>
               <button class="children btn--plus">+</button>
             </div>
           </div>
           <div class="value__control"> <span class="babies">младенцы</span>
             <div class="value__block">
-              <button class="babies btn--minus">-</button><span class="babies btn-value">0</span>
+              <button class="babies btn--minus btn-active">-</button><span class="babies btn-value">0</span>
               <button class="babies btn--plus">+</button>
             </div>
           </div>
@@ -141,7 +141,10 @@
     </div>
   </div>
   <div class="forms__button"> 
-    <div class="forms__range"> <span>range slider </span>
+    <div class="forms__range"> 
+      <div class="range-title"><span>range slider</span>
+        <div class="range-text"> <span class="range-min">5 000₽ - </span><span class="range-max">10 000₽</span></div>
+      </div>
       <div class="slider-container">
         <toolcool-range-slider min="0" max="15000" value1="5000" value2="10000" slider-width="266px" slider-height="6px" pointer-width="12px" pointer-height="12px" pointer-border="2px solid white" pointer-bg="MediumAquamarine" slider-bg="lightgray" slider-bg-fill="MediumAquamarine" slider-border="1px solid rad"></toolcool-range-slider>
       </div>
@@ -190,19 +193,19 @@
         <div class="dropdown__content dropdown__content--active"> 
           <div class="value__control"> <span class="rooms">спальни</span>
             <div class="value__block">
-              <button class="rooms btn--minus">-</button><span class="rooms btn-value">0</span>
+              <button class="rooms btn--minus btn-active">-</button><span class="rooms btn-value">0</span>
               <button class="rooms btn--plus">+</button>
             </div>
           </div>
           <div class="value__control"> <span class="beds">кровати</span>
             <div class="value__block">
-              <button class="beds btn--minus">-</button><span class="beds btn-value">0</span>
+              <button class="beds btn--minus btn-active">-</button><span class="beds btn-value">0</span>
               <button class="beds btn--plus">+</button>
             </div>
           </div>
           <div class="value__control"> <span class="bathrooms">ванные комнаты</span>
             <div class="value__block">
-              <button class="bathrooms btn--minus">-</button><span class="bathrooms btn-value">0</span>
+              <button class="bathrooms btn--minus btn-active">-</button><span class="bathrooms btn-value">0</span>
               <button class="bathrooms btn--plus">+</button>
             </div>
           </div>
@@ -218,19 +221,19 @@
         <div class="dropdown__content "> 
           <div class="value__control"> <span class="rooms">спальни</span>
             <div class="value__block">
-              <button class="rooms btn--minus">-</button><span class="rooms btn-value">0</span>
+              <button class="rooms btn--minus btn-active">-</button><span class="rooms btn-value">0</span>
               <button class="rooms btn--plus">+</button>
             </div>
           </div>
           <div class="value__control"> <span class="beds">кровати</span>
             <div class="value__block">
-              <button class="beds btn--minus">-</button><span class="beds btn-value">0</span>
+              <button class="beds btn--minus btn-active">-</button><span class="beds btn-value">0</span>
               <button class="beds btn--plus">+</button>
             </div>
           </div>
           <div class="value__control"> <span class="bathrooms">ванные комнаты</span>
             <div class="value__block">
-              <button class="bathrooms btn--minus">-</button><span class="bathrooms btn-value">0</span>
+              <button class="bathrooms btn--minus btn-active">-</button><span class="bathrooms btn-value">0</span>
               <button class="bathrooms btn--plus">+</button>
             </div>
           </div>
@@ -280,19 +283,19 @@
         <div class="dropdown__content guest-design--active">
           <div class="value__control"> <span class="adults">взрослые</span>
             <div class="value__block">
-              <button class="adults btn--minus">-</button><span class="adults btn-value">0</span>
+              <button class="adults btn--minus btn-active">-</button><span class="adults btn-value">0</span>
               <button class="adults btn--plus">+</button>
             </div>
           </div>
           <div class="value__control"> <span class="children">дети</span>
             <div class="value__block">
-              <button class="children btn--minus">-</button><span class="children btn-value">0</span>
+              <button class="children btn--minus btn-active">-</button><span class="children btn-value">0</span>
               <button class="children btn--plus">+</button>
             </div>
           </div>
           <div class="value__control"> <span class="babies">младенцы</span>
             <div class="value__block">
-              <button class="babies btn--minus">-</button><span class="babies btn-value">0</span>
+              <button class="babies btn--minus btn-active">-</button><span class="babies btn-value">0</span>
               <button class="babies btn--plus">+</button>
             </div>
           </div>
@@ -311,7 +314,7 @@
         <input type="checkbox" id="k">
         <label for="k"> 
           <div class="checkBox__difficult">
-            <p>Широкий коридор</p><span>Ширина коридора в номере не менее 91 см.</span>
+            <p>Широкий коридор</p><span>Ширина коридоров в номере не менее 91 см.</span>
           </div>
         </label>
       </div>
@@ -333,19 +336,19 @@
         <div class="dropdown__content guest-design--active">
           <div class="value__control"> <span class="adults">взрослые</span>
             <div class="value__block">
-              <button class="adults btn--minus">-</button><span class="adults btn-value">0</span>
+              <button class="adults btn--minus btn-active">-</button><span class="adults btn-value">0</span>
               <button class="adults btn--plus">+</button>
             </div>
           </div>
           <div class="value__control"> <span class="children">дети</span>
             <div class="value__block">
-              <button class="children btn--minus">-</button><span class="children btn-value">0</span>
+              <button class="children btn--minus btn-active">-</button><span class="children btn-value">0</span>
               <button class="children btn--plus">+</button>
             </div>
           </div>
           <div class="value__control"> <span class="babies">младенцы</span>
             <div class="value__block">
-              <button class="babies btn--minus">-</button><span class="babies btn-value">0</span>
+              <button class="babies btn--minus btn-active">-</button><span class="babies btn-value">0</span>
               <button class="babies btn--plus">+</button>
             </div>
           </div>
@@ -373,7 +376,7 @@
       </div>
       <div class="grade-visual--convenience"><img src="/hotelScout/assets/location_city.svg" alt="comfort place">
         <div> 
-          <p>Удобство</p><span>Окно в каждой спальне</span>
+          <p>Удобство</p><span>Окно в каждой из спален</span>
         </div>
       </div>
     </div>

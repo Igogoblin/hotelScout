@@ -11,6 +11,7 @@ import "./components/footer/footer.pug";
 import "./components/footer/footer.scss";
 import "./routing/router.js";
 import "./components/main/forMain.js";
+import "./pages/cards/cards.scss";
 import "./pages/cards/cards.js";
 import "./pages/search/search.js";
 import "./pages/search/search.scss";

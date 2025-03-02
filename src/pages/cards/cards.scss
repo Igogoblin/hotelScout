@@ -1,0 +1,7 @@
+@use "../../styles/_const.scss" as *;
+.card__calendar {
+  width: 320px;
+  height: 369px;
+  border: 1px solid $darkShade-25;
+  border-radius: 4px;
+}

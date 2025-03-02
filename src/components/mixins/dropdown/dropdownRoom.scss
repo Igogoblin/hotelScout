@@ -39,6 +39,13 @@
     }
     .dropdown__content {
       border: 1px solid $darkShade-50;
+      border-radius: 4px;
+      // .value__control {
+      //   span {
+      //     color: $darkShade-100;
+      //     font-weight: 700;
+      //   }
+      // }
     }
     .dropdown__content--active {
       display: none;
