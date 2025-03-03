@@ -1,13 +1,87 @@
 @use "../../styles/_const.scss" as *;
+
 .cardsPage {
+  max-height: 1150px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  gap: 40px;
   padding: 51px 0 0 0;
   align-items: baseline;
+  .card__calendar {
+    position: relative;
+    pointer-events: none;
+    .air-datepicker.-inline- {
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      .air-datepicker--navigation {
+        .air-datepicker-nav {
+          width: 290px;
+          padding: 13px 15px 10px 10px;
+          .air-datepicker-nav--action {
+            svg {
+              width: 19px;
+              height: 17px;
+            }
+          }
+          .air-datepicker-nav--title {
+            padding: 0 5px 0 10px;
+            letter-spacing: 0.5px;
+          }
+        }
+      }
+      .air-datepicker--content {
+        .air-datepicker-body.-days- {
+          .air-datepicker-body--day-names {
+            margin: 12px 0 0 0;
+          }
+          .-selected-.air-datepicker-cell.-day-.-range-from- {
+            background: linear-gradient(180deg, $green 0%, $green-grand 100%);
+          }
+          .checkingDate {
+            background: linear-gradient(180deg, $purple 0%, $purple-grand 100%);
+            border-radius: 50%;
+            color: $white;
+          }
+          .checkingPeriod {
+            background: $purple;
+            opacity: 0.18;
+            border-radius: none;
+          }
+        }
+      }
+      .air-datepicker--buttons {
+        padding: 6px 0 0 0;
+        .air-datepicker-buttons {
+          .air-datepicker-button {
+            margin-top: 15px;
+            @include font-style(h3);
+            text-transform: uppercase;
+            span {
+              margin: 0 15px 0 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1220px) {
+  .cardsPage {
+    max-height: 2260px;
+    align-items: center;
+  }
+}
+@media (max-width: 800px) {
+  .cardsPage {
+    max-height: 3260px;
+  }
 }
 .card__calendar {
   width: 320px;
   height: 369px;
-  border: 1px solid $darkShade-25;
-  border-radius: 4px;
 }
 .card__room {
   .card__wrapper {
@@ -17,5 +91,27 @@
   }
 }
 .room__card {
-  // margin: 0 0 0 20px;
+  .room__card-wrapper {
+    .room__card-body {
+      .card-number {
+        .card-number__room {
+          font-size: 21px;
+          line-height: 21px;
+        }
+        .card-number__room-lux {
+          margin: 0;
+        }
+      }
+      .card-cash {
+        letter-spacing: -0.8px;
+      }
+    }
+    .room__card-footer {
+      .card-star {
+        .feedbackQuality__block {
+          margin: 0 0 2px 4px;
+        }
+      }
+    }
+  }
 }
