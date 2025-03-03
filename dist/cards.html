@@ -22,17 +22,17 @@
 </header>
 <div class="wrapper cardsPage ui__area"> 
   <div class="find-room">
-    <h2>Найдём номера под ваши пожелания</h2>
+    <h1>Найдём номера под ваши пожелания</h1>
     <div class="calendar__period" id="findRoom"> 
-      <label for="arrival-findRoom">
+      <label for="arrival-findRoom">прибытие
         <input class="main__arrival" type="date" name="arrival" id="arrival-findRoom"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
       </label>
-      <label for="departure-findRoom">
+      <label for="departure-findRoom">выезд
         <input class="main__departure" type="date" name="departure" id="departure-findRoom"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
       </label>
     </div>
     <div class="dropdown">
-      <label for="guest"></label>
+      <label for="guest">гости</label>
       <div class="guest-title"> 
         <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
         <div class="dropdown__content ">
@@ -94,9 +94,11 @@
         <input class="registrationPassword" type="password" id="enterPassword-ui" name="enterEmail" placeholder="Пароль">
       </label>
       <div class="registration">
-        <div class="toggle"> 
-          <input class="toggle-checkbox" type="checkbox" id="special" name="special">
-          <label class="toggle-label" for="special"> </label><span>Получать спецпредложения</span>
+        <div class="toggleButton__block"> 
+          <div class="toggleButton__wrapper">
+            <input class="toggle-checkbox" type="checkbox" id name>
+            <label class="toggle-label" for> </label><span>Получать спецпредложения</span>
+          </div>
         </div>
       </div>
       <div class="btn__block undefined">
@@ -112,7 +114,7 @@
   <div class="card__room">
     <div class="card__wrapper"> 
       <div class="room__card-body"> 
-        <div class="card-number">№ 888 <span>люкс</span>
+        <div class="card-number"><span class="card-number__room">№ 888 </span><span class="card-number__room-lux">люкс</span>
         </div>
         <div class="card-cash"> 9990₽<span> в сутки</span></div>
       </div>
@@ -202,9 +204,11 @@
         <input class="registrationPassword" type="password" id="enterPassword-cards" name="enterEmail" placeholder="Пароль">
       </label>
       <div class="registration enter__card">
-        <div class="toggle"> 
-          <input class="toggle-checkbox" type="checkbox" id="special" name="special">
-          <label class="toggle-label" for="special"> </label><span>Получать спецпредложения</span>
+        <div class="toggleButton__block"> 
+          <div class="toggleButton__wrapper">
+            <input class="toggle-checkbox" type="checkbox" id name>
+            <label class="toggle-label" for> </label><span>Получать спецпредложения</span>
+          </div>
         </div>
       </div>
       <div class="btn__block undefined">
@@ -217,6 +221,7 @@
       </div>
     </div>
   </div>
+  <div class="card__calendar"></div>
   <div class="room__card"> 
     <div class="room__card-image"> 
       <div class="swiper"> 
@@ -233,7 +238,7 @@
     </div>
     <div class="room__card-wrapper">
       <div class="room__card-body"> 
-        <div class="card-number">№ 888 <span>люкс</span>
+        <div class="card-number"><span class="card-number__room">№ 888 </span><span class="card-number__room-lux">люкс</span>
         </div>
         <div class="card-cash"> 9990₽<span> в сутки</span></div>
       </div>
@@ -263,7 +268,7 @@
     </div>
     <div class="room__card-wrapper">
       <div class="room__card-body"> 
-        <div class="card-number">№ 840 
+        <div class="card-number"><span class="card-number__room">№ 840 </span>
         </div>
         <div class="card-cash"> 9900₽<span> в сутки</span></div>
       </div>

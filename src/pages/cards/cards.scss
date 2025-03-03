@@ -1,7 +1,21 @@
 @use "../../styles/_const.scss" as *;
+.cardsPage {
+  padding: 51px 0 0 0;
+  align-items: baseline;
+}
 .card__calendar {
   width: 320px;
   height: 369px;
   border: 1px solid $darkShade-25;
   border-radius: 4px;
+}
+.card__room {
+  .card__wrapper {
+    .calendar__period {
+      margin: 20px 0 0 0;
+    }
+  }
+}
+.room__card {
+  // margin: 0 0 0 20px;
 }

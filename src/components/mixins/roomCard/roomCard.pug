@@ -23,8 +23,9 @@ mixin feedbackQuality(options)
 
 mixin roomCardBody(options)
     .room__card-body 
-        .card-number № #{options.number} 
+        .card-number
+            .card-number__room № #{options.number} 
             if(options.lux)
-                span люкс
+                .card-number__room-lux люкс
         .card-cash  #{options.price}₽
             span  в сутки

@@ -274,11 +274,14 @@
 .forRegistration {
   max-width: 380px;
   width: 100%;
+
   background-color: $white;
   border: 1px solid $darkShade-12;
   border-radius: 4px;
   box-shadow: 0px 0px 25px 0px $darkShade-20;
-
+  &.enter-form {
+    height: 646px;
+  }
   .registration__block {
     width: 100%;
     height: 100%;
@@ -286,22 +289,31 @@
     h2 {
       font-weight: 700;
       font-size: 24px;
-      line-height: 20px;
+      line-height: 29.26px;
       color: $darkShade-100;
       margin-bottom: 20px;
+      letter-spacing: 0.5px;
     }
     .registration {
+      .toggleButton__block {
+        .toggleButton__wrapper {
+          span {
+            margin-top: 7px;
+          }
+        }
+      }
       & > input {
         width: 100%;
         margin-bottom: 10px;
       }
 
       & + div {
-        margin-top: 20px;
+        margin-top: 22px;
       }
     }
-    .registration + button {
-      height: 44px;
+    .registration__footer button {
+      height: 40px;
+      width: 96px;
     }
     .registrationEmail,
     .registrationPassword,
@@ -354,7 +366,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      margin: 20px 0;
+      margin: 24px 0 17px 0;
       text-transform: uppercase;
       font-size: 12px;
       line-height: 14.63px;
@@ -381,63 +393,8 @@
     .registrationEmail {
       margin: 5px 0 10px 0;
     }
-    // ========================================================================
-    .toggle {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      line-height: 24px;
-      color: $darkShade-75;
-      position: relative;
-      .toggle-checkbox {
-        opacity: 0;
-        position: absolute;
-        width: 40px;
-        height: 20px;
-        z-index: 1;
-        cursor: pointer;
-      }
-      .toggle-label {
-        width: 40px;
-        height: 20px;
-        margin-top: 10px;
-        // gap: 10px;
-
-        background-color: $white;
-        border-radius: 25px;
-        position: relative;
-        border: 1px solid $darkShade-25;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        display: flex;
-        align-items: center;
-      }
-      .toggle-label::after {
-        content: "";
-        width: 12px;
-        height: 12px;
-
-        background-color: $darkShade-25;
-        border-radius: 50%;
-        position: absolute;
-        top: 3px;
-        left: 4px;
-        transition: transform 0.3s;
-      }
-      input:checked + .toggle-label {
-        border-color: $purple;
-      }
-      input:checked + .toggle-label::after {
-        transform: translateX(18px);
-        background: linear-gradient(180deg, $purple 0%, $purple-grand 100%);
-        cursor: pointer;
-      }
-      span {
-        margin: 10px 0 0 10px;
-      }
-    }
     .registration__footer {
-      margin-top: 30px;
+      margin-top: 31px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -446,6 +403,14 @@
         font-size: 14px;
         line-height: 18px;
         color: $darkShade-100;
+        letter-spacing: -0.2px;
+      }
+    }
+  }
+  &.registration-form {
+    .registration__block {
+      h2 {
+        margin-bottom: 15px;
       }
     }
   }

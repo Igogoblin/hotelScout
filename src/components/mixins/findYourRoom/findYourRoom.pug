@@ -2,7 +2,7 @@ include ../mixins.pug
 
 mixin findYourRoom
     .find-room
-        h2 Найдём номера под ваши пожелания
-        +calendarCheck({idCalendar: "findRoom"})
-        +dropdownGuest({label: ""})
+        h1 Найдём номера под ваши пожелания
+        +calendarCheck({idCalendar: "findRoom", arrival: "прибытие", departure: "выезд"})
+        +dropdownGuest({label: "гости"})
         +button({text: "подобрать номер", isImage: true, isPrimary: true})

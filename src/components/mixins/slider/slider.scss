@@ -15,15 +15,15 @@
   }
   .swiper-pagination {
     text-align: right;
-    bottom: 15px;
-    padding: 0 15px 0 0;
+    bottom: 12px;
+    padding: 0 13px 0 0;
     .swiper-pagination-bullet {
       background: $white;
       width: 7.5px;
       height: 7.5px;
       background: transparent;
       // background: none;
-
+      margin: 0 2px;
       border: 1px solid $white;
       opacity: 1;
       &.swiper-pagination-bullet-active {
@@ -35,13 +35,13 @@
   .swiper-button-prev {
     // background: url("@assets/swiperNext.svg") no-repeat;
     color: $white;
-    width: 24px;
-    height: 24px;
-
+    width: 16px;
+    height: 16px;
+    padding-top: 22px;
     &::after {
-      width: 24px;
-      height: 24px;
-      font-size: 20px;
+      width: 16px;
+      height: 16px;
+      font-size: 11px;
     }
   }
   .swiper-button-prev {
