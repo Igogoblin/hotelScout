@@ -1,4 +1,39 @@
 <head><script defer src="/hotelScout/bundle.js"></script></head>
+<div class="header">
+  <div class="wrapper"><a class="link-to-main" href="/" data-link><img src="/hotelScout/assets/logo.svg" alt="logo"></a>
+    <div class="wrapper__content">
+      <ul class=" header-navigation"> 
+        <li><a href="/hotelScout/about" data-link>О нас</a></li>
+        <li class="showMore">Услуги<img src="/hotelScout/assets/expand_more.svg" alt="expand more"></li>
+        <li>Вакансии</li>
+        <li>Новости</li>
+        <li class="showMore"> <a href="/hotelScout/ui-colors" data-link><span>Соглашения<img src="/hotelScout/assets/expand_more.svg" alt="expand more"></span></a></li>
+      </ul>
+      <div class=" user-acc">
+        <div class="user-acc__info"><span>Юлий Цезарь</span></div>
+      </div>
+      <div class=" in-area">
+        <div class="btn__block btn-login">
+          <button class="btn btn--second" onclick="location.href='/hotelScout/enter'">войти</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+        </div>
+        <div class="btn__block btn-register">
+          <button class="btn btn--primary" onclick="location.href='/hotelScout/registration'">зарегистрироваться</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+        </div>
+      </div>
+      <div class="menu-btn"> <span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+      <div class="header__nav"> 
+        <nav class="nav"> 
+          <ul class="nav__list"> 
+            <li> <a href="/hotelScout/about" data-link>О нас</a></li>
+            <li>Услуги </li>
+            <li>Вакансии</li>
+            <li>Новости</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
 <section class="registration__area"><img class="main__image" src="/hotelScout/assets/registrationPage.jpg" alt="background">
   <div class="wrapper"> 
     <div class="forRegistration show enter-form">
@@ -7,13 +42,15 @@
         <div class="registration">
           <input class="registrationName" type="text" name="name" placeholder="Имя">
           <input class="registrationSurname" type="text" name="surname" placeholder="Фамилия">
-          <div class="forMale">
-            <label for="male">
-              <input class="registrationMale" type="radio" id="male" name="gender" value="male">Мужчина
-            </label>
-            <label for="female">
-              <input class="registrationFemale" type="radio" id="female" name="gender" value="female">Женщина
-            </label>
+          <div class="radioButton__block"> 
+            <div class="radioButton__wrapper">
+              <input type="radio" id="radio1" name="radio">
+              <label for="radio1">Мужчина</label>
+            </div>
+            <div class="radioButton__wrapper">
+              <input type="radio" id="radio2" name="radio">
+              <label for="radio2">Женщина</label>
+            </div>
           </div>
           <div class="born"> 
             <label for="born">дата рождения
@@ -21,16 +58,18 @@
             </label>
           </div>
         </div><span class="registration__forEnter">данные для входа в сервис</span>
-        <label for="enterEmail"> 
-          <input class="registrationEmail" type="email" id="enterEmail" name="enterEmail" placeholder="Email">
+        <label for="enterEmail-main"> 
+          <input class="registrationEmail" type="email" id="enterEmail-main" name="enterEmail" placeholder="Email">
         </label>
-        <label for="enterPassword">
-          <input class="registrationPassword" type="password" id="enterPassword" name="enterEmail" placeholder="Пароль">
+        <label for="enterPassword-main">
+          <input class="registrationPassword" type="password" id="enterPassword-main" name="enterEmail" placeholder="Пароль">
         </label>
         <div class="registration">
-          <div class="toggle"> 
-            <input class="toggle-checkbox" type="checkbox" id="special" name="special">
-            <label class="toggle-label" for="special"> </label><span>Получать спецпредложения</span>
+          <div class="toggleButton__block"> 
+            <div class="toggleButton__wrapper">
+              <input class="toggle-checkbox" type="checkbox" id name>
+              <label class="toggle-label" for> </label><span>Получать спецпредложения</span>
+            </div>
           </div>
         </div>
         <div class="btn__block undefined">

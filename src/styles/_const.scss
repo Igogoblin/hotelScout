@@ -5,6 +5,7 @@ $darkShade-50: rgba(31, 32, 65, 0.5);
 $darkShade-25: rgba(31, 32, 65, 0.25);
 $darkShade-20: rgba(31, 32, 65, 0.2);
 $darkShade-12: rgba(31, 32, 65, 0.12);
+$darkShade-10: rgba(31, 32, 65, 0.1);
 $darkShade-5: rgba(31, 32, 65, 0.05);
 $purple: rgba(188, 156, 255, 1);
 $purple-grand: rgba(139, 164, 248, 1);
@@ -19,6 +20,7 @@ $fontSize: (
   h2: 19px,
   h3: 12px,
   body: 14px,
+  title: 14px,
 );
 
 $lineHeight: (
@@ -26,6 +28,7 @@ $lineHeight: (
   h2: 23.16px,
   h3: 14.63px,
   body: 24px,
+  title: 17.07px,
 );
 
 $fontWeight: (
@@ -33,6 +36,7 @@ $fontWeight: (
   h2: 700,
   h3: 400,
   body: 400,
+  title: 400,
 );
 
 @mixin font-style($key) {
@@ -41,31 +45,3 @@ $fontWeight: (
   font-weight: map.get($fontWeight, $key);
   line-height: map.get($lineHeight, $key);
 }
-
-// @mixin font-header {
-//   font-family: $fontFamily;
-//   font-size: map.get($fontSize, h1);
-//   font-weight: map.get($fontWeight, h1);
-//   line-height: map.get($lineHeight, h1);
-// }
-
-// @mixin font-title {
-//   font-family: $fontFamily;
-//   font-size: map.get($fontSize, h2);
-//   font-weight: map.get($fontWeight, h2);
-//   line-height: map.get($lineHeight, h2);
-// }
-
-// @mixin font-subtitle {
-//   font-family: $fontFamily;
-//   font-size: map.get($fontSize, h3);
-//   font-weight: map.get($fontWeight, h3);
-//   line-height: map.get($lineHeight, h3);
-// }
-
-// @mixin font-body {
-//   font-family: $fontFamily;
-//   font-size: map.get($fontSize, body);
-//   font-weight: map.get($fontWeight, body);
-//   line-height: map.get($lineHeight, body);
-// }

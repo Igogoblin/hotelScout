@@ -1,6 +1,10 @@
 include ../components/mixins/mixins.pug
 
+include ../components/header/header.pug
+
++header
 section.registration__area
     img(src=require("@assets/registrationPage.jpg").default, alt="background", class="main__image")
     .wrapper 
-        +registration({isEnter: true, className: true })
+        +registration({isEnter: true, className: true , page: "main"})
+include ../components/footer/footer.pug

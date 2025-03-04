@@ -1,6 +1,14 @@
 include ../components/mixins/mixins.pug
+include ../components/header/header.pug
+include ../components/footer/footer.pug
 
-+ui-header({title: "Headers & Footers", active: "headers"})
-.wrapper.headersPage 
-
-    h1 this is a headers.pug file
+section.headers
+    +ui-header({title: "Headers & Footers", active: "headers", className:"ui__area"})
+    .headerPage__wrapper
+    +header()
+    .headerPage__wrapper
+    +header({classRegistration: "userRegistration"})
+    .headerPage__wrapper
+    +footer()
+    .headerPage__wrapper
+    +footer({isMobile: true})

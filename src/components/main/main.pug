@@ -1,18 +1,15 @@
-//- include ../mixins/mixins.pug
+include ../mixins/mixins.pug
+include ../header/header.pug
+include ../footer/footer.pug
 
++header()
 main
-    //- img(src=require("@assets/mainImage.jpg").default, alt="background", class="main__image")
     img(src=require("./assets/mainImage.jpg").default, alt="background", class="main__image")
     .wrapper 
-        +cardCalendar({idCalendar: "mainCalendar"} )
-        //- .dynamic__content
-        //- input#myId(style="position: relative")
-        //- input#my-element
-        //- +registration({isEnter: false, className: false })
-        //- +registration({isEnter: true, className: false })
+        +cardCalendar({idCalendar: "mainCalendar", arrival:"прибытие", departure: "выезд",label:"Гости"} )
 
         span.main__text
             | Лучшие номера для вашей работы,
             br
             | отдыха и просто вдохновения
-        
++footer()

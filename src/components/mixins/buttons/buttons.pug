@@ -1,0 +1,21 @@
+mixin radioButton 
+    .radioButton__block 
+        .radioButton__wrapper
+            input(type="radio", id="radio1", name="radio")
+            label(for="radio1") Мужчина
+        .radioButton__wrapper
+            input(type="radio", id="radio2", name="radio")
+            label(for="radio2") Женщина
+
+mixin toggleButton(options) 
+    .toggleButton__block 
+        .toggleButton__wrapper
+            input(type="checkbox", id=options.className name=options.className class="toggle-checkbox" checked=options.checked ? "checked" : null)
+            label(for=options.className class="toggle-label") 
+            span Получать спецпредложения
+
+mixin likeButton(options)
+    div(class=`likeButton__block ${options.className?options.className:""} ${options.checked ? 'checked' : ''}`)
+        img.likeButton__icon.likeButton__icon--checked(src=require("@assets/favorite.svg").default, alt="like")
+        img.likeButton__icon.likeButton__icon--unchecked(src=require("@assets/favorite_border.svg").default, alt="like")
+        span.likeText= options.checked ? 12 : 2

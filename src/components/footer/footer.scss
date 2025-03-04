@@ -5,10 +5,9 @@ footer {
   font-size: 14px;
   line-height: 17.07px;
   color: $darkShade-50;
-  // position: fixed;
-  // bottom: 0;
+  background: $white;
   margin: 0 auto;
-  //   margin: auto 0 0 0;
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -18,14 +17,15 @@ footer {
       display: flex;
       justify-content: space-between;
       gap: 40px;
-      .footer__about {
+      margin: 100px 0 80px;
+      .footer__title {
         max-width: 260px;
         width: 100%;
         height: 132px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        line-height: 24px;
+        gap: 17px;
+        @include font-style(body);
         color: $darkShade-75;
 
         img {
@@ -33,50 +33,44 @@ footer {
           height: 40px;
         }
       }
+      .footer__text {
+        width: 560px;
+        display: flex;
+        justify-content: start;
+        gap: 57px;
+        .support {
+          margin-left: 33px;
+        }
+      }
       .menu__list-support {
         min-width: 149px;
         width: 100%;
       }
+
       .subscription {
         .subscription__title {
           font-weight: 700;
-          font-size: 12px;
-          line-height: 14.63px;
+          @include font-style(h3);
           text-transform: uppercase;
           color: $darkShade-100;
         }
         .subscription__text {
           line-height: 24px;
           color: $darkShade-75;
-          margin: 21px 0 20px 0;
+          margin: 15px 0 23px 0;
         }
         .footer__email {
           width: 260px;
           height: 44px;
           position: relative;
-          input {
-            position: absolute;
-            width: 260px;
-            // height: 44px;
-            // border: 1px solid $darkShade-25;
-            // border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            // padding: 0 15px;
-            // &::placeholder {
-            //   color: $darkShade-25;
-            // }
-          }
-          img {
-            position: absolute;
-            right: 10px;
-            top: calc(50% - 10px);
-
-            width: 20px;
-            height: 20px;
-          }
         }
+      }
+
+      .footer__navigation,
+      .footer__about,
+      .support,
+      .subscription {
+        margin-top: 5px;
       }
     }
     .footer__foot {
@@ -86,11 +80,98 @@ footer {
       justify-content: space-between;
       align-items: center;
       border-top: 1px solid $darkShade-5;
+      @include font-style(title);
+      letter-spacing: 0;
       .footer__social {
         width: 112px;
-        height: 24px;
+        height: 23px;
         display: flex;
         justify-content: space-between;
+      }
+    }
+  }
+}
+@media (max-width: 960px) {
+  footer {
+    .wrapper {
+      .footer__head {
+        gap: 20px;
+        .footer__text {
+          // width: 560px;
+          gap: 20px;
+          .support {
+            margin-left: 0px;
+          }
+        }
+        .subscription {
+          width: 230px;
+
+          .input__block {
+            width: 230px;
+            input.footer__email {
+              width: 230px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+footer.footerMobile {
+  max-width: 768px;
+  width: 100%;
+  height: 367px;
+  box-shadow: 0px 10px 20px 0px rgba(31, 32, 65, 0.05);
+  .wrapper {
+    .footer__head {
+      justify-content: center;
+      margin: 120px 0 20px;
+      .footer__title p,
+      .footer__navigation,
+      .footer__about,
+      .support,
+      .subscription,
+      .footer__text {
+        display: none;
+      }
+    }
+    .footer__title {
+      align-items: center;
+      height: 40px;
+    }
+    .footer__foot {
+      height: 66px;
+      flex-direction: column;
+      border: none;
+      margin-bottom: 120px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    .wrapper {
+      .footer__head {
+        justify-content: center;
+        margin: 120px 0 20px;
+        .footer__title p,
+        .footer__navigation,
+        .footer__about,
+        .support,
+        .subscription,
+        .footer__text {
+          display: none;
+        }
+      }
+      .footer__title {
+        align-items: center;
+        height: 40px;
+      }
+      .footer__foot {
+        height: 66px;
+        flex-direction: column;
+        border: none;
+        margin-bottom: 120px;
       }
     }
   }

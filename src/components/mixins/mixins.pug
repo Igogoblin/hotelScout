@@ -1,3 +1,5 @@
+include ./mburger/mburger.pug
+include ./buttons/buttons.pug
 
 mixin button(options )
         div(class=`btn__block ${options.className}`)
@@ -23,30 +25,30 @@ mixin cardCalendar(options)
             //-         input(type="date", name="arrival", id=`arrival-${options.idCalendar}`, class="main__arrival")
             //-     label(for=`departure-${options.idCalendar}`) выезд
             //-         input(type="date", name="departure", id=`departure-${options.idCalendar}`, class="main__departure")
-            +dropdownGuest
-            +button({text:"подобрать номер", isPrimary:true, isImage:true, link:"search"})
+            +dropdownGuest(options)
+            +button({text:"подобрать номер", isPrimary:true, isImage:true, link:"/hotelScout/search"})
 
 mixin calendarCheck(options)
             .calendar__period(id=options.idCalendar) 
-                label(for=`arrival-${options.idCalendar}`) прибытие
+                label(for=`arrival-${options.idCalendar}`) #{options.arrival}
                     input(type="date", name="arrival", id=`arrival-${options.idCalendar}`, class="main__arrival")
                     img(src=require("@assets/expand_more.svg").default, alt="expend more")
-                label(for=`departure-${options.idCalendar}`) выезд
+                label(for=`departure-${options.idCalendar}`) #{options.departure}
                     input(type="date", name="departure", id=`departure-${options.idCalendar}`, class="main__departure")
                     img(src=require("@assets/expand_more.svg").default, alt="expend more")
 
-mixin dropdownGuest(className)
+mixin dropdownGuest(options)
     div(class='dropdown')
-        label(for="guest") Гости
+        label(for="guest") #{options.label?options.label:""}
         .guest-title 
             button(class="show-dropdown") Сколько гостей
-            img(src=require("@assets/expand_more.svg").default, alt="expend more")
-            .dropdown__content 
+            img(src=require("@assets/expand_more.svg").default, alt="expand more")
+            div(class=`dropdown__content ${options.isContent? "guest-design--active":""}`)
                 +valueControl("взрослые", "adults")
                 +valueControl("дети", "children") 
                 +valueControl("младенцы", "babies")
                 .guest-design 
-                    button(class="guest__button--clear") очистить
+                    button(class=`guest__button--clear ${options.isClear?options.isClear:""}`) очистить
                     button(class="guest__button--apply") применить
 
 //- valueControl for dropdownGuest
@@ -55,7 +57,7 @@ mixin valueControl(name, className)
     .value__control 
         span(class=className)= name
         .value__block
-            button(class=`${className} btn--minus`) -
+            button(class=`${className} btn--minus btn-active`) -
             span(class=`${className} btn-value`) 0
             button(class=`${className} btn--plus`) +
 
@@ -74,26 +76,28 @@ mixin registration(options)
             div(class=registrationClassName)
                 input(type="text", name="name", class="registrationName", placeholder="Имя")
                 input(type="text", name="surname", class="registrationSurname", placeholder="Фамилия")
-                .forMale
-                    label(for="male")
-                        input(type="radio" id="male" name="gender" class="registrationMale" value="male")
-                        | Мужчина
-                    label(for="female")
-                        input(type="radio" id="female" name="gender" class="registrationFemale" value="female")
-                        | Женщина
+                +radioButton
+                //- .forMale
+                //-     label(for="male")
+                //-         input(type="radio" id="male" name="gender" class="registrationMale" value="male")
+                //-         | Мужчина
+                //-     label(for="female")
+                //-         input(type="radio" id="female" name="gender" class="registrationFemale" value="female")
+                //-         | Женщина
                 .born 
                     label(for="born") дата рождения
                         input(type="date", name="born", id="born")
             span(class="registration__forEnter")= dataEnter
-            label(for="enterEmail") 
-                input(type="email", id="enterEmail" name="enterEmail" class="registrationEmail" placeholder="Email")
-            label(for="enterPassword")
-                input(type="password", id="enterPassword" name="enterEmail" class="registrationPassword" placeholder="Пароль")
+            label(for=`enterEmail-${options.page}`) 
+                input(type="email", id=`enterEmail-${options.page}` name="enterEmail" class="registrationEmail" placeholder="Email")
+            label(for=`enterPassword-${options.page}`)
+                input(type="password", id=`enterPassword-${options.page}` name="enterEmail" class="registrationPassword" placeholder="Пароль")
             div(class=registrationClassName)
-                .toggle 
-                    input(type="checkbox", id="special" name="special" class="toggle-checkbox")
-                    label(for="special" class="toggle-label") 
-                    span Получать спецпредложения
+                +toggleButton(options)
+                //- .toggle 
+                //-     input(type="checkbox", id="special" name="special" class="toggle-checkbox")
+                //-     label(for="special" class="toggle-label") 
+                //-     span Получать спецпредложения
             +button({text:forButton, isPrimary:true, isImage:true})
             .registration__footer
                 span= registrationText
@@ -101,8 +105,10 @@ mixin registration(options)
 
 
 mixin ui-header(options)
-    header.ui-header
-        div(class='wrapper')
+    header(class=`ui-header ${options.className? "ui__area":"" }`)
+
+        div(class='header-wrapper')
+            //- a(href="/"  data-link, onclick="initializeCalendar()")
             a(href="/"  data-link)
                 img(src=require("@assets/ui-logo.svg").default, alt="logo")
             span(class='ui__title')= options.title
@@ -112,15 +118,20 @@ mixin ui-header(options)
             { key: "cards", label: "Cards" },
             { key: "headers", label: "Headers & Footers" }
             ], options.active)
+            .menu-btn.bar-second 
+                span.bar
+                span.bar
+                span.bar
+            +burger(false)
 
 
 mixin menu(items, active)
-    ul
+    ul.header-navigation
         each item in items
             if active === item.key
                 li #{item.label}
             else
-                a(href=`/ui-${item.key}` data-link)
+                a(href=`/hotelScout/ui-${item.key}` data-link)
                     li #{item.label}
 
 mixin ui-color 
@@ -128,9 +139,9 @@ mixin ui-color
         +color-list([
             { color: "#1F2041", title: "Dark Shade 100%",opacity: 1},
             { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.75},
-            { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.50},
-            { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.25},
-            { color: "#1F2041", title: "Dark Shade 75%",opacity: 0.05},
+            { color: "#1F2041", title: "Dark Shade 50%",opacity: 0.50},
+            { color: "#1F2041", title: "Dark Shade 25%",opacity: 0.25},
+            { color: "#1F2041", title: "Dark Shade 5%",opacity: 0.05},
             { color: "#BC9CFF", title: "Purple",opacity: 1},
             { color: "#6FCF97", title: "Green",opacity: 1},
             
@@ -165,14 +176,3 @@ mixin type-list(types)
                 span= type.title
             .type__title
                 span= type.text
-
-mixin room-card()
-    .room__card 
-        .room__card-image 
-            .card-image-slider
-        .room__card-body 
-            .card-number 
-            .card-cash 
-        .room__card-footer
-            .card-star 
-            .card-review

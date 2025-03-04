@@ -1,0 +1,54 @@
+@use "../../../styles/const" as *;
+.swiper {
+  width: 270px;
+  height: 151px;
+  .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      width: 100%;
+      height: 100%;
+      // background: gray;
+      background-size: cover;
+      border-radius: 4px 4px 0 0;
+    }
+  }
+  .swiper-pagination {
+    text-align: right;
+    bottom: 12px;
+    padding: 0 13px 0 0;
+    .swiper-pagination-bullet {
+      background: $white;
+      width: 7.5px;
+      height: 7.5px;
+      background: transparent;
+      // background: none;
+      margin: 0 2px;
+      border: 1px solid $white;
+      opacity: 1;
+      &.swiper-pagination-bullet-active {
+        background: $white;
+      }
+    }
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    // background: url("@assets/swiperNext.svg") no-repeat;
+    color: $white;
+    width: 16px;
+    height: 16px;
+    padding-top: 22px;
+    &::after {
+      width: 16px;
+      height: 16px;
+      font-size: 11px;
+    }
+  }
+  .swiper-button-prev {
+    left: 20px;
+  }
+  .swiper-button-next {
+    right: 20px;
+    text-align: end;
+  }
+}

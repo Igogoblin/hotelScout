@@ -1,0 +1,10 @@
+mixin slider(options)
+    - const roomNumber = options.number;
+    - const imagePaths = Array.from({ length: options.images.length }, (_, i) => `./assets/rooms/room-${roomNumber}-${i + 1}.jpg`);
+    .swiper 
+        .swiper-wrapper 
+            each imagePath in imagePaths
+                .swiper-slide(style=`background-image: url('${imagePath}')`)
+        .swiper-pagination 
+        .swiper-button-prev 
+        .swiper-button-next 

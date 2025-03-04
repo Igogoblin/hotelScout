@@ -28,12 +28,16 @@
   },
   "homepage": "https://Igogoblin.github.io/hotelScout",
   "dependencies": {
+    "@glidejs/glide": "^3.7.1",
     "air-datepicker": "^3.5.3",
     "browserify-zlib": "^0.2.0",
     "express": "^4.21.2",
+    "mburger-webcomponent": "^3.1.4",
     "path-browserify": "^1.0.1",
     "pug-runtime": "^3.0.1",
     "querystring-es3": "^0.2.1",
+    "swiper": "^11.2.2",
+    "toolcool-range-slider": "^4.0.28",
     "webpack-node-externals": "^3.0.0"
   }
 }

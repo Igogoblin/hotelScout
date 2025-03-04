@@ -1,18 +1,30 @@
 include ../mixins/mixins.pug
+include ../mixins/mburger/mburger.pug
+include ../mixins/userAcc/userAcc.pug
 
-header
-    .wrapper
-        a(href="/"  data-link)
-            img(src=require("./assets/logo.svg").default, alt="logo")
-        ul 
-            a(href="/about"  data-link)
-                li О нас
-            li Услуги 
-            li Вакансии
-            li Новости
-            a(href="/ui-colors"  data-link)
-                li Соглашения
-        +button({text:"войти", isPrimary:false, className:"btn-login", link:"enter"})
-        +button({text:"зарегистрироваться", isPrimary:true, className:"btn-register", link:"registration"})
-
-    
+mixin header(options)
+    .header
+        .wrapper
+            a(href="/"  data-link, class="link-to-main")
+                img(src=require("@assets/logo.svg").default, alt="logo")
+            .wrapper__content
+                ul(class=`${options && options.classRegistration ? options.classRegistration : ""} header-navigation`)  
+                    li
+                        a(href="/hotelScout/about" data-link) О нас
+                    li.showMore Услуги
+                        img(src=require("@assets/expand_more.svg").default, alt="expand more") 
+                    li Вакансии
+                    li Новости
+                    li.showMore 
+                        a(href="/hotelScout/ui-colors" data-link)
+                            span Соглашения
+                                img(src=require("@assets/expand_more.svg").default, alt="expand more")
+                +userAcc(options)
+                div(class=`${options && options.classRegistration ? options.classRegistration : ""} in-area`)
+                    +button({text:"войти", isPrimary:false, className:"btn-login", link:"/hotelScout/enter"})
+                    +button({text:"зарегистрироваться", isPrimary:true, className:"btn-register", link:"/hotelScout/registration"})
+                .menu-btn 
+                    span.bar
+                    span.bar
+                    span.bar
+                +burger(true)   

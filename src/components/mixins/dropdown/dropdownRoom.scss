@@ -1,0 +1,54 @@
+@use "../../../styles/_const.scss" as *;
+.dropdownRoom {
+  .dropdownRoom__labels {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    margin-bottom: 5px;
+    @include font-style(h3);
+    label {
+      font-weight: 700;
+      color: $darkShade-100;
+    }
+    span {
+      font-weight: 400;
+      color: $darkShade-50;
+    }
+  }
+
+  .dropdownRoom-title {
+    position: relative;
+    .show-dropdownRoom {
+      width: 100%;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding: 0 15px;
+      border: 1px solid $darkShade-20;
+      border-radius: 4px;
+      background: $white;
+      @include font-style(body);
+      color: $darkShade-75;
+    }
+    img {
+      position: absolute;
+      right: 16px;
+      top: 20px;
+    }
+    .dropdown__content {
+      border: 1px solid $darkShade-50;
+      border-radius: 4px;
+      // .value__control {
+      //   span {
+      //     color: $darkShade-100;
+      //     font-weight: 700;
+      //   }
+      // }
+    }
+    .dropdown__content--active {
+      display: none;
+    }
+  }
+}

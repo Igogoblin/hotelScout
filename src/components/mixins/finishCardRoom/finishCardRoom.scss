@@ -1,0 +1,95 @@
+@use "../../../styles/const" as *;
+.card__room {
+  width: 380px;
+  height: 512px;
+  background: $white;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  .card__wrapper {
+    width: 320px;
+    margin: 0 auto;
+    padding: 41px 0 30px 0;
+    .room__card-body {
+      // margin-bottom: 20px;
+      .card-number {
+        font-size: 19px;
+        line-height: 23.16px;
+        letter-spacing: 0;
+        font-weight: 700;
+
+        &::first-letter {
+          font-size: 14px;
+          line-height: 17.07px;
+          // letter-spacing: 0;
+          // font-weight: 700;
+        }
+
+        span {
+          @include font-style(h3);
+          color: $purple;
+        }
+      }
+    }
+    .dropdown {
+      margin: 20px 0;
+      label {
+        @include font-style(h3);
+        font-weight: 700;
+        // &::first-letter {
+        //   text-transform: lowercase;
+        // }
+      }
+    }
+    .card__title {
+      @include font-style(body);
+      color: $darkShade-75;
+      letter-spacing: 0;
+      .serviceTitle {
+        display: flex;
+        justify-content: space-between;
+      }
+      .serviceFee {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0;
+        img {
+          margin: 0 auto 0 0;
+        }
+        .serviceFee-text {
+          width: 218px;
+        }
+      }
+      .serviceAddFee {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        img {
+          margin: 0 auto 0 0;
+        }
+        .serviceAddFee-text {
+          width: 218px;
+          height: 36px;
+          line-height: 18px;
+        }
+      }
+      .serviceTotal {
+        margin: 30px 0 20px 0;
+        @include font-style(h2);
+        display: flex;
+        justify-content: space-between;
+        .dottedLine {
+          width: 60%;
+          border-bottom: 1px dotted $darkShade-50;
+        }
+        .serviceTotal-value {
+          width: 77px;
+        }
+      }
+    }
+    .btn.btn--primary {
+      width: 100%;
+      height: 44px;
+    }
+  }
+}

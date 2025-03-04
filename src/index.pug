@@ -5,11 +5,21 @@ html(lang="en")
         link(rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css")
+        //- link(rel="stylesheet", href="node_modules/@glidejs/glide/dist/css/glide.core.min.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
+        //- link(rel="stylesheet", href="")
         script(src="https://cdn.jsdelivr.net/npm/flatpickr")
+        //- script(src="node_modules/@glidejs/glide/dist/glide.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
+        script(src="toolcool-range-slider.min.js")
+         link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toolcool-range-slider/dist/toolcool-range-slider.min.css")
+    script(src="https://cdn.jsdelivr.net/npm/toolcool-range-slider")
+        //- script(src="path/to/mburger.js" type=module)
         title HotelScout
     body 
-        include ./components/header/header.pug
-        #content
+        include ./components/main/main.pug
+        //- include ./components/header/header.pug
+        //- #content
             include ./components/main/main.pug
         //- include ./components/main/main.pug
-        include ./components/footer/footer.pug
+        //- include ./components/footer/footer.pug

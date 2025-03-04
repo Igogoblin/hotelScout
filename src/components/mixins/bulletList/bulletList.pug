@@ -1,0 +1,10 @@
+mixin bulletList(options)
+    .bulletList__block
+        if options.label 
+            span(class="bulletList__label") #{options.label}
+        ul(class=`bulletList ${options.className ? options.className : ''}`)
+            if options.items
+                each item in options.items
+                    li(class=`bulletList__item ${item.className ? item.className : ''}`)
+                        span(class="bulletList__dot")
+                        span #{item.text}

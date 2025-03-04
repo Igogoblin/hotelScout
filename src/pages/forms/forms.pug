@@ -1,0 +1,123 @@
+include ../../components/mixins/mixins.pug
+include ../../components/mixins/input/inputForm.pug
+include ../../components/mixins/checkbox/checkbox.pug
+include ../../components/mixins/buttons/buttons.pug
+include ../../components/mixins/roomCard/roomCard.pug
+include ../../components/mixins/rangeSlider/rangeSlider.pug
+include ../../components/mixins/pagination/pagination.pug
+include ../../components/mixins/dropdown/dropdownRoom.pug
+include ../../components/mixins/bulletList/bulletList.pug
+
++ui-header({title: "Form Elements", active: "forms", className:"ui__area ui__header"})
+.wrapper.formsPage 
+    .forms__input 
+        +inputForm({placeholder:"Email",type:"email", label: "Text Field", labelText:"Default"})
+        +inputForm({placeholder:"This is pretty awesome",type:"email", label: "Text Field", labelText:"Hover / Focus", className:"input__active"})
+        +dropdownGuest({label:"Dropdown"})
+        +inputForm({type:"date", label:"masked text field", class_name:"for__forms__input" })
+        +calendarCheck({idCalendar:"forCalendarShow", arrival:"date Dropdown", departure: "date Dropdown"})
+        +inputForm({type: "text", placeholder:"19 авг - 23 авг", label:"filter date dropdown",isImage: "down", class_name: "short sixChild__forms__input"})
+        +inputForm({type: "email", placeholder:"Email", label:"subscription text field", isImage: "go", class_name: "short"})
+
+    .forms__checkbox 
+        +checkBox({arr:[
+ { feature: "smocking", text: "Можно курить" },
+ { feature: "pet", text: "Можно с питомцами", checked: true },
+ { feature: "guests", text: "Можно пригласить гостей (до 10 человек)", checked: true} 
+],title: "Checkbox Buttons"})
+        .forms__radioButton
+            span radio buttons
+            +radioButton
+        .forms__toggle 
+            span toggle 
+            +toggleButton({className:"toggleButton", checked: true})
+            +toggleButton({className:"toggleButton"})
+        .forms__like 
+            span like button
+            .forms__like-area
+                +likeButton({checked: false})
+                +likeButton({className:"likeButton", checked: true})
+        .forms__rate 
+            span rate button
+            .forms__rate-area
+                +feedbackQuality(4)
+                +feedbackQuality(5)
+
+
+    .forms__button 
+        .forms__range 
+            .range-title
+                span range slider
+                .range-text 
+                    span.range-min 5 000₽ - 
+                    span.range-max 10 000₽
+            +rangeSlider
+        .forms__buttons 
+            span buttons 
+            .forms__buttons-area 
+                +button({isPrimary: true, text:"CLICK ME", className: "buttonSize"})
+                +button({isPrimary: true, text:"CLICK ME", className: "buttonSize"})
+                +button({isPrimary: false, text:"CLICK ME", className: "buttonSize"})
+                +button({isPrimary: false, text:"CLICK ME", className: "buttonSize"})
+                .text-buttons
+                    span click me
+                    span click me
+                +button({isPrimary: true, text:"перейти к оплате", className: "", isImage: true})
+        .forms__pagination 
+            span pagination
+            +pagination
+    
+
+    .forms__dropdown 
+        +dropdownRoom({value: "2 спальни, 2 кровати...", label: "Dropdown", labelText: "Default",isContent: true})
+        +dropdownRoom({value: "2 спальни, 2 кровати...", label: "Dropdown", labelText: "expanded",isContent: false})
+        +checkBox({title: "expandable checkbox list", isList: true})
+        +checkBox({arr:[
+ { feature: "breakfast", text: "Завтрак" },
+ { feature: "desk", text: "Письменный стол", checked: true  },
+ { feature: "babyChair", text: "Стул для кормления", checked: true  }, 
+ { feature: "babyBed", text: "Кроватка", checked: true  }, 
+ { feature: "tv", text: "Телевизор" }, 
+ { feature: "shampoo", text: "Шампунь" } 
+],title: "expandable checkbox list", isList: true, className: "checkBox__title-active"})
+
+    .forms__dropdownMin 
+        +dropdownGuest({value: "Сколько гостей", label: "Dropdown",isContent: true, isClear: "guest-clear--inActive"})
+        +checkBoxDifficult({arr:[
+            { feature: "k", text: "Широкий коридор", textSecond: "Ширина коридоров в номере не менее 91 см." },
+            {feature: "hel", text: "Помощник для инвалидов", textSecond:"На 1 этаже вас встретит специалист  и проводит до номера."},
+            ], title:"rich Checkbox Buttons", className: "checkBox__difficult"})
+    
+    .forms__dropdownMax
+        +dropdownGuest({value: "3 гостя", label: "Dropdown",isContent: true}) 
+        +bulletList({items:[
+            {text: "Нельзя с питомцами"},
+            {text: "Без вечеринок и мероприятий"},
+            {text: "Время прибытия — после 13:00, а выезд до 12:00"},], label: "bullet list"})
+        
+
+    .forms__grade
+        .forms__grade-visual
+            .grade-visual--comport
+                img(src=require("@assets/insert_emoticon.svg").default, alt="comfort")
+                div 
+                    p Комфорт
+                    span Шумопоглощающие стены
+            .grade-visual--convenience
+                img(src=require("@assets/location_city.svg").default, alt="comfort place")
+                div 
+                    p Удобство
+                    span Окно в каждой из спален
+        .forms__grade-user 
+            .grade-user 
+                .grade-user-image 
+                    img(src=require("@assets/muradSaraphanov.jpg").default, alt="user image", class="grade-user-image")
+                .grade-user-name 
+                    p Мурад Сарафанов
+                    span 5 дней назад
+            .grade-feedback 
+                .grade-feedback-like
+                    +likeButton({className:"likeButton", checked: true})
+                .grade-feedback-text 
+                    p Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+                    

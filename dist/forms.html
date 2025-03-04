@@ -1,27 +1,400 @@
 <head><script defer src="/hotelScout/bundle.js"></script></head>
-<header class="ui-header">
-  <div class="wrapper"><a href="/" data-link><img src="/hotelScout/assets/ui-logo.svg" alt="logo"></a><span class="ui__title">Form Elements</span>
-    <ul><a href="/ui-colors" data-link>
+<header class="ui-header ui__area">
+  <div class="header-wrapper"><a href="/" data-link><img src="/hotelScout/assets/ui-logo.svg" alt="logo"></a><span class="ui__title">Form Elements</span>
+    <ul class="header-navigation"><a href="/hotelScout/ui-colors" data-link>
         <li>Colors &amp; Type</li></a>
-      <li>Form Elements</li><a href="/ui-cards" data-link>
-        <li>Cards</li></a><a href="/ui-headers" data-link>
+      <li>Form Elements</li><a href="/hotelScout/ui-cards" data-link>
+        <li>Cards</li></a><a href="/hotelScout/ui-headers" data-link>
         <li>Headers &amp; Footers</li></a>
     </ul>
+    <div class="menu-btn bar-second"> <span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+    <div class="header__nav"> 
+      <nav class="nav"> 
+        <ul class="nav__list">
+          <li> <a href="/hotelScout/ui-colors" data-link>Colors & type</a></li>
+          <li> <a href="/hotelScout/ui-forms" data-link>Form Element</a></li>
+          <li> <a href="/hotelScout/ui-cards" data-link>Cards </a></li>
+          <li> <a href="/hotelScout/ui-headers" data-link>Headers & Footers</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 <div class="wrapper formsPage"> 
-  <h1>this is a form.pug file</h1>
-  <div class="room__card"> 
-    <div class="room__card-image"> 
-      <div class="card-image-slider"></div>
+  <div class="forms__input"> 
+    <div class="input__block undefined">
+      <label> <span>Text Field</span><span>Default</span></label>
+      <input type="email" placeholder="Email">
     </div>
-    <div class="room__card-body"> 
-      <div class="card-number"> </div>
-      <div class="card-cash"> </div>
+    <div class="input__block undefined">
+      <label> <span>Text Field</span><span>Hover / Focus</span></label>
+      <input class="input__active" type="email" placeholder="This is pretty awesome">
     </div>
-    <div class="room__card-footer">
-      <div class="card-star"> </div>
-      <div class="card-review"></div>
+    <div class="dropdown">
+      <label for="guest">Dropdown</label>
+      <div class="guest-title"> 
+        <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
+        <div class="dropdown__content ">
+          <div class="value__control"> <span class="adults">взрослые</span>
+            <div class="value__block">
+              <button class="adults btn--minus btn-active">-</button><span class="adults btn-value">0</span>
+              <button class="adults btn--plus">+</button>
+            </div>
+          </div>
+          <div class="value__control"> <span class="children">дети</span>
+            <div class="value__block">
+              <button class="children btn--minus btn-active">-</button><span class="children btn-value">0</span>
+              <button class="children btn--plus">+</button>
+            </div>
+          </div>
+          <div class="value__control"> <span class="babies">младенцы</span>
+            <div class="value__block">
+              <button class="babies btn--minus btn-active">-</button><span class="babies btn-value">0</span>
+              <button class="babies btn--plus">+</button>
+            </div>
+          </div>
+          <div class="guest-design"> 
+            <button class="guest__button--clear ">очистить</button>
+            <button class="guest__button--apply">применить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="input__block for__forms__input">
+      <label> <span>masked text field</span><span></span></label>
+      <input type="date">
+    </div>
+    <div class="calendar__period" id="forCalendarShow"> 
+      <label for="arrival-forCalendarShow">date Dropdown
+        <input class="main__arrival" type="date" name="arrival" id="arrival-forCalendarShow"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+      </label>
+      <label for="departure-forCalendarShow">date Dropdown
+        <input class="main__departure" type="date" name="departure" id="departure-forCalendarShow"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+      </label>
+    </div>
+    <div class="input__block short sixChild__forms__input">
+      <label> <span>filter date dropdown</span><span></span></label>
+      <input type="text" placeholder="19 авг - 23 авг"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+    </div>
+    <div class="input__block short">
+      <label> <span>subscription text field</span><span></span></label>
+      <input type="email" placeholder="Email"><img src="/hotelScout/assets/arrow_forward.svg" alt="enter">
+    </div>
+  </div>
+  <div class="forms__checkbox"> 
+    <div class="checkBox__block"> 
+      <div class="checkBox__title">
+        <h3>Checkbox Buttons</h3>
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="smocking">
+        <label for="smocking">Можно курить</label>
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="pet" checked="checked">
+        <label for="pet">Можно с питомцами</label>
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="guests" checked="checked">
+        <label for="guests">Можно пригласить гостей (до 10 человек)</label>
+      </div>
+    </div>
+    <div class="forms__radioButton"><span>radio buttons</span>
+      <div class="radioButton__block"> 
+        <div class="radioButton__wrapper">
+          <input type="radio" id="radio1" name="radio">
+          <label for="radio1">Мужчина</label>
+        </div>
+        <div class="radioButton__wrapper">
+          <input type="radio" id="radio2" name="radio">
+          <label for="radio2">Женщина</label>
+        </div>
+      </div>
+    </div>
+    <div class="forms__toggle"> <span>toggle </span>
+      <div class="toggleButton__block"> 
+        <div class="toggleButton__wrapper">
+          <input class="toggle-checkbox" type="checkbox" id="toggleButton" name="toggleButton" checked="checked">
+          <label class="toggle-label" for="toggleButton"> </label><span>Получать спецпредложения</span>
+        </div>
+      </div>
+      <div class="toggleButton__block"> 
+        <div class="toggleButton__wrapper">
+          <input class="toggle-checkbox" type="checkbox" id="toggleButton" name="toggleButton">
+          <label class="toggle-label" for="toggleButton"> </label><span>Получать спецпредложения</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms__like"> <span>like button</span>
+      <div class="forms__like-area">
+        <div class="likeButton__block  "><img class="likeButton__icon likeButton__icon--checked" src="/hotelScout/assets/favorite.svg" alt="like"><img class="likeButton__icon likeButton__icon--unchecked" src="/hotelScout/assets/favorite_border.svg" alt="like"><span class="likeText">2</span></div>
+        <div class="likeButton__block likeButton checked"><img class="likeButton__icon likeButton__icon--checked" src="/hotelScout/assets/favorite.svg" alt="like"><img class="likeButton__icon likeButton__icon--unchecked" src="/hotelScout/assets/favorite_border.svg" alt="like"><span class="likeText">12</span></div>
+      </div>
+    </div>
+    <div class="forms__rate"> <span>rate button</span>
+      <div class="forms__rate-area">
+        <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star_border.svg" alt="filled star">
+        </div>
+        <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="forms__button"> 
+    <div class="forms__range"> 
+      <div class="range-title"><span>range slider</span>
+        <div class="range-text"> <span class="range-min">5 000₽ - </span><span class="range-max">10 000₽</span></div>
+      </div>
+      <div class="slider-container">
+        <toolcool-range-slider min="0" max="15000" value1="5000" value2="10000" slider-width="266px" slider-height="6px" pointer-width="12px" pointer-height="12px" pointer-border="2px solid white" pointer-bg="MediumAquamarine" slider-bg="lightgray" slider-bg-fill="MediumAquamarine" slider-border="1px solid rad"></toolcool-range-slider>
+      </div>
+    </div>
+    <div class="forms__buttons"> <span>buttons </span>
+      <div class="forms__buttons-area"> 
+        <div class="btn__block buttonSize">
+          <button class="btn btn--primary" onclick="location.href='undefined'">CLICK ME</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+        </div>
+        <div class="btn__block buttonSize">
+          <button class="btn btn--primary" onclick="location.href='undefined'">CLICK ME</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+        </div>
+        <div class="btn__block buttonSize">
+          <button class="btn btn--second" onclick="location.href='undefined'">CLICK ME</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+        </div>
+        <div class="btn__block buttonSize">
+          <button class="btn btn--second" onclick="location.href='undefined'">CLICK ME</button><img class="btn__image-none" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+        </div>
+        <div class="text-buttons"><span>click me</span><span>click me</span></div>
+        <div class="btn__block ">
+          <button class="btn btn--primary" onclick="location.href='undefined'">перейти к оплате</button><img class="btn__image" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter">
+        </div>
+      </div>
+    </div>
+    <div class="forms__pagination"> <span>pagination</span>
+      <div class="pagination__block">
+        <div class="pagination"> 
+          <div class="pagination__item"> <a href="#">1</a></div>
+          <div class="pagination__item"> <a href="#">2</a></div>
+          <div class="pagination__item"> <a href="#">3</a></div>
+          <div class="pagination__item"> <a href="#">...</a></div>
+          <div class="pagination__item"> <a href="#">15</a></div>
+          <div class="pagination__item"> <a href="#">6<img class="forward" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter"></a></div>
+        </div>
+        <div class="pagination__title">1 – 12 из 100+ вариантов аренды</div>
+      </div>
+    </div>
+  </div>
+  <div class="forms__dropdown"> 
+    <div class="dropdownRoom">
+      <div class="dropdownRoom__labels">
+        <label for="guest">Dropdown</label><span>Default</span>
+      </div>
+      <div class="dropdownRoom-title"> 
+        <button class="show-dropdownRoom">2 спальни, 2 кровати...</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
+        <div class="dropdown__content dropdown__content--active"> 
+          <div class="value__control"> <span class="rooms">спальни</span>
+            <div class="value__block">
+              <button class="rooms btn--minus btn-active">-</button><span class="rooms btn-value">0</span>
+              <button class="rooms btn--plus">+</button>
+            </div>
+          </div>
+          <div class="value__control"> <span class="beds">кровати</span>
+            <div class="value__block">
+              <button class="beds btn--minus btn-active">-</button><span class="beds btn-value">0</span>
+              <button class="beds btn--plus">+</button>
+            </div>
+          </div>
+          <div class="value__control"> <span class="bathrooms">ванные комнаты</span>
+            <div class="value__block">
+              <button class="bathrooms btn--minus btn-active">-</button><span class="bathrooms btn-value">0</span>
+              <button class="bathrooms btn--plus">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dropdownRoom">
+      <div class="dropdownRoom__labels">
+        <label for="guest">Dropdown</label><span>expanded</span>
+      </div>
+      <div class="dropdownRoom-title"> 
+        <button class="show-dropdownRoom">2 спальни, 2 кровати...</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
+        <div class="dropdown__content "> 
+          <div class="value__control"> <span class="rooms">спальни</span>
+            <div class="value__block">
+              <button class="rooms btn--minus btn-active">-</button><span class="rooms btn-value">0</span>
+              <button class="rooms btn--plus">+</button>
+            </div>
+          </div>
+          <div class="value__control"> <span class="beds">кровати</span>
+            <div class="value__block">
+              <button class="beds btn--minus btn-active">-</button><span class="beds btn-value">0</span>
+              <button class="beds btn--plus">+</button>
+            </div>
+          </div>
+          <div class="value__control"> <span class="bathrooms">ванные комнаты</span>
+            <div class="value__block">
+              <button class="bathrooms btn--minus btn-active">-</button><span class="bathrooms btn-value">0</span>
+              <button class="bathrooms btn--plus">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="checkBox__block"> 
+      <div class="checkBox__title">
+        <h3>expandable checkbox list</h3><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+      </div>
+    </div>
+    <div class="checkBox__block"> 
+      <div class="checkBox__title">
+        <h3>expandable checkbox list</h3><img class="checkBox__title-active" src="/hotelScout/assets/expand_more.svg" alt="expend more">
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="breakfast">
+        <label for="breakfast">Завтрак</label>
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="desk" checked="checked">
+        <label for="desk">Письменный стол</label>
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="babyChair" checked="checked">
+        <label for="babyChair">Стул для кормления</label>
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="babyBed" checked="checked">
+        <label for="babyBed">Кроватка</label>
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="tv">
+        <label for="tv">Телевизор</label>
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="shampoo">
+        <label for="shampoo">Шампунь</label>
+      </div>
+    </div>
+  </div>
+  <div class="forms__dropdownMin"> 
+    <div class="dropdown">
+      <label for="guest">Dropdown</label>
+      <div class="guest-title"> 
+        <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
+        <div class="dropdown__content guest-design--active">
+          <div class="value__control"> <span class="adults">взрослые</span>
+            <div class="value__block">
+              <button class="adults btn--minus btn-active">-</button><span class="adults btn-value">0</span>
+              <button class="adults btn--plus">+</button>
+            </div>
+          </div>
+          <div class="value__control"> <span class="children">дети</span>
+            <div class="value__block">
+              <button class="children btn--minus btn-active">-</button><span class="children btn-value">0</span>
+              <button class="children btn--plus">+</button>
+            </div>
+          </div>
+          <div class="value__control"> <span class="babies">младенцы</span>
+            <div class="value__block">
+              <button class="babies btn--minus btn-active">-</button><span class="babies btn-value">0</span>
+              <button class="babies btn--plus">+</button>
+            </div>
+          </div>
+          <div class="guest-design"> 
+            <button class="guest__button--clear guest-clear--inActive">очистить</button>
+            <button class="guest__button--apply">применить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="checkBox__block"> 
+      <div class="checkBox__title">
+        <h3>rich Checkbox Buttons</h3>
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="k">
+        <label for="k"> 
+          <div class="checkBox__difficult">
+            <p>Широкий коридор</p><span>Ширина коридоров в номере не менее 91 см.</span>
+          </div>
+        </label>
+      </div>
+      <div class="checkBox__wrapper">
+        <input type="checkbox" id="hel">
+        <label for="hel"> 
+          <div class="checkBox__difficult">
+            <p>Помощник для инвалидов</p><span>На 1 этаже вас встретит специалист  и проводит до номера.</span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="forms__dropdownMax">
+    <div class="dropdown">
+      <label for="guest">Dropdown</label>
+      <div class="guest-title"> 
+        <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
+        <div class="dropdown__content guest-design--active">
+          <div class="value__control"> <span class="adults">взрослые</span>
+            <div class="value__block">
+              <button class="adults btn--minus btn-active">-</button><span class="adults btn-value">0</span>
+              <button class="adults btn--plus">+</button>
+            </div>
+          </div>
+          <div class="value__control"> <span class="children">дети</span>
+            <div class="value__block">
+              <button class="children btn--minus btn-active">-</button><span class="children btn-value">0</span>
+              <button class="children btn--plus">+</button>
+            </div>
+          </div>
+          <div class="value__control"> <span class="babies">младенцы</span>
+            <div class="value__block">
+              <button class="babies btn--minus btn-active">-</button><span class="babies btn-value">0</span>
+              <button class="babies btn--plus">+</button>
+            </div>
+          </div>
+          <div class="guest-design"> 
+            <button class="guest__button--clear ">очистить</button>
+            <button class="guest__button--apply">применить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bulletList__block"><span class="bulletList__label">bullet list</span>
+      <ul class="bulletList ">
+        <li class="bulletList__item "><span class="bulletList__dot"></span><span>Нельзя с питомцами</span></li>
+        <li class="bulletList__item "><span class="bulletList__dot"></span><span>Без вечеринок и мероприятий</span></li>
+        <li class="bulletList__item "><span class="bulletList__dot"></span><span>Время прибытия — после 13:00, а выезд до 12:00</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="forms__grade">
+    <div class="forms__grade-visual">
+      <div class="grade-visual--comport"><img src="/hotelScout/assets/insert_emoticon.svg" alt="comfort">
+        <div> 
+          <p>Комфорт</p><span>Шумопоглощающие стены</span>
+        </div>
+      </div>
+      <div class="grade-visual--convenience"><img src="/hotelScout/assets/location_city.svg" alt="comfort place">
+        <div> 
+          <p>Удобство</p><span>Окно в каждой из спален</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms__grade-user"> 
+      <div class="grade-user"> 
+        <div class="grade-user-image"> <img class="grade-user-image" src="/hotelScout/assets/muradSaraphanov.jpg" alt="user image"></div>
+        <div class="grade-user-name"> 
+          <p>Мурад Сарафанов</p><span>5 дней назад</span>
+        </div>
+      </div>
+      <div class="grade-feedback"> 
+        <div class="grade-feedback-like">
+          <div class="likeButton__block likeButton checked"><img class="likeButton__icon likeButton__icon--checked" src="/hotelScout/assets/favorite.svg" alt="like"><img class="likeButton__icon likeButton__icon--unchecked" src="/hotelScout/assets/favorite_border.svg" alt="like"><span class="likeText">12</span></div>
+        </div>
+        <div class="grade-feedback-text"> 
+          <p>Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
