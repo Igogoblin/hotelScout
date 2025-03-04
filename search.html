@@ -1,6 +1,6 @@
 <head><script defer src="/hotelScout/bundle.js"></script></head>
 <div class="header">
-  <div class="wrapper"><a class="link-to-main" href="/" data-link><img src="/hotelScout/assets/logo.svg" alt="logo"></a>
+  <div class="wrapper"><a class="link-to-main" href="/hotelScout" data-link><img src="/hotelScout/assets/logo.svg" alt="logo"></a>
     <div class="wrapper__content">
       <ul class=" header-navigation"> 
         <li><a href="/hotelScout/about" data-link>О нас</a></li>
@@ -72,12 +72,12 @@
         </div>
       </div>
       <div class="forms__range"> 
-        <div class="range-title"><span>диапазон цены</span>
+        <div class="range-title"><span class="range-title__text">диапазон цены</span>
           <div class="range-text"> <span class="range-min">5 000₽ - </span><span class="range-max">10 000₽</span></div>
         </div>
         <div class="slider-container">
           <toolcool-range-slider min="0" max="15000" value1="5000" value2="10000" slider-width="266px" slider-height="6px" pointer-width="12px" pointer-height="12px" pointer-border="2px solid white" pointer-bg="MediumAquamarine" slider-bg="lightgray" slider-bg-fill="MediumAquamarine" slider-border="1px solid rad"></toolcool-range-slider>
-        </div><span>Стоимость за сутки пребывания в номере</span>
+        </div><span class="range-title_text">Стоимость за сутки пребывания в номере</span>
       </div>
       <div class="checkBox__block"> 
         <div class="checkBox__title">
@@ -96,7 +96,7 @@
           <label for="guests">Можно пригласить гостей (до 10 человек)</label>
         </div>
       </div>
-      <div class="checkBox__block"> 
+      <div class="checkBox__block checkBoxFat"> 
         <div class="checkBox__title">
           <h3>доступность</h3>
         </div>
@@ -119,7 +119,7 @@
       </div>
       <div class="dropdownRoom">
         <div class="dropdownRoom__labels">
-          <label for="guest">удобства номера</label><span>Default</span>
+          <label for="guest">удобства номера</label><span></span>
         </div>
         <div class="dropdownRoom-title"> 
           <button class="show-dropdownRoom">2 спальни, 2 кровати...</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
@@ -153,7 +153,353 @@
     </div>
     <section>
       <h1>Номера, которые мы для вас подобрали</h1>
-      <div class="search__block"></div>
+      <div class="search__block">
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-888-1.jpg')"></div>
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-888-2.jpg')"></div>
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-888-3.jpg')"></div>
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-888-4.jpg')"></div>
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 888 </div>
+                <div class="card-number__room-lux">люкс</div>
+              </div>
+              <div class="card-cash"> 9990₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star">
+                </div>
+              </div>
+              <div class="card-review">145<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-840-1.jpg')"></div>
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-840-2.jpg')"></div>
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-840-3.jpg')"></div>
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-840-4.jpg')"></div>
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 840 </div>
+              </div>
+              <div class="card-cash"> 9900₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star_border.svg" alt="filled star">
+                </div>
+              </div>
+              <div class="card-review">65<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 980 </div>
+                <div class="card-number__room-lux">люкс</div>
+              </div>
+              <div class="card-cash"> 8500₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star_border.svg" alt="filled star"><img src="/hotelScout/assets/star_border.svg" alt="filled star">
+                </div>
+              </div>
+              <div class="card-review">35<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 856 </div>
+              </div>
+              <div class="card-cash"> 7300₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star">
+                </div>
+              </div>
+              <div class="card-review">19<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 740 </div>
+              </div>
+              <div class="card-cash"> 6000₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star_border.svg" alt="filled star">
+                </div>
+              </div>
+              <div class="card-review">44<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 982 </div>
+              </div>
+              <div class="card-cash"> 5800₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star_border.svg" alt="filled star"><img src="/hotelScout/assets/star_border.svg" alt="filled star">
+                </div>
+              </div>
+              <div class="card-review">56<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 678 </div>
+              </div>
+              <div class="card-cash"> 5500₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star">
+                </div>
+              </div>
+              <div class="card-review">45<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 450 </div>
+              </div>
+              <div class="card-cash"> 5300₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star_border.svg" alt="filled star">
+                </div>
+              </div>
+              <div class="card-review">39<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 350 </div>
+              </div>
+              <div class="card-cash"> 5000₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star_border.svg" alt="filled star"><img src="/hotelScout/assets/star_border.svg" alt="filled star">
+                </div>
+              </div>
+              <div class="card-review">77<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 666 </div>
+              </div>
+              <div class="card-cash"> 5000₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star">
+                </div>
+              </div>
+              <div class="card-review">25<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 444 </div>
+              </div>
+              <div class="card-cash"> 5000₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star_border.svg" alt="filled star"><img src="/hotelScout/assets/star_border.svg" alt="filled star">
+                </div>
+              </div>
+              <div class="card-review">15<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="room__card"> 
+          <div class="room__card-image"> 
+            <div class="swiper"> 
+              <div class="swiper-wrapper"> 
+              </div>
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-button-prev"> </div>
+              <div class="swiper-button-next"> </div>
+            </div>
+          </div>
+          <div class="room__card-wrapper">
+            <div class="room__card-body"> 
+              <div class="card-number">
+                <div class="card-number__room">№ 352 </div>
+              </div>
+              <div class="card-cash"> 5000₽<span> в сутки</span></div>
+            </div>
+            <div class="room_separator"></div>
+            <div class="room__card-footer">
+              <div class="card-star">
+                <div class="feedbackQuality__block"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star.svg" alt="empty star"><img src="/hotelScout/assets/star_border.svg" alt="filled star"><img src="/hotelScout/assets/star_border.svg" alt="filled star">
+                </div>
+              </div>
+              <div class="card-review">55<span> Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pagination__block">
+        <div class="pagination"> 
+          <div class="pagination__item"> <a href="#">1</a></div>
+          <div class="pagination__item"> <a href="#">2</a></div>
+          <div class="pagination__item"> <a href="#">3</a></div>
+          <div class="pagination__item"> <a href="#">...</a></div>
+          <div class="pagination__item"> <a href="#">15</a></div>
+          <div class="pagination__item"> <a href="#">6<img class="forward" src="/hotelScout/assets/arrow_forwardWhite.svg" alt="enter"></a></div>
+        </div>
+        <div class="pagination__title">1 – 12 из 100+ вариантов аренды</div>
+      </div>
     </section>
   </div>
 </main>
