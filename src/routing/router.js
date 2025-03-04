@@ -32,7 +32,7 @@ function navigateTo(route) {
 
 const routes = {
   "/": "./index.html",
-  "/hotelScout/": "./index.html",
+  "/hotelScout": "./index.html",
   "/hotelScout/about": "./about.html",
   "/hotelScout/registration": "./registration.html",
   "/hotelScout/enter": "./enter.html",

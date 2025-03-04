@@ -13,7 +13,7 @@ mixin checkBox(options)
                     label(for=item.feature  ) #{item.text}
 
 mixin checkBoxDifficult(options)
-    .checkBox__block 
+    div(class=`checkBox__block ${options.class_name?options.class_name:""}`) 
         .checkBox__title
             h3 #{options.title}
             if options.isList
