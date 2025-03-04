@@ -34,7 +34,129 @@
     </div>
   </div>
 </div>
-<h1>this is search page </h1>
+<main class="search"> 
+  <div class="wrapper"> 
+    <div class="aside">
+      <div class="input__block short">
+        <label> <span>даты пребывания в отеле</span><span></span></label>
+        <input type="text" placeholder="19 авг - 23 авг"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+      </div>
+      <div class="dropdown">
+        <label for="guest">гости</label>
+        <div class="guest-title"> 
+          <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
+          <div class="dropdown__content ">
+            <div class="value__control"> <span class="adults">взрослые</span>
+              <div class="value__block">
+                <button class="adults btn--minus btn-active">-</button><span class="adults btn-value">0</span>
+                <button class="adults btn--plus">+</button>
+              </div>
+            </div>
+            <div class="value__control"> <span class="children">дети</span>
+              <div class="value__block">
+                <button class="children btn--minus btn-active">-</button><span class="children btn-value">0</span>
+                <button class="children btn--plus">+</button>
+              </div>
+            </div>
+            <div class="value__control"> <span class="babies">младенцы</span>
+              <div class="value__block">
+                <button class="babies btn--minus btn-active">-</button><span class="babies btn-value">0</span>
+                <button class="babies btn--plus">+</button>
+              </div>
+            </div>
+            <div class="guest-design"> 
+              <button class="guest__button--clear ">очистить</button>
+              <button class="guest__button--apply">применить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="forms__range"> 
+        <div class="range-title"><span>диапазон цены</span>
+          <div class="range-text"> <span class="range-min">5 000₽ - </span><span class="range-max">10 000₽</span></div>
+        </div>
+        <div class="slider-container">
+          <toolcool-range-slider min="0" max="15000" value1="5000" value2="10000" slider-width="266px" slider-height="6px" pointer-width="12px" pointer-height="12px" pointer-border="2px solid white" pointer-bg="MediumAquamarine" slider-bg="lightgray" slider-bg-fill="MediumAquamarine" slider-border="1px solid rad"></toolcool-range-slider>
+        </div><span>Стоимость за сутки пребывания в номере</span>
+      </div>
+      <div class="checkBox__block"> 
+        <div class="checkBox__title">
+          <h3>правила дома</h3>
+        </div>
+        <div class="checkBox__wrapper">
+          <input type="checkbox" id="smocking">
+          <label for="smocking">Можно курить</label>
+        </div>
+        <div class="checkBox__wrapper">
+          <input type="checkbox" id="pet" checked="checked">
+          <label for="pet">Можно с питомцами</label>
+        </div>
+        <div class="checkBox__wrapper">
+          <input type="checkbox" id="guests" checked="checked">
+          <label for="guests">Можно пригласить гостей (до 10 человек)</label>
+        </div>
+      </div>
+      <div class="checkBox__block"> 
+        <div class="checkBox__title">
+          <h3>доступность</h3>
+        </div>
+        <div class="checkBox__wrapper">
+          <input type="checkbox" id="k">
+          <label for="k"> 
+            <div class="accessibility">
+              <p>Широкий коридор</p><span>Ширина коридоров в номере не менее 91 см.</span>
+            </div>
+          </label>
+        </div>
+        <div class="checkBox__wrapper">
+          <input type="checkbox" id="hel">
+          <label for="hel"> 
+            <div class="accessibility">
+              <p>Помощник для инвалидов</p><span>На 1 этаже вас встретит специалист  и проводит до номера.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="dropdownRoom">
+        <div class="dropdownRoom__labels">
+          <label for="guest">удобства номера</label><span>Default</span>
+        </div>
+        <div class="dropdownRoom-title"> 
+          <button class="show-dropdownRoom">2 спальни, 2 кровати...</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
+          <div class="dropdown__content dropdown__content--active"> 
+            <div class="value__control"> <span class="rooms">спальни</span>
+              <div class="value__block">
+                <button class="rooms btn--minus btn-active">-</button><span class="rooms btn-value">0</span>
+                <button class="rooms btn--plus">+</button>
+              </div>
+            </div>
+            <div class="value__control"> <span class="beds">кровати</span>
+              <div class="value__block">
+                <button class="beds btn--minus btn-active">-</button><span class="beds btn-value">0</span>
+                <button class="beds btn--plus">+</button>
+              </div>
+            </div>
+            <div class="value__control"> <span class="bathrooms">ванные комнаты</span>
+              <div class="value__block">
+                <button class="bathrooms btn--minus btn-active">-</button><span class="bathrooms btn-value">0</span>
+                <button class="bathrooms btn--plus">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checkBox__block"> 
+        <div class="checkBox__title">
+          <h3>дополнительные удобства</h3><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+        </div>
+      </div>
+    </div>
+    <section>
+      <h1>Номера, которые мы для вас подобрали</h1>
+      <div class="search__block"></div>
+    </section>
+  </div>
+</main>
 <footer class=" footer">
   <div class="wrapper">
     <div class="footer__head">

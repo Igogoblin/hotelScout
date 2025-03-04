@@ -1,6 +1,39 @@
 include ../../components/header/header.pug
 include ../../components/footer/footer.pug
+include ../../components/mixins/mixins.pug
+include ../../components/mixins/input/inputForm.pug
+include ../../components/mixins/rangeSlider/rangeSlider.pug
+include ../../components/mixins/checkbox/checkbox.pug
+include ../../components/mixins/dropdown/dropdownRoom.pug
 
-+header
-h1 this is search page 
-+footer
++header()
+main.search 
+    .wrapper 
+        .aside
+            +inputForm({type: "text", placeholder: "19 авг - 23 авг", label:"даты пребывания в отеле", isImage: "down", class_name:"short" })
+            +dropdownGuest({label: "гости"})
+            .forms__range 
+                .range-title
+                    span диапазон цены
+                    .range-text 
+                        span.range-min 5 000₽ - 
+                        span.range-max 10 000₽
+                +rangeSlider
+                span Стоимость за сутки пребывания в номере
+            +checkBox({arr:[
+ { feature: "smocking", text: "Можно курить" },
+ { feature: "pet", text: "Можно с питомцами", checked: true },
+ { feature: "guests", text: "Можно пригласить гостей (до 10 человек)", checked: true} 
+],title: "правила дома"})
+            +checkBoxDifficult({arr:[
+            { feature: "k", text: "Широкий коридор", textSecond: "Ширина коридоров в номере не менее 91 см." },
+            {feature: "hel", text: "Помощник для инвалидов", textSecond:"На 1 этаже вас встретит специалист  и проводит до номера."},
+            ], title:"доступность", className: "accessibility"})
+            +dropdownRoom({value: "2 спальни, 2 кровати...", label: "удобства номера", labelText: "Default",isContent: true})
+            +checkBox({title: "дополнительные удобства", isList: true})
+        section
+            h1 Номера, которые мы для вас подобрали
+            .search__block
+
+             
++footer()

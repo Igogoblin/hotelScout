@@ -20,13 +20,21 @@ main {
     align-items: flex-start;
     .calendar__block {
       margin-top: 70px;
-      .calendar__period {
-        position: relative;
+      .calendar__wrapper {
+        h2 {
+          letter-spacing: 0.4px;
+        }
+        .dropdown {
+          margin: 21px 0 31px 0;
+        }
+        .calendar__period {
+          position: relative;
+        }
       }
     }
     .main__text {
       align-self: flex-end;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       text-align: right;
       color: $darkShade-75;
       font-size: 14px;

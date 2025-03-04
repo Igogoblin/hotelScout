@@ -114,16 +114,18 @@
   <div class="card__room">
     <div class="card__wrapper"> 
       <div class="room__card-body"> 
-        <div class="card-number"><span class="card-number__room">№ 888 </span><span class="card-number__room-lux">люкс</span>
+        <div class="card-number">
+          <div class="card-number__room">№ 888 </div>
+          <div class="card-number__room-lux">люкс</div>
         </div>
         <div class="card-cash"> 9990₽<span> в сутки</span></div>
       </div>
-      <div class="calendar__period"> 
-        <label for="arrival-undefined">
-          <input class="main__arrival" type="date" name="arrival" id="arrival-undefined"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+      <div class="calendar__period" id="cardFormic"> 
+        <label for="arrival-cardFormic">прибытие
+          <input class="main__arrival" type="date" name="arrival" id="arrival-cardFormic"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
         </label>
-        <label for="departure-undefined">
-          <input class="main__departure" type="date" name="departure" id="departure-undefined"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+        <label for="departure-cardFormic">выезд
+          <input class="main__departure" type="date" name="departure" id="departure-cardFormic"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
         </label>
       </div>
       <div class="dropdown">
@@ -157,7 +159,7 @@
         </div>
       </div>
       <div class="card__title">
-        <div class="serviceTitle"> <span>9990₽</span><span class="serviceTitle-total">39 960₽</span></div>
+        <div class="serviceTitle"> <span>9990₽ x 4 суток</span><span class="serviceTitle-total">39 960₽</span></div>
         <div class="serviceFee"> 
           <div class="serviceFee-text">Сбор за услуги: скидка 2 179₽</div><img src="/hotelScout/assets/information.svg" alt="information" title="сбор фиксированный 300₽">
           <div class="serviceFee-total">0₽</div>
@@ -221,7 +223,7 @@
       </div>
     </div>
   </div>
-  <div class="card__calendar"></div>
+  <div class="card__calendar" id="card__calendar"></div>
   <div class="room__card"> 
     <div class="room__card-image"> 
       <div class="swiper"> 
@@ -238,7 +240,9 @@
     </div>
     <div class="room__card-wrapper">
       <div class="room__card-body"> 
-        <div class="card-number"><span class="card-number__room">№ 888 </span><span class="card-number__room-lux">люкс</span>
+        <div class="card-number">
+          <div class="card-number__room">№ 888 </div>
+          <div class="card-number__room-lux">люкс</div>
         </div>
         <div class="card-cash"> 9990₽<span> в сутки</span></div>
       </div>
@@ -268,7 +272,8 @@
     </div>
     <div class="room__card-wrapper">
       <div class="room__card-body"> 
-        <div class="card-number"><span class="card-number__room">№ 840 </span>
+        <div class="card-number">
+          <div class="card-number__room">№ 840 </div>
         </div>
         <div class="card-cash"> 9900₽<span> в сутки</span></div>
       </div>
