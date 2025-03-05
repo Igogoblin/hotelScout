@@ -14,7 +14,6 @@ function loadContent(url) {
     })
     .then((html) => {
       document.body.innerHTML = html;
-      console.log("html ", url);
       setTimeout(() => initializeScripts(url), 100);
     })
     .catch((err) => {
@@ -70,7 +69,6 @@ window.addEventListener("popstate", () => {
 
 function initializeScripts(url) {
   const forPage = url.split("/").pop().split(".")[0];
-  console.log("forPage ", forPage);
   switch (forPage) {
     case "index":
       initializeCalendar();

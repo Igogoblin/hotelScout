@@ -1,5 +1,3 @@
-console.log("checkbox is loaded");
-
 export function checkbox() {
   const roomOptional = document.getElementById("roomOptional");
   const roomOptionalImage = document.querySelector(

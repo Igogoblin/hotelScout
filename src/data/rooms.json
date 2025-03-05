@@ -17,7 +17,12 @@
     "number": 352,
     "price": 5000,
     "reviewNumbers": 55,
-    "images": [],
+    "images": [
+      "room-352-1.jpg",
+      "room-352-2.jpg",
+      "room-352-3.jpg",
+      "room-352-4.jpg"
+    ],
     "reservation": 0,
     "lux": false,
     "star": 3
@@ -26,7 +31,12 @@
     "number": 444,
     "price": 5000,
     "reviewNumbers": 15,
-    "images": [],
+    "images": [
+      "room-444-1.jpg",
+      "room-444-2.jpg",
+      "room-444-3.jpg",
+      "room-444-4.jpg"
+    ],
     "reservation": 0,
     "lux": false,
     "star": 3
@@ -35,7 +45,12 @@
     "number": 450,
     "price": 5300,
     "reviewNumbers": 39,
-    "images": [],
+    "images": [
+      "room-450-1.jpg",
+      "room-450-2.jpg",
+      "room-450-3.jpg",
+      "room-450-4.jpg"
+    ],
     "reservation": 0,
     "lux": false,
     "star": 4
@@ -44,7 +59,12 @@
     "number": 666,
     "price": 5000,
     "reviewNumbers": 25,
-    "images": [],
+    "images": [
+      "room-666-1.jpg",
+      "room-666-2.jpg",
+      "room-666-3.jpg",
+      "room-666-4.jpg"
+    ],
     "reservation": 0,
     "lux": false,
     "star": 5
@@ -53,7 +73,12 @@
     "number": 678,
     "price": 5500,
     "reviewNumbers": 45,
-    "images": [],
+    "images": [
+      "room-678-1.jpg",
+      "room-678-2.jpg",
+      "room-678-3.jpg",
+      "room-678-4.jpg"
+    ],
     "reservation": 0,
     "lux": false,
     "star": 5
@@ -62,7 +87,12 @@
     "number": 740,
     "price": 6000,
     "reviewNumbers": 44,
-    "images": [],
+    "images": [
+      "room-740-1.jpg",
+      "room-740-2.jpg",
+      "room-740-3.jpg",
+      "room-740-4.jpg"
+    ],
     "reservation": 0,
     "lux": false,
     "star": 4
@@ -85,7 +115,12 @@
     "number": 856,
     "price": 7300,
     "reviewNumbers": 19,
-    "images": [],
+    "images": [
+      "room-856-1.jpg",
+      "room-856-2.jpg",
+      "room-856-3.jpg",
+      "room-856-4.jpg"
+    ],
     "reservation": 0,
     "lux": false,
     "star": 5
@@ -108,7 +143,12 @@
     "number": 980,
     "price": 8500,
     "reviewNumbers": 35,
-    "images": [],
+    "images": [
+      "room-980-1.jpg",
+      "room-980-2.jpg",
+      "room-980-3.jpg",
+      "room-980-4.jpg"
+    ],
     "reservation": 0,
     "lux": true,
     "star": 3
@@ -117,7 +157,12 @@
     "number": 982,
     "price": 5800,
     "reviewNumbers": 56,
-    "images": [],
+    "images": [
+      "room-982-1.jpg",
+      "room-982-2.jpg",
+      "room-982-3.jpg",
+      "room-982-4.jpg"
+    ],
     "reservation": 0,
     "lux": false,
     "star": 3

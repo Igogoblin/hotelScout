@@ -18,7 +18,7 @@ main.search
     .wrapper 
         .aside
             +inputForm({type: "text", placeholder: "19 авг - 23 авг", label:"даты пребывания в отеле", isImage: "down", class_name:"short",className:"searchCalendar" })
-            +dropdownGuest({value: "Сколько гостей", label: "гости",isContent: false })
+            +dropdownGuest({value: "Сколько гостей", label: "гости", isContent: false })
             .forms__range 
                 .range-title
                     span.range-title__text диапазон цены
@@ -36,7 +36,7 @@ main.search
             { feature: "k", text: "Широкий коридор", textSecond: "Ширина коридоров в номере не менее 91 см." },
             {feature: "hel", text: "Помощник для инвалидов", textSecond:"На 1 этаже вас встретит специалист  и проводит до номера."},
             ], title:"доступность", className: "accessibility", class_name: "checkBoxFat"})
-            +dropdownRoom({value: "2 спальни, 2 кровати...", label: "удобства номера",isContent: true})
+            +dropdownRoom({value: "2 спальни, 2 кровати...", label: "удобства номера",isContent: false})
             +checkBox({arr:[
  { feature: "breakfast", text: "Завтрак" },
  { feature: "desk", text: "Письменный стол"  },

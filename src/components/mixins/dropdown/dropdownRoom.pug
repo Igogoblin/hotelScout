@@ -1,4 +1,3 @@
-include ../mixins.pug
 
 mixin dropdownRoom(options)
     .dropdownRoom
@@ -8,7 +7,15 @@ mixin dropdownRoom(options)
         .dropdownRoom-title 
             button(class="show-dropdownRoom") #{options.value?options.value:"Сколько гостей"}
             img(src=require("@assets/expand_more.svg").default, alt="expand more")
-            div(class=`dropdown__content ${options.isContent? "dropdown__content--active":""}`) 
-                +valueControl("спальни", "rooms")
-                +valueControl("кровати", "beds") 
-                +valueControl("ванные комнаты", "bathrooms")
+            div(class=`dropdown__content ${options.isContent?"dropdown__content__active" :""}`) 
+                +controlValue("спальни", "rooms")
+                +controlValue("кровати", "beds") 
+                +controlValue("ванные комнаты", "bathrooms")
+
+mixin controlValue(name, className)
+    .value__control 
+        span(class=className)= name
+        .value__block
+            button(class=`${className} btn__minus btn_active`) -
+            span(class=`${className} btn_value`) 0
+            button(class=`${className} btn__plus`) +

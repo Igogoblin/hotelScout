@@ -3,10 +3,15 @@ import {
   setupValueControls,
   showValueDropdown,
 } from "../../components/main/forMain.js";
+import {
+  initGuestControls,
+  updateGuestDisplay,
+} from "../../components/mixins/dropdown/dropdown.js";
 
 export function workSearch() {
   showSearchCalendar();
   showGuests();
+  showRooms();
 }
 
 function showSearchCalendar() {
@@ -93,4 +98,23 @@ function showGuests() {
 
   setupValueControls(valueGuests);
   showValueDropdown();
+}
+// ============================================================
+function showRooms() {
+  const input = document.querySelector(".show-dropdownRoom");
+  const block = document.querySelector(".dropdown__content");
+  const valueRooms = document.querySelectorAll(".btn_value");
+
+  input.addEventListener("click", (event) => {
+    // event.stopPropagation();
+    block.classList.toggle("dropdown__content__active");
+    console.log("test ..........");
+  });
+  document.addEventListener("click", (event) => {
+    if (!block.contains(event.target) && !input.contains(event.target)) {
+      block.classList.remove("dropdown__content__active");
+    }
+  });
+  initGuestControls(valueRooms);
+  updateGuestDisplay();
 }

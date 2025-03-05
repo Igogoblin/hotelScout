@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  // Дождитесь загрузки контента
   const swiperContainer = await waitForElement(".swiper");
 
   if (swiperContainer) {
@@ -19,11 +18,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       //     el: ".swiper-scrollbar",
       //     draggable: true,
       //   },
-      on: {
-        init: function () {
-          console.log("swiper initialized");
-        },
-      },
+      // on: {
+      //   init: function () {
+      //     console.log("swiper initialized");
+      //   },
+      // },
     });
   }
 });
