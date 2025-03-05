@@ -107,31 +107,45 @@ function hideCalendar() {
     calendar.classList.add("showNone");
   }, 100);
 }
-
-function setupValueControls(valueGuests) {
+// for dropdown guest --------------------------------------------------
+export function setupValueControls(valueGuests) {
   const btnMinus = document.querySelectorAll(".btn--minus");
   const btnPlus = document.querySelectorAll(".btn--plus");
 
   btnMinus.forEach((btn, index) => {
     btn.addEventListener("click", () => {
       updateGuestCount(valueGuests, index, -1);
+      checkClassButton(btnMinus, valueGuests);
     });
   });
 
   btnPlus.forEach((btn, index) => {
     btn.addEventListener("click", () => {
       updateGuestCount(valueGuests, index, 1);
+      checkClassButton(btnMinus, valueGuests);
     });
   });
 }
 
-function updateGuestCount(valueGuests, index, change) {
+function checkClassButton(btnMinus, valueGuests) {
+  valueGuests.forEach((guest, index) => {
+    if (parseInt(guest.textContent) === 0) {
+      console.log("we ");
+      btnMinus[index].classList.add("correctClass");
+    }
+    if (parseInt(guest.textContent) > 0) {
+      btnMinus[index].classList.remove("correctClass");
+    }
+  });
+}
+
+export function updateGuestCount(valueGuests, index, change) {
   const currentValue = parseInt(valueGuests[index].textContent) || 0;
   valueGuests[index].textContent = Math.max(0, currentValue + change);
   showValueDropdown();
 }
 
-function showValueDropdown() {
+export function showValueDropdown() {
   const buttonElement = document.querySelector(".show-dropdown");
   const guestShow = checkGuests();
   const babiesCount = checkGuests(true);
@@ -162,7 +176,7 @@ function showValueDropdown() {
   buttonElement.textContent = displayText;
 }
 
-function checkGuests(isBabies = false) {
+export function checkGuests(isBabies = false) {
   let count = 0;
   const valueGuests = document.querySelectorAll(".btn-value");
   valueGuests.forEach((value) => {

@@ -39,13 +39,13 @@
     <div class="aside">
       <div class="input__block short">
         <label> <span>даты пребывания в отеле</span><span></span></label>
-        <input type="text" placeholder="19 авг - 23 авг"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+        <input class="searchCalendar" type="text" placeholder="19 авг - 23 авг"><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
       </div>
       <div class="dropdown">
         <label for="guest">гости</label>
         <div class="guest-title"> 
           <button class="show-dropdown">Сколько гостей</button><img src="/hotelScout/assets/expand_more.svg" alt="expand more">
-          <div class="dropdown__content ">
+          <div class="dropdown__content guest-design--active">
             <div class="value__control"> <span class="adults">взрослые</span>
               <div class="value__block">
                 <button class="adults btn--minus btn-active">-</button><span class="adults btn-value">0</span>
@@ -79,24 +79,24 @@
           <toolcool-range-slider min="0" max="15000" value1="5000" value2="10000" slider-width="266px" slider-height="6px" pointer-width="12px" pointer-height="12px" pointer-border="2px solid white" pointer-bg="MediumAquamarine" slider-bg="lightgray" slider-bg-fill="MediumAquamarine" slider-border="1px solid rad"></toolcool-range-slider>
         </div><span class="range-title_text">Стоимость за сутки пребывания в номере</span>
       </div>
-      <div class="checkBox__block"> 
+      <div class="checkBox__block">
         <div class="checkBox__title">
           <h3>правила дома</h3>
         </div>
-        <div class="checkBox__wrapper">
+        <div class="checkBox__wrapper ">
           <input type="checkbox" id="smocking">
           <label for="smocking">Можно курить</label>
         </div>
-        <div class="checkBox__wrapper">
+        <div class="checkBox__wrapper ">
           <input type="checkbox" id="pet" checked="checked">
           <label for="pet">Можно с питомцами</label>
         </div>
-        <div class="checkBox__wrapper">
+        <div class="checkBox__wrapper ">
           <input type="checkbox" id="guests" checked="checked">
           <label for="guests">Можно пригласить гостей (до 10 человек)</label>
         </div>
       </div>
-      <div class="checkBox__block"> 
+      <div class="checkBox__block checkBoxFat"> 
         <div class="checkBox__title">
           <h3>доступность</h3>
         </div>
@@ -145,9 +145,33 @@
           </div>
         </div>
       </div>
-      <div class="checkBox__block"> 
+      <div class="checkBox__block" id="roomOptional">
         <div class="checkBox__title">
-          <h3>дополнительные удобства</h3><img src="/hotelScout/assets/expand_more.svg" alt="expend more">
+          <h3>дополнительные удобства</h3><img class="checkBox__title-active" src="/hotelScout/assets/expand_more.svg" alt="expend more">
+        </div>
+        <div class="checkBox__wrapper showNone">
+          <input type="checkbox" id="breakfast">
+          <label for="breakfast">Завтрак</label>
+        </div>
+        <div class="checkBox__wrapper showNone">
+          <input type="checkbox" id="desk">
+          <label for="desk">Письменный стол</label>
+        </div>
+        <div class="checkBox__wrapper showNone">
+          <input type="checkbox" id="babyChair">
+          <label for="babyChair">Стул для кормления</label>
+        </div>
+        <div class="checkBox__wrapper showNone">
+          <input type="checkbox" id="babyBed">
+          <label for="babyBed">Кроватка</label>
+        </div>
+        <div class="checkBox__wrapper showNone">
+          <input type="checkbox" id="tv">
+          <label for="tv">Телевизор</label>
+        </div>
+        <div class="checkBox__wrapper showNone">
+          <input type="checkbox" id="shampoo">
+          <label for="shampoo">Шампунь</label>
         </div>
       </div>
     </div>
@@ -384,6 +408,10 @@
           <div class="room__card-image"> 
             <div class="swiper"> 
               <div class="swiper-wrapper"> 
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-350-1.jpg')"></div>
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-350-2.jpg')"></div>
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-350-3.jpg')"></div>
+                <div class="swiper-slide" style="background-image: url('./assets/rooms/room-350-4.jpg')"></div>
               </div>
               <div class="swiper-pagination"> </div>
               <div class="swiper-button-prev"> </div>

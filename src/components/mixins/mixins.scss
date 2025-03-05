@@ -196,6 +196,7 @@
     line-height: 14.63px;
     color: $darkShade-100;
     text-transform: uppercase;
+    border-radius: 4px;
 
     .guest-design {
       display: flex;
@@ -212,15 +213,12 @@
         cursor: pointer;
       }
     }
-    .guest-clear--inActive {
-      display: none;
-    }
     .guest-clear--inActive + .guest__button--apply {
       margin: 0 0 0 auto;
     }
   }
   .guest-design--active {
-    display: block;
+    display: none;
   }
 
   .show {
@@ -259,13 +257,16 @@
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      border: 1px solid $darkShade-25;
+      border: 1px solid $darkShade-50;
       background-color: $white;
       cursor: pointer;
     }
     span {
       margin: 0 0 3px 0;
       width: 700;
+    }
+    .btn--minus.correctClass {
+      border: 1px solid $darkShade-25;
     }
   }
 }

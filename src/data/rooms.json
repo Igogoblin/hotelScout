@@ -3,7 +3,12 @@
     "number": 350,
     "price": 5000,
     "reviewNumbers": 77,
-    "images": [],
+    "images": [
+      "room-350-1.jpg",
+      "room-350-2.jpg",
+      "room-350-3.jpg",
+      "room-350-4.jpg"
+    ],
     "reservation": 0,
     "lux": false,
     "star": 3

@@ -3,6 +3,8 @@ import { mburger } from "../components/mixins/mburger/mburger.js";
 import { rangeSlider } from "../components/mixins/rangeSlider/rangeSlider.js";
 import { correctHoverForm } from "../pages/forms/forms.js";
 import { showCalendar } from "../pages/cards/cards.js";
+import { checkbox } from "../components/mixins/checkbox/checkbox.js";
+import { workSearch } from "../pages/search/search.js";
 function loadContent(url) {
   fetch(url)
     .then((response) => {
@@ -80,6 +82,8 @@ function initializeScripts(url) {
     case "about":
     case "search":
       mburger();
+      checkbox();
+      workSearch();
       break;
     case "cards":
       mburger();

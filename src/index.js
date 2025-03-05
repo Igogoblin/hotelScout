@@ -31,6 +31,7 @@ import "./components/mixins/findYourRoom/findYourRoom.pug";
 import "./components/mixins/findYourRoom/findYourRoom.scss";
 import "./components/mixins/input/inputForm.scss";
 import "./components/mixins/checkbox/checkbox.scss";
+import "./components/mixins/checkbox/checkbox.js";
 import "./components/mixins/buttons/buttons.scss";
 import "./pages/forms/forms.scss";
 import "./pages/forms/forms.js";

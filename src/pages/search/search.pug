@@ -17,8 +17,8 @@ include ../../components/mixins/pagination/pagination.pug
 main.search 
     .wrapper 
         .aside
-            +inputForm({type: "text", placeholder: "19 авг - 23 авг", label:"даты пребывания в отеле", isImage: "down", class_name:"short" })
-            +dropdownGuest({label: "гости"})
+            +inputForm({type: "text", placeholder: "19 авг - 23 авг", label:"даты пребывания в отеле", isImage: "down", class_name:"short",className:"searchCalendar" })
+            +dropdownGuest({value: "Сколько гостей", label: "гости",isContent: false })
             .forms__range 
                 .range-title
                     span.range-title__text диапазон цены
@@ -37,7 +37,15 @@ main.search
             {feature: "hel", text: "Помощник для инвалидов", textSecond:"На 1 этаже вас встретит специалист  и проводит до номера."},
             ], title:"доступность", className: "accessibility", class_name: "checkBoxFat"})
             +dropdownRoom({value: "2 спальни, 2 кровати...", label: "удобства номера",isContent: true})
-            +checkBox({title: "дополнительные удобства", isList: true})
+            +checkBox({arr:[
+ { feature: "breakfast", text: "Завтрак" },
+ { feature: "desk", text: "Письменный стол"  },
+ { feature: "babyChair", text: "Стул для кормления"  }, 
+ { feature: "babyBed", text: "Кроватка" }, 
+ { feature: "tv", text: "Телевизор" }, 
+ { feature: "shampoo", text: "Шампунь" } 
+],title: "дополнительные удобства", isList: true, className: "checkBox__title-active", id:"roomOptional", isShow: true})
+            //- +checkBox({title: "дополнительные удобства", isList: true,id:"roomOptional"})
         section
             h1 Номера, которые мы для вас подобрали
             .search__block
