@@ -1,0 +1,26 @@
+@use "../../../styles/const" as *;
+.grade-user {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  .grade-user-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    img {
+      object-fit: none;
+      margin-top: 6px;
+    }
+  }
+  .grade-user-name {
+    display: flex;
+    flex-direction: column;
+    @include font-style(body);
+    color: $darkShade-75;
+    font-weight: 700;
+    span {
+      font-weight: 400;
+      letter-spacing: -0.2px;
+    }
+  }
+}

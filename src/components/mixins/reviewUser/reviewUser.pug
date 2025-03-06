@@ -1,0 +1,7 @@
+mixin reviewUser(options)
+    .grade-user 
+        .grade-user-image 
+            img(src=require(`@assets/${options.image}.jpg`).default, alt="user image", class="grade-user-image")
+        .grade-user-name 
+            p #{options.name}
+            span #{options.lastDate}

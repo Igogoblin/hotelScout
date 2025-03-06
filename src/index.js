@@ -44,6 +44,10 @@ import "./components/mixins/bulletList/bulletList.scss";
 import "./components/mixins/userAcc/userAcc.scss";
 import "./components/mixins/gradeVisual/gradeVisual.pug";
 import "./components/mixins/gradeVisual/gradeVisual.scss";
+import "./components/mixins/reviewUser/reviewUser.pug";
+import "./components/mixins/reviewUser/reviewUser.scss";
+import "./components/mixins/reviewText/reviewText.pug";
+import "./components/mixins/reviewText/reviewText.scss";
 import "./data/rooms.json";
 
 console.log("hotelScout is running!");

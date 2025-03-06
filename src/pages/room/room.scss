@@ -1,3 +1,4 @@
+@use "../../styles/_const.scss" as *;
 .room {
   max-width: 1440px;
   width: 100%;
@@ -30,6 +31,40 @@
         .room-information {
           display: flex;
           flex-direction: column;
+        }
+      }
+      .room-review {
+        display: flex;
+        flex-direction: column;
+        .room-review_title {
+          display: flex;
+          justify-content: space-between;
+          .room-review_quantity {
+            font-size: 14px;
+            line-height: 14px;
+            color: $darkShade-50;
+          }
+        }
+        .room-review_block {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+      .room-rules {
+        display: flex;
+        justify-content: space-between;
+        .room_rules {
+          display: flex;
+          flex-direction: column;
+        }
+        .room_cancel {
+          display: flex;
+          flex-direction: column;
+          p {
+            @include font-style(body);
+            color: $darkShade-75;
+          }
         }
       }
     }

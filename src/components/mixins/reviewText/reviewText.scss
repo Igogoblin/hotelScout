@@ -1,0 +1,15 @@
+@use "../../../styles/const" as *;
+.grade-feedback {
+  display: flex;
+  gap: 14px;
+  .grade-feedback-like {
+    width: 40px;
+  }
+  .grade-feedback-text {
+    p {
+      @include font-style(body);
+      color: $darkShade-75;
+      letter-spacing: -0.08px;
+    }
+  }
+}

@@ -2,6 +2,9 @@ include ../../components/header/header.pug
 include ../../components/footer/footer.pug
 include ../../components/mixins/finishCardRoom/finishCardRoom.pug
 include ../../components/mixins/gradeVisual/gradeVisual.pug
+include ../../components/mixins/reviewUser/reviewUser.pug
+include ../../components/mixins/reviewText/reviewText.pug
+include ../../components/mixins/bulletList/bulletList.pug
 
 +header()
 main.room
@@ -25,10 +28,17 @@ main.room
                 .room-review_title    
                     h2 Отзывы посетителей номера
                     .room-review_quantity 2 отзыва
-                .room-review_block             
+                .room-review_block
+                    +reviewUser({image: "muradSaraphanov",name: "Мурад Сарафанов", lastDate:"5 дней назад"})
+                    +reviewText({text:"Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",className:"likeButton", checked: true, likeValue: 12})
+                .room-review_block
+                    +reviewUser({image: "patrishaSteklo",name: "Патрисия Стёклышкова", lastDate:"Неделю назад"})
+                    +reviewText({text:"Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",className:"likeButton", checked: false, likeValue: 2})            
             .room-rules 
-                .room_rules 
-                    h2 Правила
+                +bulletList({items:[
+            {text: "Нельзя с питомцами"},
+            {text: "Без вечеринок и мероприятий"},
+            {text: "Время прибытия — после 13:00, а выезд до 12:00"},], label: "Правила"})
 
                 .room_cancel 
                     h2 Отмена
