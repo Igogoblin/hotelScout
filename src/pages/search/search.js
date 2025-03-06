@@ -7,24 +7,32 @@ import {
   initGuestControls,
   updateGuestDisplay,
 } from "../../components/mixins/dropdown/dropdown.js";
+import { rangeSlider } from "../../components/mixins/rangeSlider/rangeSlider.js";
 
 export function workSearch() {
   showSearchCalendar();
   showGuests();
   showRooms();
+  showValueCoast();
 }
 
 function showSearchCalendar() {
   const calendarElement = document.querySelector(".searchCalendar");
+  let calendarInstance = null; // Сохраняем экземпляр календаря
+
   calendarElement.addEventListener("click", () => {
-    setupCalendar(calendarElement);
+    if (!calendarInstance) {
+      calendarInstance = setupCalendar(calendarElement);
+    } else {
+      toggleCalendar(calendarInstance);
+    }
   });
 }
 
 function setupCalendar(calendarElement) {
-  new AirDatepicker(calendarElement, {
+  const instance = new AirDatepicker(calendarElement, {
     range: true,
-    inline: false,
+    inline: true,
     classes: "showNone",
     autoClose: false,
     prevHtml: `<svg class="arrow-icon" width="11" height="18" viewBox="0 0 11 18" xmlns="http://www.w3.org/2000/svg">
@@ -36,16 +44,6 @@ function setupCalendar(calendarElement) {
     navTitles: {
       days: `<strong>MMMM</strong>${" "}<strong>yyyy</strong>`,
     },
-    // onSelect: (datepicker) => {
-    //   if (datepicker.formattedDate[0]) {
-    //     const firstTime = datepicker.formattedDate[0].split(".");
-    //     mainArrivalDate.value = `${firstTime[2]}-${firstTime[1]}-${firstTime[0]}`;
-    //   }
-    //   if (datepicker.formattedDate[1]) {
-    //     const secondTime = datepicker.formattedDate[1].split(".");
-    //     mainDepartureDate.value = `${secondTime[2]}-${secondTime[1]}-${secondTime[0]}`;
-    //   }
-    // },
     onSelect: ({ formattedDate }) => {
       if (formattedDate.length === 2) {
         const [start, end] = formattedDate.map((date) =>
@@ -59,19 +57,52 @@ function setupCalendar(calendarElement) {
         content: "Очистить",
         onClick: (datepicker) => {
           datepicker.clear();
-          hideCalendar();
         },
       },
       {
         content: "Применить",
         onClick: (datepicker) => {
           datepicker.hide();
-          hideCalendar();
+          toggleCalendar();
         },
       },
     ],
   });
+
+  return instance; // Возвращаем созданный календарь
 }
+
+function toggleCalendar(calendarInstance) {
+  const calendar = document.querySelector(".air-datepicker");
+  if (!calendar) return;
+
+  calendar.classList.toggle("showNone");
+
+  // Убираем предыдущий обработчик, если он уже существует
+  document.removeEventListener("click", closeCalendarOnClickOutside);
+
+  if (!calendar.classList.contains("showNone")) {
+    // Добавляем обработчик, но только если календарь активен
+    document.addEventListener("click", closeCalendarOnClickOutside);
+  }
+}
+
+function closeCalendarOnClickOutside(event) {
+  const calendar = document.querySelector(".air-datepicker");
+  const calendarButton = document.querySelector(".searchCalendar");
+
+  if (!calendar || !calendarButton) return;
+
+  // Закрываем календарь только если клик был вне календаря и кнопки
+  if (
+    !calendar.contains(event.target) &&
+    !calendarButton.contains(event.target)
+  ) {
+    calendar.classList.add("showNone");
+    document.removeEventListener("click", closeCalendarOnClickOutside);
+  }
+}
+
 // ============================================================
 
 function showGuests() {
@@ -102,13 +133,12 @@ function showGuests() {
 // ============================================================
 function showRooms() {
   const input = document.querySelector(".show-dropdownRoom");
-  const block = document.querySelector(".dropdown__content");
+  const block = document.querySelector(".dropdown__content.check__room");
   const valueRooms = document.querySelectorAll(".btn_value");
 
   input.addEventListener("click", (event) => {
     // event.stopPropagation();
     block.classList.toggle("dropdown__content__active");
-    console.log("test ..........");
   });
   document.addEventListener("click", (event) => {
     if (!block.contains(event.target) && !input.contains(event.target)) {
@@ -117,4 +147,14 @@ function showRooms() {
   });
   initGuestControls(valueRooms);
   updateGuestDisplay();
+}
+// range slider value ====================================================
+function showValueCoast() {
+  let rangeMin = document.querySelector(".range-min");
+  let rangeMax = document.querySelector(".range-max");
+  rangeSlider(([min, max]) => {
+    console.log("Минимум:", min, "Максимум:", max);
+    rangeMin.textContent = min + "₽ - ";
+    rangeMax.textContent = max + "₽";
+  });
 }

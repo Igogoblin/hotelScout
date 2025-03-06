@@ -1,17 +1,18 @@
 include ../slider/slider.pug
 mixin room-card(options)
     - console.log("room-card вызывается!", options)
-    .room__card 
-        .room__card-image 
-            +slider(options)
-        .room__card-wrapper
-            +roomCardBody(options)
-            .room_separator
-            .room__card-footer
-                .card-star
-                    +feedbackQuality(options.star)
-                .card-review #{options.reviewNumbers}
-                    span  Отзывов
+    a(href=`/hotelScout/room/${options.number}` data-link, class="link-to-room")
+        .room__card 
+            .room__card-image 
+                +slider(options)
+            .room__card-wrapper
+                +roomCardBody(options)
+                .room_separator
+                .room__card-footer
+                    .card-star
+                        +feedbackQuality(options.star)
+                    .card-review #{options.reviewNumbers}
+                        span  Отзывов
 
 mixin feedbackQuality(options)
     .feedbackQuality__block

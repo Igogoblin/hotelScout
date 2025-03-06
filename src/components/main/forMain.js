@@ -130,7 +130,6 @@ export function setupValueControls(valueGuests) {
 function checkClassButton(btnMinus, valueGuests) {
   valueGuests.forEach((guest, index) => {
     if (parseInt(guest.textContent) === 0) {
-      console.log("we ");
       btnMinus[index].classList.add("correctClass");
     }
     if (parseInt(guest.textContent) > 0) {

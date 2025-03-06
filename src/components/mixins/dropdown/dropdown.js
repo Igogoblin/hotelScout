@@ -20,9 +20,9 @@ export function initGuestControls(guestValues) {
 function updateMinusButtonState(minusButtons, guestValues) {
   guestValues.forEach((guest, index) => {
     if (parseInt(guest.textContent) === 0) {
-      minusButtons[index].classList.add("btn_disabled");
+      minusButtons[index].classList.add("correctClass");
     } else {
-      minusButtons[index].classList.remove("btn_disabled");
+      minusButtons[index].classList.remove("correctClass");
     }
   });
 }
@@ -34,10 +34,14 @@ export function adjustGuestCount(guestValues, index, change) {
 }
 
 export function updateGuestDisplay() {
-  const displayButton = document.querySelector(".dropdown_display");
-  const totalGuests = countGuests();
-  const babyCount = countGuests(true);
+  const displayButton = document.querySelector(".show-dropdownRoom");
   if (!displayButton) return;
+  const totalRooms = parseInt(
+    document.querySelector(".rooms.btn_value").textContent
+  );
+  const totalBeds = parseInt(
+    document.querySelector(".beds.btn_value").textContent
+  );
 
   let text = "";
 
@@ -56,19 +60,5 @@ export function updateGuestDisplay() {
       totalBeds === 1 ? "кровать" : totalBeds < 5 ? "кровати" : "кроватей"
     }`;
   }
-
   displayButton.textContent = text;
-}
-
-export function countGuests(isBabies = false) {
-  let count = 0;
-  const guestValues = document.querySelectorAll(".btn_value");
-  guestValues.forEach((value) => {
-    if (isBabies && value.classList.contains("baby")) {
-      count += parseInt(value.textContent) || 0;
-    } else if (!isBabies && !value.classList.contains("baby")) {
-      count += parseInt(value.textContent) || 0;
-    }
-  });
-  return count;
 }

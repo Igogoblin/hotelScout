@@ -5,7 +5,9 @@ import { correctHoverForm } from "../pages/forms/forms.js";
 import { showCalendar } from "../pages/cards/cards.js";
 import { checkbox } from "../components/mixins/checkbox/checkbox.js";
 import { workSearch } from "../pages/search/search.js";
-function loadContent(url) {
+
+function loadContent(url, roomId = null) {
+  console.log("Загружаем:", url);
   fetch(url)
     .then((response) => {
       if (!response.ok)
@@ -15,19 +17,31 @@ function loadContent(url) {
     .then((html) => {
       document.body.innerHTML = html;
       setTimeout(() => initializeScripts(url), 100);
+      if (roomId) {
+        console.log("ID комнаты:", roomId);
+        loadRoomData(roomId);
+      }
     })
     .catch((err) => {
       document.body.innerHTML = "<h1>Error loading content</h1>";
       console.error(err);
     });
 }
-
+function loadRoomData(roomId) {
+  console.log(`Загружаем данные для комнаты ID: ${roomId}`);
+  // Здесь можно подгружать данные с сервера через fetch()
+}
 function navigateTo(route) {
-  if (routes[route]) {
+  const page = getRoute(route);
+  if (page) {
     history.pushState({}, "", route);
-    loadContent(routes[route]);
+
+    const roomId = route.startsWith("/hotelScout/room/")
+      ? route.split("/").pop()
+      : null;
+    loadContent(page, roomId);
   } else {
-    console.log("Default route or 404 handler here.");
+    console.log("Страница не найдена:", route);
   }
 }
 
@@ -45,12 +59,19 @@ const routes = {
   "/hotelScout/search": "./search.html",
 };
 
+function getRoute(route) {
+  if (route.startsWith("/hotelScout/room/")) {
+    return "/hotelScout/room.html"; // Для всех комнат загружаем `room.html`
+  }
+  return routes[route] || null;
+}
 // Инициализация контента при загрузке
 const initialRoute = window.location.pathname;
-if (routes[initialRoute]) {
-  loadContent(routes[initialRoute]);
+const page = getRoute(initialRoute);
+if (page) {
+  loadContent(page);
 } else {
-  console.log("Default route or 404 handler here.");
+  console.log("Страница не найдена.");
 }
 
 // Обработка навигации без перезагрузки страницы
@@ -64,7 +85,12 @@ document.addEventListener("click", (event) => {
 
 // Обработка кнопок "Назад" и "Вперед"
 window.addEventListener("popstate", () => {
-  loadContent(routes[window.location.pathname]);
+  const route = getRoute(window.location.pathname);
+  if (route) {
+    loadContent(route);
+  } else {
+    console.log("Страница не найдена.");
+  }
 });
 
 function initializeScripts(url) {
@@ -82,6 +108,7 @@ function initializeScripts(url) {
       mburger();
       checkbox();
       workSearch();
+      rangeSlider();
       break;
     case "cards":
       mburger();

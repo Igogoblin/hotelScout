@@ -18,65 +18,73 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      // .air-datepicker.-inline- {
-      //   top: 0;
-      //   display: flex;
-      //   flex-direction: column;
-      //   justify-content: start;
-      //   .air-datepicker--navigation {
-      //     .air-datepicker-nav {
-      //       width: 290px;
-      //       padding: 13px 15px 10px 10px;
-      //       .air-datepicker-nav--action {
-      //         svg {
-      //           width: 19px;
-      //           height: 17px;
-      //         }
-      //       }
-      //       .air-datepicker-nav--title {
-      //         padding: 0 5px 0 10px;
-      //         letter-spacing: 0.5px;
-      //       }
-      //     }
-      //   }
-      //   .air-datepicker--content {
-      //     .air-datepicker-body.-days- {
-      //       .air-datepicker-body--day-names {
-      //         margin: 12px 0 0 0;
-      //       }
-      //       .-selected-.air-datepicker-cell.-day-.-range-from- {
-      //         background: linear-gradient(180deg, $green 0%, $green-grand 100%);
-      //       }
-      //       .checkingDate {
-      //         background: linear-gradient(
-      //           180deg,
-      //           $purple 0%,
-      //           $purple-grand 100%
-      //         );
-      //         border-radius: 50%;
-      //         color: $white;
-      //       }
-      //       .checkingPeriod {
-      //         background: $purple;
-      //         opacity: 0.18;
-      //         border-radius: none;
-      //       }
-      //     }
-      //   }
-      //   .air-datepicker--buttons {
-      //     padding: 6px 0 0 0;
-      //     .air-datepicker-buttons {
-      //       .air-datepicker-button {
-      //         margin-top: 15px;
-      //         @include font-style(h3);
-      //         text-transform: uppercase;
-      //         span {
-      //           margin: 0 15px 0 15px;
-      //         }
-      //       }
-      //     }
-      //   }
-      // }
+      .input__block.short {
+        position: relative;
+      }
+      .air-datepicker.-inline- {
+        position: absolute;
+        top: 63px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        z-index: 150;
+        .air-datepicker--navigation {
+          .air-datepicker-nav {
+            width: 290px;
+            padding: 13px 15px 10px 10px;
+            .air-datepicker-nav--action {
+              svg {
+                width: 19px;
+                height: 17px;
+              }
+            }
+            .air-datepicker-nav--title {
+              padding: 0 5px 0 10px;
+              letter-spacing: 0.5px;
+            }
+          }
+        }
+        .air-datepicker--content {
+          .air-datepicker-body.-days- {
+            .air-datepicker-body--day-names {
+              margin: 12px 0 0 0;
+            }
+            .-selected-.air-datepicker-cell.-day-.-range-from- {
+              background: linear-gradient(180deg, $green 0%, $green-grand 100%);
+            }
+            .checkingDate {
+              background: linear-gradient(
+                180deg,
+                $purple 0%,
+                $purple-grand 100%
+              );
+              border-radius: 50%;
+              color: $white;
+            }
+            .checkingPeriod {
+              background: $purple;
+              opacity: 0.18;
+              border-radius: none;
+            }
+          }
+        }
+        .air-datepicker--buttons {
+          padding: 6px 0 0 0;
+          .air-datepicker-buttons {
+            .air-datepicker-button {
+              margin-top: 15px;
+              @include font-style(h3);
+              text-transform: uppercase;
+              span {
+                margin: 0 15px 0 15px;
+              }
+            }
+          }
+        }
+        &.showNone {
+          display: none;
+        }
+      }
       .dropdown {
         .dropdown__content {
           background: $white;
@@ -127,7 +135,7 @@
         }
       }
       .dropdownRoom {
-        margin-top: 12px;
+        margin-bottom: 12px;
       }
     }
     section {
@@ -142,66 +150,16 @@
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
+        .room__card:nth-child(1),
+        .room__card:nth-child(4),
+        .room__card:nth-child(7) {
+          margin-bottom: 8px;
+        }
       }
+
       .pagination__block {
         margin: 0 auto;
-        margin-top: 40px;
-      }
-    }
-  }
-}
-
-.air-datepicker.-inline- {
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  .air-datepicker--navigation {
-    .air-datepicker-nav {
-      width: 290px;
-      padding: 13px 15px 10px 10px;
-      .air-datepicker-nav--action {
-        svg {
-          width: 19px;
-          height: 17px;
-        }
-      }
-      .air-datepicker-nav--title {
-        padding: 0 5px 0 10px;
-        letter-spacing: 0.5px;
-      }
-    }
-  }
-  .air-datepicker--content {
-    .air-datepicker-body.-days- {
-      .air-datepicker-body--day-names {
-        margin: 12px 0 0 0;
-      }
-      .-selected-.air-datepicker-cell.-day-.-range-from- {
-        background: linear-gradient(180deg, $green 0%, $green-grand 100%);
-      }
-      .checkingDate {
-        background: linear-gradient(180deg, $purple 0%, $purple-grand 100%);
-        border-radius: 50%;
-        color: $white;
-      }
-      .checkingPeriod {
-        background: $purple;
-        opacity: 0.18;
-        border-radius: none;
-      }
-    }
-  }
-  .air-datepicker--buttons {
-    padding: 6px 0 0 0;
-    .air-datepicker-buttons {
-      .air-datepicker-button {
-        margin-top: 15px;
-        @include font-style(h3);
-        text-transform: uppercase;
-        span {
-          margin: 0 15px 0 15px;
-        }
+        margin-top: 22px;
       }
     }
   }
