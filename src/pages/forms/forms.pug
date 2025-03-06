@@ -7,6 +7,7 @@ include ../../components/mixins/rangeSlider/rangeSlider.pug
 include ../../components/mixins/pagination/pagination.pug
 include ../../components/mixins/dropdown/dropdownRoom.pug
 include ../../components/mixins/bulletList/bulletList.pug
+include ../../components/mixins/gradeVisual/gradeVisual.pug
 
 +ui-header({title: "Form Elements", active: "forms", className:"ui__area ui__header"})
 .wrapper.formsPage 
@@ -98,16 +99,8 @@ include ../../components/mixins/bulletList/bulletList.pug
 
     .forms__grade
         .forms__grade-visual
-            .grade-visual--comport
-                img(src=require("@assets/insert_emoticon.svg").default, alt="comfort")
-                div 
-                    p Комфорт
-                    span Шумопоглощающие стены
-            .grade-visual--convenience
-                img(src=require("@assets/location_city.svg").default, alt="comfort place")
-                div 
-                    p Удобство
-                    span Окно в каждой из спален
+            +gradeVisual({type: "comfort"})
+            +gradeVisual({type: "convenience"})
         .forms__grade-user 
             .grade-user 
                 .grade-user-image 

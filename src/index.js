@@ -35,12 +35,15 @@ import "./components/mixins/checkbox/checkbox.js";
 import "./components/mixins/buttons/buttons.scss";
 import "./pages/forms/forms.scss";
 import "./pages/forms/forms.js";
+import "./pages/room/room.scss";
 import "./components/mixins/rangeSlider/rangeSlider.scss";
 import "./components/mixins/rangeSlider/rangeSlider.js";
 import "./components/mixins/pagination/pagination.scss";
 import "./components/mixins/dropdown/dropdownRoom.scss";
 import "./components/mixins/bulletList/bulletList.scss";
 import "./components/mixins/userAcc/userAcc.scss";
+import "./components/mixins/gradeVisual/gradeVisual.pug";
+import "./components/mixins/gradeVisual/gradeVisual.scss";
 import "./data/rooms.json";
 
 console.log("hotelScout is running!");

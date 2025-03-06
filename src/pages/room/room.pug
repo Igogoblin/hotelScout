@@ -1,8 +1,40 @@
 include ../../components/header/header.pug
 include ../../components/footer/footer.pug
+include ../../components/mixins/finishCardRoom/finishCardRoom.pug
+include ../../components/mixins/gradeVisual/gradeVisual.pug
 
 +header()
 main.room
+    .room__visual 
+        img(src=require("@assets/rooms/room-888-1.jpg").default, alt="visual room", class="roomImage1") 
+        .room__visual-image 
+            img(src=require("@assets/rooms/room-888-2.jpg").default, alt="visual room", class="roomImage2") 
+            img(src=require("@assets/rooms/room-888-3.jpg").default, alt="visual room", class="roomImage3") 
     .wrapper
-        h1 this is room page 
+        .room_main
+            .room-about 
+                .room-information 
+                    h2 Сведения о номере
+                    .room-information_item
+                        +gradeVisual({type: "comfort"})
+                        +gradeVisual({type: "convenience"})
+                        +gradeVisual({type: "star"})
+                .room-impression 
+                    h2 Впечатления от номера
+            .room-review 
+                .room-review_title    
+                    h2 Отзывы посетителей номера
+                    .room-review_quantity 2 отзыва
+                .room-review_block             
+            .room-rules 
+                .room_rules 
+                    h2 Правила
+
+                .room_cancel 
+                    h2 Отмена
+                    p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        .room_card 
+            +finishCardRoom({number: 888, price: 9990, lux: true, day: 4, label: "Гости",arrival:"прибытие",departure:"выезд",idCalendar:"cardFormic" })
+
+
 +footer()

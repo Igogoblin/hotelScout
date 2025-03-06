@@ -1,0 +1,29 @@
+mixin gradeVisual(options)
+    if options.type === "comfort"
+        .grade-visual
+            img(src=require("@assets/insert_emoticon.svg").default, alt="comfort")
+            div 
+                p Комфорт
+                span Шумопоглощающие стены
+    else
+        if options.type === "convenience"
+            .grade-visual
+                img(src=require("@assets/location_city.svg").default, alt="comfort place")
+                div 
+                    p Удобство
+                    span Окно в каждой из спален
+        else
+            if options.type === "luxury"
+                .grade-visual
+                    img(src=require("@assets/star.svg").default, alt="luxury")
+                    div 
+                        p Роскошь
+                        span Дорогая мебель и премиальный ремонт
+            else 
+                if options.type === "star"
+                    .grade-visual
+                        img(src=require("@assets/whatshot.svg").default, alt="luxury")
+                        div 
+                            p Уют
+                            span Номер оснащён камином
+
