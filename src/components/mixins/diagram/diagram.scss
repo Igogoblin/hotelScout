@@ -24,10 +24,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
     .gradient-text {
       font-size: 12px;
       line-height: 12px;
       text-transform: uppercase;
+      margin-bottom: 5px;
     }
   }
 }

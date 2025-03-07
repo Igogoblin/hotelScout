@@ -6,6 +6,7 @@ include ../../components/mixins/reviewUser/reviewUser.pug
 include ../../components/mixins/reviewText/reviewText.pug
 include ../../components/mixins/bulletList/bulletList.pug
 include ../../components/mixins/diagram/diagram.pug
+include ../../components/mixins/mixins.pug
 
 +header()
 main.room
@@ -25,7 +26,14 @@ main.room
                         +gradeVisual({type: "star"})
                 .room-impression 
                     h2 Впечатления от номера
-                    +diagram({items: 260})
+                    .diagram-block
+                        +diagram({items: 260})
+                        .diagram-story 
+                            +story({color:"beige",text: "Великолепно"})
+                            +story({color:"green",text: "Хорошо"})
+                            +story({color:"purple",text: "Удовлетворительно"})
+                            +story({color:"gray",text: "Разочарован"})
+
                     
             .room-review 
                 .room-review_title    

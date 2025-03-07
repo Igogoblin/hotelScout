@@ -537,3 +537,33 @@
     }
   }
 }
+
+.story-block {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  .story-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    &.green {
+      background: $gradientGreen;
+    }
+    &.beige {
+      background: $gradientBeige;
+    }
+    &.gray {
+      background: $gradientGray;
+    }
+    &.purple {
+      background: $gradientPurple;
+    }
+  }
+  .story-text {
+    font-size: 12px;
+    line-height: 24px;
+    color: $darkShade-75;
+    letter-spacing: 1.1px;
+  }
+}
