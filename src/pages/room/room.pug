@@ -5,6 +5,7 @@ include ../../components/mixins/gradeVisual/gradeVisual.pug
 include ../../components/mixins/reviewUser/reviewUser.pug
 include ../../components/mixins/reviewText/reviewText.pug
 include ../../components/mixins/bulletList/bulletList.pug
+include ../../components/mixins/diagram/diagram.pug
 
 +header()
 main.room
@@ -24,6 +25,8 @@ main.room
                         +gradeVisual({type: "star"})
                 .room-impression 
                     h2 Впечатления от номера
+                    +diagram({items: 260})
+                    
             .room-review 
                 .room-review_title    
                     h2 Отзывы посетителей номера

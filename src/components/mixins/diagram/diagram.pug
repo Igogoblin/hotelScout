@@ -1,0 +1,15 @@
+                    
+mixin pluralize(count, one, few, many)
+    - var mod10 = count % 10, mod100 = count % 100
+    if count === 1
+        | #{one}
+    else if mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)
+        | #{few}
+    else
+        | #{many}
+
+mixin diagram(options)
+    .gradient
+        .gradient-centre  #{options.items}
+            .gradient-text
+                +pluralize(options.items, "голос", "голоса", "голосов")

@@ -5,6 +5,7 @@ import { correctHoverForm } from "../pages/forms/forms.js";
 import { showCalendar } from "../pages/cards/cards.js";
 import { checkbox } from "../components/mixins/checkbox/checkbox.js";
 import { workSearch } from "../pages/search/search.js";
+import { diagram } from "../components/mixins/diagram/diagram.js";
 
 function loadContent(url, roomId = null) {
   console.log("Загружаем:", url);
@@ -100,6 +101,11 @@ function initializeScripts(url) {
       initializeCalendar();
       mburger();
       break;
+    case "room":
+      mburger();
+      diagram();
+      break;
+
     case "colors":
 
     case "headers":
