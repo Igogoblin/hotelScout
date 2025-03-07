@@ -5,21 +5,28 @@ include ../../components/mixins/input/inputForm.pug
 include ../../components/mixins/rangeSlider/rangeSlider.pug
 include ../../components/mixins/checkbox/checkbox.pug
 include ../../components/mixins/dropdown/dropdownRoom.pug
+include ../../components/mixins/roomCard/roomCard.pug
+include ../../components/mixins/pagination/pagination.pug
+
+- var roomData = require("../../data/rooms.json")
+- var order = [888, 840, 980, 856, 740, 982, 678, 450, 350, 666, 444, 352]
+- var sortedRooms = roomData.sort((a, b) => order.indexOf(a.number) - order.indexOf(b.number))
+
 
 +header()
 main.search 
     .wrapper 
         .aside
-            +inputForm({type: "text", placeholder: "19 авг - 23 авг", label:"даты пребывания в отеле", isImage: "down", class_name:"short" })
-            +dropdownGuest({label: "гости"})
+            +inputForm({type: "text", placeholder: "19 авг - 23 авг", label:"даты пребывания в отеле", isImage: "down", class_name:"short",className:"searchCalendar" })
+            +dropdownGuest({value: "Сколько гостей", label: "гости", isContent: false })
             .forms__range 
                 .range-title
-                    span диапазон цены
+                    span.range-title__text диапазон цены
                     .range-text 
                         span.range-min 5 000₽ - 
                         span.range-max 10 000₽
                 +rangeSlider
-                span Стоимость за сутки пребывания в номере
+                span.range-title_text Стоимость за сутки пребывания в номере
             +checkBox({arr:[
  { feature: "smocking", text: "Можно курить" },
  { feature: "pet", text: "Можно с питомцами", checked: true },
@@ -28,12 +35,22 @@ main.search
             +checkBoxDifficult({arr:[
             { feature: "k", text: "Широкий коридор", textSecond: "Ширина коридоров в номере не менее 91 см." },
             {feature: "hel", text: "Помощник для инвалидов", textSecond:"На 1 этаже вас встретит специалист  и проводит до номера."},
-            ], title:"доступность", className: "accessibility"})
-            +dropdownRoom({value: "2 спальни, 2 кровати...", label: "удобства номера", labelText: "Default",isContent: true})
-            +checkBox({title: "дополнительные удобства", isList: true})
+            ], title:"доступность", className: "accessibility", class_name: "checkBoxFat"})
+            +dropdownRoom({value: "2 спальни, 2 кровати...", label: "удобства номера",isContent: false})
+            +checkBox({arr:[
+ { feature: "breakfast", text: "Завтрак" },
+ { feature: "desk", text: "Письменный стол"  },
+ { feature: "babyChair", text: "Стул для кормления"  }, 
+ { feature: "babyBed", text: "Кроватка" }, 
+ { feature: "tv", text: "Телевизор" }, 
+ { feature: "shampoo", text: "Шампунь" } 
+],title: "дополнительные удобства", isList: true, className: "checkBox__title-active", id:"roomOptional", isShow: true})
+            //- +checkBox({title: "дополнительные удобства", isList: true,id:"roomOptional"})
         section
             h1 Номера, которые мы для вас подобрали
             .search__block
-
-             
+                    each room in sortedRooms
+                        - var roomImages = room.images ? room.images : []
+                        +room-card({star: room.star, lux: room.lux, price: room.price, number: room.number, reviewNumbers: room.reviewNumbers, images: roomImages})
+            +pagination
 +footer()

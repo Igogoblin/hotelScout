@@ -109,7 +109,7 @@ mixin ui-header(options)
 
         div(class='header-wrapper')
             //- a(href="/"  data-link, onclick="initializeCalendar()")
-            a(href="/"  data-link)
+            a(href="/hotelScout"  data-link)
                 img(src=require("@assets/ui-logo.svg").default, alt="logo")
             span(class='ui__title')= options.title
             +menu([
@@ -176,3 +176,8 @@ mixin type-list(types)
                 span= type.title
             .type__title
                 span= type.text
+
+mixin story(options) 
+    .story-block 
+        div(class=`story-color ${options.color}`) 
+        .story-text #{options.text}

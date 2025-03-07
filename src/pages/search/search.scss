@@ -1,7 +1,8 @@
+@use "../../styles/_const.scss" as *;
 .search {
   max-width: 1440px;
   width: 100%;
-  //   height: 1356px;
+  min-height: 1356px;
   margin: 0 auto;
   .wrapper {
     max-width: 1160px;
@@ -17,15 +18,149 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      .input__block.short {
+        position: relative;
+      }
+      .air-datepicker.-inline- {
+        position: absolute;
+        top: 63px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        z-index: 150;
+        .air-datepicker--navigation {
+          .air-datepicker-nav {
+            width: 290px;
+            padding: 13px 15px 10px 10px;
+            .air-datepicker-nav--action {
+              svg {
+                width: 19px;
+                height: 17px;
+              }
+            }
+            .air-datepicker-nav--title {
+              padding: 0 5px 0 10px;
+              letter-spacing: 0.5px;
+            }
+          }
+        }
+        .air-datepicker--content {
+          .air-datepicker-body.-days- {
+            .air-datepicker-body--day-names {
+              margin: 12px 0 0 0;
+            }
+            .-selected-.air-datepicker-cell.-day-.-range-from- {
+              background: linear-gradient(180deg, $green 0%, $green-grand 100%);
+            }
+            .checkingDate {
+              background: linear-gradient(
+                180deg,
+                $purple 0%,
+                $purple-grand 100%
+              );
+              border-radius: 50%;
+              color: $white;
+            }
+            .checkingPeriod {
+              background: $purple;
+              opacity: 0.18;
+              border-radius: none;
+            }
+          }
+        }
+        .air-datepicker--buttons {
+          padding: 6px 0 0 0;
+          .air-datepicker-buttons {
+            .air-datepicker-button {
+              margin-top: 15px;
+              @include font-style(h3);
+              text-transform: uppercase;
+              span {
+                margin: 0 15px 0 15px;
+              }
+            }
+          }
+        }
+        &.showNone {
+          display: none;
+        }
+      }
+      .dropdown {
+        .dropdown__content {
+          background: $white;
+          z-index: 100;
+        }
+        .guest-design--active {
+          display: block;
+        }
+      }
       .forms__range {
-        margin: 10px 0;
+        margin: 13px 0 10px 0;
+        @include font-style(h3);
+        color: $darkShade-50;
+        .range-title {
+          display: flex;
+          justify-content: space-between;
+        }
+        .slider-container {
+          margin: 20px 0 16px 0;
+        }
+        span {
+        }
+        .range-title__text {
+          color: $darkShade-100;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+        .range-title_text {
+          letter-spacing: -0.1px;
+        }
+      }
+      .checkBox__block.checkBoxFat {
+        .checkBox__wrapper {
+          max-width: 266px;
+          margin: 3px 0;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 18px;
+          color: $darkShade-75;
+          font-weight: 700;
+          letter-spacing: 0.3px;
+        }
+        span {
+          @include font-style(h3);
+          color: $darkShade-50;
+        }
+      }
+      .dropdownRoom {
+        margin-bottom: 12px;
       }
     }
     section {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 22px;
+      h1 {
+        letter-spacing: 0.45px;
+      }
+      .search__block {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        .room__card:nth-child(1),
+        .room__card:nth-child(4),
+        .room__card:nth-child(7) {
+          margin-bottom: 8px;
+        }
+      }
+
+      .pagination__block {
+        margin: 0 auto;
+        margin-top: 22px;
+      }
     }
   }
 }

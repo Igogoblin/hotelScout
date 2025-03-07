@@ -18,4 +18,4 @@ mixin likeButton(options)
     div(class=`likeButton__block ${options.className?options.className:""} ${options.checked ? 'checked' : ''}`)
         img.likeButton__icon.likeButton__icon--checked(src=require("@assets/favorite.svg").default, alt="like")
         img.likeButton__icon.likeButton__icon--unchecked(src=require("@assets/favorite_border.svg").default, alt="like")
-        span.likeText= options.checked ? 12 : 2
+        span.likeText #{options.likeValue}

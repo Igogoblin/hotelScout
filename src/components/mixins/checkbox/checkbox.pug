@@ -1,19 +1,19 @@
 
 
 mixin checkBox(options)
-    .checkBox__block 
+    div(class="checkBox__block" id=options.id)
         .checkBox__title
             h3 #{options.title}
             if options.isList
                 img(src=require("@assets/expand_more.svg").default, alt="expend more", class=options.className?options.className:"")
         if options.arr
             for item in options.arr
-                .checkBox__wrapper
+                div(class=`checkBox__wrapper ${options.isShow?"showNone":""}`)
                     input(type="checkbox", id=item.feature, checked=item.checked ? "checked" : null)
                     label(for=item.feature  ) #{item.text}
 
 mixin checkBoxDifficult(options)
-    .checkBox__block 
+    div(class=`checkBox__block ${options.class_name?options.class_name:""}`) 
         .checkBox__title
             h3 #{options.title}
             if options.isList

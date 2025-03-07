@@ -1,1 +1,61 @@
-h1 this is room page 
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+include ../../components/mixins/finishCardRoom/finishCardRoom.pug
+include ../../components/mixins/gradeVisual/gradeVisual.pug
+include ../../components/mixins/reviewUser/reviewUser.pug
+include ../../components/mixins/reviewText/reviewText.pug
+include ../../components/mixins/bulletList/bulletList.pug
+include ../../components/mixins/diagram/diagram.pug
+include ../../components/mixins/mixins.pug
+
++header()
+main.room
+    .room__visual 
+        img(src=require("@assets/rooms/room-888-1.jpg").default, alt="visual room", class="roomImage1") 
+        .room__visual-image 
+            img(src=require("@assets/rooms/room-888-2.jpg").default, alt="visual room", class="roomImage2") 
+            img(src=require("@assets/rooms/room-888-3.jpg").default, alt="visual room", class="roomImage3") 
+    .wrapper
+        .room_main
+            .room-about 
+                .room-information 
+                    h2 Сведения о номере
+                    .room-information_item
+                        +gradeVisual({type: "comfort"})
+                        +gradeVisual({type: "convenience"})
+                        +gradeVisual({type: "star"})
+                .room-impression 
+                    h2 Впечатления от номера
+                    .diagram-block
+                        +diagram({items: 260})
+                        .diagram-story 
+                            +story({color:"beige",text: "Великолепно"})
+                            +story({color:"green",text: "Хорошо"})
+                            +story({color:"purple",text: "Удовлетворительно"})
+                            +story({color:"gray",text: "Разочарован"})
+
+                    
+            .room-review 
+                .room-review_title    
+                    h2 Отзывы посетителей номера
+                    .room-review_quantity 2 отзыва
+                .room-review_block
+                    +reviewUser({image: "muradSaraphanov",name: "Мурад Сарафанов", lastDate:"5 дней назад"})
+                    +reviewText({text:"Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",className:"likeButton", checked: true, likeValue: 12})
+                .room-review_block
+                    +reviewUser({image: "patrishaSteklo",name: "Патрисия Стёклышкова", lastDate:"Неделю назад"})
+                    +reviewText({text:"Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",className:"likeButton", checked: false, likeValue: 2})            
+            .room-rules 
+                +bulletList({items:[
+            {text: "Нельзя с питомцами"},
+            {text: "Без вечеринок и мероприятий"},
+            {text: "Время прибытия — после 13:00, а выезд до 12:00"},], label: "Правила"})
+
+                .room_cancel 
+                    h2 Отмена
+                    p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        .room_card 
+            +finishCardRoom({number: 888, price: 9990, lux: true, day: 4, label: "Гости",arrival:"прибытие",departure:"выезд",idCalendar:"cardFormic" })
+
+
++footer()

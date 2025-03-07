@@ -1,0 +1,129 @@
+@use "../../styles/_const.scss" as *;
+.room {
+  max-width: 1440px;
+  width: 100%;
+  min-height: 1423px;
+  margin: 0 auto;
+  .room__visual {
+    max-width: 1440px;
+    width: 100%;
+    height: 485px;
+    display: flex;
+    margin: 0 auto;
+    .room__visual-image {
+      max-width: 459px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .wrapper {
+    .room_main {
+      max-width: 712px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      // gap: 30px;
+      margin-top: 70px;
+      .room-about {
+        display: flex;
+        justify-content: start;
+        gap: 104px;
+        .room-information {
+          h2 {
+            letter-spacing: 0.3px;
+          }
+          .room-information_item {
+            margin: 2px 0 0 4px;
+          }
+        }
+        // .room-information {
+        //   display: flex;
+        //   flex-direction: column;
+        //   gap: 20px;
+
+        //   .room-information_item {
+        //     .grade-visual {
+        //       gap: 13px;
+        //       align-items: start;
+        //       img {
+        //         margin: 5px 0 0 5px;
+        //       }
+        //     }
+        //   }
+        // }
+        .room-impression {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          h2 {
+            letter-spacing: 0.3px;
+          }
+          .diagram-block {
+            height: 124px;
+            display: flex;
+            gap: 30px;
+            justify-content: start;
+            align-items: end;
+          }
+        }
+      }
+      .room-review {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+        margin: 10px 0 34px;
+        .room-review_title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 4px;
+          h2 {
+            letter-spacing: 0.4px;
+          }
+          .room-review_quantity {
+            font-size: 14px;
+            line-height: 14px;
+            color: $darkShade-50;
+            padding-top: 5px;
+          }
+        }
+        .room-review_block {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+      .room-rules {
+        display: flex;
+        justify-content: space-between;
+        gap: 100px;
+
+        .bulletList__block {
+          display: flex;
+          flex-direction: column;
+          gap: 13px;
+          .bulletList__label {
+            font-size: 19px;
+            line-height: 19px;
+            color: $darkShade-100;
+            font-weight: 700;
+            padding-left: 20px;
+          }
+        }
+        .room_cancel {
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+          p {
+            @include font-style(body);
+            color: $darkShade-75;
+          }
+        }
+      }
+    }
+    .room_card {
+      margin-top: 70px;
+    }
+  }
+}

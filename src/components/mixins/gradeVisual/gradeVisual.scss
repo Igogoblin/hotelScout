@@ -1,0 +1,17 @@
+@use "../../../styles/_const.scss" as *;
+.grade-visual {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: $darkShade-75;
+  @include font-style(body);
+  border-bottom: 1px solid $darkShade-10;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  p {
+    font-weight: 700;
+  }
+}

@@ -7,6 +7,9 @@ include ../../components/mixins/rangeSlider/rangeSlider.pug
 include ../../components/mixins/pagination/pagination.pug
 include ../../components/mixins/dropdown/dropdownRoom.pug
 include ../../components/mixins/bulletList/bulletList.pug
+include ../../components/mixins/gradeVisual/gradeVisual.pug
+include ../../components/mixins/reviewUser/reviewUser.pug
+include ../../components/mixins/reviewText/reviewText.pug
 
 +ui-header({title: "Form Elements", active: "forms", className:"ui__area ui__header"})
 .wrapper.formsPage 
@@ -35,8 +38,8 @@ include ../../components/mixins/bulletList/bulletList.pug
         .forms__like 
             span like button
             .forms__like-area
-                +likeButton({checked: false})
-                +likeButton({className:"likeButton", checked: true})
+                +likeButton({checked: false, likeValue: 2})
+                +likeButton({className:"likeButton", checked: true, likeValue: 12})
         .forms__rate 
             span rate button
             .forms__rate-area
@@ -98,26 +101,8 @@ include ../../components/mixins/bulletList/bulletList.pug
 
     .forms__grade
         .forms__grade-visual
-            .grade-visual--comport
-                img(src=require("@assets/insert_emoticon.svg").default, alt="comfort")
-                div 
-                    p Комфорт
-                    span Шумопоглощающие стены
-            .grade-visual--convenience
-                img(src=require("@assets/location_city.svg").default, alt="comfort place")
-                div 
-                    p Удобство
-                    span Окно в каждой из спален
+            +gradeVisual({type: "comfort"})
+            +gradeVisual({type: "convenience"})
         .forms__grade-user 
-            .grade-user 
-                .grade-user-image 
-                    img(src=require("@assets/muradSaraphanov.jpg").default, alt="user image", class="grade-user-image")
-                .grade-user-name 
-                    p Мурад Сарафанов
-                    span 5 дней назад
-            .grade-feedback 
-                .grade-feedback-like
-                    +likeButton({className:"likeButton", checked: true})
-                .grade-feedback-text 
-                    p Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
-                    
+            +reviewUser({image: "muradSaraphanov",name: "Мурад Сарафанов", lastDate:"5 дней назад"})
+            +reviewText({text:"Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",className:"likeButton", checked: true, likeValue: 12})

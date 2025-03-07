@@ -12,6 +12,14 @@ $purple-grand: rgba(139, 164, 248, 1);
 $green: rgba(111, 207, 151, 1);
 $white: rgba(255, 255, 255, 1);
 $green-grand: rgba(102, 210, 234, 1);
+$beige: rgba(255, 227, 156, 1);
+$beige-grand: rgba(255, 186, 156, 1);
+$gray: rgba(144, 144, 144, 1);
+$gray-grand: rgba(61, 73, 117, 1);
+$gradientPurple: linear-gradient(180deg, $purple 0%, $purple-grand 100%);
+$gradientGreen: linear-gradient(180deg, $green 0%, $green-grand 100%);
+$gradientBeige: linear-gradient(180deg, $beige 0%, $beige-grand 100%);
+$gradientGray: linear-gradient(180deg, $gray 0%, $gray-grand 100%);
 
 $fontFamily: "Montserrat", sans-serif;
 
