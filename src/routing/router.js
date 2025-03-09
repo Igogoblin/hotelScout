@@ -110,6 +110,8 @@ function initializeScripts(url) {
 
     case "headers":
     case "about":
+      mburger();
+      break;
     case "search":
       mburger();
       checkbox();
@@ -125,8 +127,7 @@ function initializeScripts(url) {
       rangeSlider();
       correctHoverForm();
       break;
-    // case "ui-forms":
-    //   break;
+
     default:
       initializeCalendar();
       mburger();
