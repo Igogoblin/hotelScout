@@ -6,6 +6,7 @@ import { showCalendar } from "../pages/cards/cards.js";
 import { checkbox } from "../components/mixins/checkbox/checkbox.js";
 import { workSearch } from "../pages/search/search.js";
 import { diagram } from "../components/mixins/diagram/diagram.js";
+import { roomWithNumber } from "../pages/room/room.js";
 
 function loadContent(url, roomId = null) {
   console.log("Загружаем:", url);
@@ -30,6 +31,9 @@ function loadContent(url, roomId = null) {
 }
 function loadRoomData(roomId) {
   console.log(`Загружаем данные для комнаты ID: ${roomId}`);
+  if (roomId !== 888) {
+    roomWithNumber(roomId);
+  }
   // Здесь можно подгружать данные с сервера через fetch()
 }
 function navigateTo(route) {
@@ -48,7 +52,7 @@ function navigateTo(route) {
 
 const routes = {
   "/": "./index.html",
-  "/hotelScout": "./index.html",
+  "/hotelScout/": "./index.html",
   "/hotelScout/about": "./about.html",
   "/hotelScout/registration": "./registration.html",
   "/hotelScout/enter": "./enter.html",
