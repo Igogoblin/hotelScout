@@ -65,6 +65,7 @@ module.exports = {
           filename: "assets/[name][ext]",
         },
       },
+
       {
         test: /\.js$/,
         exclude: /node_modules/,
