@@ -7,6 +7,7 @@ import { checkbox } from "../components/mixins/checkbox/checkbox.js";
 import { workSearch } from "../pages/search/search.js";
 import { diagram } from "../components/mixins/diagram/diagram.js";
 import { roomWithNumber } from "../pages/room/room.js";
+import { changeFinishCardRoom } from "../components/mixins/finishCardRoom/finishCardRoom.js";
 
 function loadContent(url, roomId = null) {
   console.log("Загружаем:", url);
@@ -21,7 +22,7 @@ function loadContent(url, roomId = null) {
       setTimeout(() => initializeScripts(url), 100);
       if (roomId) {
         console.log("ID комнаты:", roomId);
-        loadRoomData(roomId);
+        loadRoomData(Number(roomId));
       }
     })
     .catch((err) => {
@@ -33,6 +34,7 @@ function loadRoomData(roomId) {
   console.log(`Загружаем данные для комнаты ID: ${roomId}`);
   if (roomId !== 888) {
     roomWithNumber(roomId);
+    changeFinishCardRoom(roomId);
   }
   // Здесь можно подгружать данные с сервера через fetch()
 }
@@ -108,6 +110,7 @@ function initializeScripts(url) {
     case "room":
       mburger();
       diagram();
+
       break;
 
     case "colors":
