@@ -64,7 +64,6 @@
             .checkingPeriod {
               background: $purple;
               opacity: 0.18;
-              border-radius: none;
             }
           }
         }
@@ -159,6 +158,72 @@
       .pagination__block {
         margin: 0 auto;
         margin-top: 22px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1250px) {
+  .search {
+    .wrapper {
+      gap: 20px;
+      .aside {
+        margin-left: 20px;
+      }
+      section {
+        .search__block {
+          margin: 0 auto;
+          width: 552px;
+          .link-to-room:nth-child(n + 9) {
+            display: none;
+          }
+        }
+        // .pagination__block {
+        //   margin: 0 auto;
+        // }
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .search {
+    min-height: 2052px;
+    .wrapper {
+      flex-direction: column;
+      .aside {
+        margin: 0 auto;
+      }
+      section {
+        h1 {
+          text-align: center;
+        }
+        .search__block {
+          margin: 0 auto;
+          width: 552px;
+          .link-to-room:nth-child(n + 9) {
+            display: none;
+          }
+        }
+
+        .pagination__block {
+          margin: 0 auto;
+          margin: 12px auto 10px auto;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 620px) {
+  .search {
+    .wrapper {
+      justify-content: start;
+      section {
+        .search__block {
+          // width: 100%;
+          .link-to-room:nth-child(n + 5) {
+            display: none;
+            margin: 0 20px;
+          }
+        }
       }
     }
   }

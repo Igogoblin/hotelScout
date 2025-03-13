@@ -78,7 +78,7 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        type: "asset/resource",
+        type: "json",
       },
     ],
   },
