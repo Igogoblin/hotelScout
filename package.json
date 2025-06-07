@@ -23,6 +23,7 @@
   "scripts": {
     "start": "webpack serve --mode development --hot",
     "build": "webpack",
+    "predeploy": "npm run build -- --mode=development",
     "deploy": "npm run build && gh-pages -d dist --dotfiles --silent",
     "clean": "rimraf node_modules/.cache/webpack"
   },

@@ -65,6 +65,7 @@ module.exports = {
           filename: "assets/[name][ext]",
         },
       },
+
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -74,6 +75,10 @@ module.exports = {
             presets: ["@babel/preset-env"],
           },
         },
+      },
+      {
+        test: /\.json$/,
+        type: "json",
       },
     ],
   },

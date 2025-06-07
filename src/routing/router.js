@@ -6,6 +6,8 @@ import { showCalendar } from "../pages/cards/cards.js";
 import { checkbox } from "../components/mixins/checkbox/checkbox.js";
 import { workSearch } from "../pages/search/search.js";
 import { diagram } from "../components/mixins/diagram/diagram.js";
+import { roomWithNumber } from "../pages/room/room.js";
+import { changeFinishCardRoom } from "../components/mixins/finishCardRoom/finishCardRoom.js";
 
 function loadContent(url, roomId = null) {
   console.log("Загружаем:", url);
@@ -20,7 +22,7 @@ function loadContent(url, roomId = null) {
       setTimeout(() => initializeScripts(url), 100);
       if (roomId) {
         console.log("ID комнаты:", roomId);
-        loadRoomData(roomId);
+        loadRoomData(Number(roomId));
       }
     })
     .catch((err) => {
@@ -30,6 +32,10 @@ function loadContent(url, roomId = null) {
 }
 function loadRoomData(roomId) {
   console.log(`Загружаем данные для комнаты ID: ${roomId}`);
+  if (roomId !== 888) {
+    roomWithNumber(roomId);
+    changeFinishCardRoom(roomId);
+  }
   // Здесь можно подгружать данные с сервера через fetch()
 }
 function navigateTo(route) {
@@ -48,7 +54,7 @@ function navigateTo(route) {
 
 const routes = {
   "/": "./index.html",
-  "/hotelScout": "./index.html",
+  "/hotelScout/": "./index.html",
   "/hotelScout/about": "./about.html",
   "/hotelScout/registration": "./registration.html",
   "/hotelScout/enter": "./enter.html",
@@ -104,12 +110,15 @@ function initializeScripts(url) {
     case "room":
       mburger();
       diagram();
+
       break;
 
     case "colors":
 
     case "headers":
     case "about":
+      mburger();
+      break;
     case "search":
       mburger();
       checkbox();
@@ -125,8 +134,7 @@ function initializeScripts(url) {
       rangeSlider();
       correctHoverForm();
       break;
-    // case "ui-forms":
-    //   break;
+
     default:
       initializeCalendar();
       mburger();

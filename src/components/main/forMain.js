@@ -10,7 +10,7 @@ linksToMain.forEach((link) => {
 
 export function initializeCalendar() {
   const mainCalendar = document.getElementById("mainCalendar");
-  // const mainCalendar = document.getElementById(calendarElement);
+
   const dropdownShow = document.querySelector(".show-dropdown");
   const dropdownContent = document.querySelector(".dropdown__content");
   const valueGuests = document.querySelectorAll(".btn-value");

@@ -53,7 +53,7 @@ import "./components/mixins/diagram/diagram.scss";
 import "./components/mixins/diagram/diagram.js";
 import "./data/rooms.json";
 
-console.log("hotelScout is running!");
+// console.log("hotelScout is running!");
 if (module.hot) {
   module.hot.accept();
 }

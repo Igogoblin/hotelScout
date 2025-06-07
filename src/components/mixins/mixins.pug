@@ -1,6 +1,7 @@
 include ./mburger/mburger.pug
 include ./buttons/buttons.pug
 
+
 mixin button(options )
         div(class=`btn__block ${options.className}`)
             button(class=options.isPrimary?'btn btn--primary': 'btn btn--second', onclick=`location.href='${options.link}'`)=options.text
@@ -106,10 +107,8 @@ mixin registration(options)
 
 mixin ui-header(options)
     header(class=`ui-header ${options.className? "ui__area":"" }`)
-
         div(class='header-wrapper')
-            //- a(href="/"  data-link, onclick="initializeCalendar()")
-            a(href="/hotelScout"  data-link)
+            a(href="/hotelScout/"  data-link)
                 img(src=require("@assets/ui-logo.svg").default, alt="logo")
             span(class='ui__title')= options.title
             +menu([
@@ -143,8 +142,7 @@ mixin ui-color
             { color: "#1F2041", title: "Dark Shade 25%",opacity: 0.25},
             { color: "#1F2041", title: "Dark Shade 5%",opacity: 0.05},
             { color: "#BC9CFF", title: "Purple",opacity: 1},
-            { color: "#6FCF97", title: "Green",opacity: 1},
-            
+            { color: "#6FCF97", title: "Green",opacity: 1},        
         ]) 
         
 
@@ -164,8 +162,6 @@ mixin ui-type
             { title: "H2", text: "Next one is the item title inside widgets" },
             { title: "H3", text: "This is a label or CTA text" },
             { title: "Body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc." },
-
-
         ])
 
 

@@ -5,7 +5,7 @@ include ../mixins/userAcc/userAcc.pug
 mixin header(options)
     .header
         .wrapper
-            a(href="/hotelScout"  data-link, class="link-to-main")
+            a(href="/hotelScout/"  data-link, class="link-to-main")
                 img(src=require("@assets/logo.svg").default, alt="logo")
             .wrapper__content
                 ul(class=`${options && options.classRegistration ? options.classRegistration : ""} header-navigation`)  
